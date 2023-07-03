@@ -1,70 +1,115 @@
-! function e(t, r, a)
+! function e(t, n, r)
 {
-	function n(o, l)
+	function a(o, s)
 	{
-		if (!r[o])
+		if (!n[o])
 		{
 			if (!t[o])
 			{
-				var u = "function" ==
+				var l = "function" ==
 					typeof require &&
 					require;
-				if (!l && u) return u(o,
+				if (!s && l) return l(o,
 					!0);
 				if (i) return i(o, !0);
-				var s = new Error(
+				var c = new Error(
 					"Cannot find module '" +
 					o + "'");
-				throw s.code =
+				throw c.code =
 					"MODULE_NOT_FOUND",
-					s
+					c
 			}
-			var c = r[o] = {
+			var u = n[o] = {
 				exports:
 				{}
 			};
-			t[o][0].call(c.exports, (
+			t[o][0].call(u.exports, (
 					function (e)
 					{
-						return n(t[
+						return a(t[
 								o]
 							[1][
 								e] ||
 							e)
-					}), c, c
-				.exports, e, t, r, a
+					}), u, u
+				.exports, e, t, n, r
 				)
 		}
-		return r[o].exports
+		return n[o].exports
 	}
 	for (var i = "function" ==
 			typeof require && require,
-			o = 0; o < a.length; o++) n(
-		a[o]);
-	return n
+			o = 0; o < r.length; o++) a(
+		r[o]);
+	return a
 }(
 {
-	1: [function (e, t, r)
+	1: [function (e, t, n)
 	{
-		function a(e, t, r,
-			a, n, i, o)
+		t.exports =
+			function (e, t)
+			{
+				(null ==
+					t || t >
+					e.length
+					) && (
+					t = e
+					.length
+					);
+				for (var n =
+						0,
+						r =
+						new Array(
+							t
+							); n <
+					t; n++)
+					r[n] =
+					e[n];
+				return r
+			}, t.exports
+			.__esModule = !
+			0, t.exports
+			.default = t
+			.exports
+	},
+	{}],
+	2: [function (e, t, n)
+	{
+		t.exports =
+			function (e)
+			{
+				if (Array
+					.isArray(
+						e))
+					return e
+			}, t.exports
+			.__esModule = !
+			0, t.exports
+			.default = t
+			.exports
+	},
+	{}],
+	3: [function (e, t, n)
+	{
+		function r(e, t, n,
+			r, a, i, o)
 		{
 			try
 			{
-				var l = e[i]
+				var s = e[i]
 					(o),
-					u = l
+					l = s
 					.value
 			}
 			catch (e)
 			{
-				return void r(
+				return void n(
 					e)
 			}
-			l.done ? t(u) :
+			s.done ? t(l) :
 				Promise
-				.resolve(u)
-				.then(a, n)
+				.resolve(l)
+				.then(r, a)
 		}
 		t.exports =
 			function (e)
@@ -73,11 +118,11 @@
 				{
 					var t =
 						this,
-						r =
+						n =
 						arguments;
 					return new Promise(
 						(function (
-							n,
+							a,
 							i
 							)
 						{
@@ -85,31 +130,31 @@
 								e
 								.apply(
 									t,
-									r
+									n
 									);
-							function l(
+							function s(
 								e
 								)
 							{
-								a(o, n, i,
+								r(o, a, i,
+									s,
 									l,
-									u,
 									"next",
 									e
 									)
 							}
-							function u(
+							function l(
 								e
 								)
 							{
-								a(o, n, i,
+								r(o, a, i,
+									s,
 									l,
-									u,
 									"throw",
 									e
 									)
 							}
-							l(void 0)
+							s(void 0)
 						})
 						)
 				}
@@ -120,7 +165,7 @@
 			.exports
 	},
 	{}],
-	2: [function (e, t, r)
+	4: [function (e, t, n)
 	{
 		t.exports =
 			function (e, t)
@@ -138,16 +183,16 @@
 			.exports
 	},
 	{}],
-	3: [function (e, t, r)
+	5: [function (e, t, n)
 	{
 		t.exports =
 			function (e, t,
-				r)
+				n)
 			{
 				if (t.set) t
 					.set
 					.call(e,
-						r);
+						n);
 				else
 				{
 					if (!t
@@ -157,7 +202,7 @@
 							"attempted to set read only private field"
 							);
 					t.value =
-						r
+						n
 				}
 			}, t.exports
 			.__esModule = !
@@ -166,7 +211,7 @@
 			.exports
 	},
 	{}],
-	4: [function (e, t, r)
+	6: [function (e, t, n)
 	{
 		t.exports =
 			function (e, t)
@@ -183,17 +228,17 @@
 			.exports
 	},
 	{}],
-	5: [function (e, t, r)
+	7: [function (e, t, n)
 	{
 		t.exports =
 			function (e, t,
-				r)
+				n)
 			{
 				if (!t.has(
 						e))
 					throw new TypeError(
 						"attempted to " +
-						r +
+						n +
 						" private field on non-instance"
 						);
 				return t
@@ -205,23 +250,23 @@
 			.exports
 	},
 	{}],
-	6: [function (e, t, r)
+	8: [function (e, t, n)
 	{
-		var a = e(
+		var r = e(
 				"./classApplyDescriptorGet.js"
 				),
-			n = e(
+			a = e(
 				"./classExtractFieldDescriptor.js"
 				);
 		t.exports =
 			function (e, t)
 			{
-				var r = n(e,
+				var n = a(e,
 					t,
 					"get"
 					);
-				return a(e,
-					r)
+				return r(e,
+					n)
 			}, t.exports
 			.__esModule = !
 			0, t.exports
@@ -229,28 +274,28 @@
 			.exports
 	},
 	{
-		"./classApplyDescriptorGet.js": 2,
-		"./classExtractFieldDescriptor.js": 5
+		"./classApplyDescriptorGet.js": 4,
+		"./classExtractFieldDescriptor.js": 7
 	}],
-	7: [function (e, t, r)
+	9: [function (e, t, n)
 	{
-		var a = e(
+		var r = e(
 				"./classApplyDescriptorSet.js"
 				),
-			n = e(
+			a = e(
 				"./classExtractFieldDescriptor.js"
 				);
 		t.exports =
 			function (e, t,
-				r)
+				n)
 			{
-				var i = n(e,
+				var i = a(e,
 					t,
 					"set"
 					);
-				return a(e,
-					i, r
-					), r
+				return r(e,
+					i, n
+					), n
 			}, t.exports
 			.__esModule = !
 			0, t.exports
@@ -258,46 +303,46 @@
 			.exports
 	},
 	{
-		"./classApplyDescriptorSet.js": 3,
-		"./classExtractFieldDescriptor.js": 5
+		"./classApplyDescriptorSet.js": 5,
+		"./classExtractFieldDescriptor.js": 7
 	}],
-	8: [function (e, t, r)
+	10: [function (e, t, n)
 	{
-		function a(e, t)
+		function r(e, t)
 		{
-			for (var r =
-				0; r < t
-				.length; r++
+			for (var n =
+				0; n < t
+				.length; n++
 				)
 			{
-				var a = t[
-				r];
-				a.enumerable =
-					a
+				var r = t[
+				n];
+				r.enumerable =
+					r
 					.enumerable ||
-					!1, a
+					!1, r
 					.configurable = !
 					0,
 					"value" in
-					a && (a
+					r && (r
 						.writable = !
 						0),
 					Object
 					.defineProperty(
-						e, a
+						e, r
 						.key,
-						a)
+						r)
 			}
 		}
 		t.exports =
 			function (e, t,
-				r)
+				n)
 			{
 				return t &&
-					a(e.prototype,
+					r(e.prototype,
 						t),
-					r && a(
-						e, r
+					n && r(
+						e, n
 						),
 					Object
 					.defineProperty(
@@ -316,11 +361,11 @@
 			.exports
 	},
 	{}],
-	9: [function (e, t, r)
+	11: [function (e, t, n)
 	{
 		t.exports =
 			function (e, t,
-				r)
+				n)
 			{
 				return t in
 					e ?
@@ -329,7 +374,7 @@
 						e,
 						t,
 						{
-							value: r,
+							value: n,
 							enumerable:
 								!
 								0,
@@ -341,7 +386,7 @@
 								0
 						}) :
 					e[t] =
-					r, e
+					n, e
 			}, t.exports
 			.__esModule = !
 			0, t.exports
@@ -349,7 +394,7 @@
 			.exports
 	},
 	{}],
-	10: [function (e, t, r)
+	12: [function (e, t, n)
 	{
 		t.exports =
 			function (e)
@@ -368,13 +413,151 @@
 			.exports
 	},
 	{}],
-	11: [function (e, t, r)
+	13: [function (e, t, n)
 	{
-		function a(e)
+		t.exports =
+			function (e, t)
+			{
+				var n =
+					null ==
+					e ?
+					null :
+					"undefined" !=
+					typeof Symbol &&
+					e[Symbol
+						.iterator
+						] ||
+					e[
+						"@@iterator"];
+				if (null !=
+					n)
+				{
+					var r,
+						a,
+						i = [],
+						o = !
+						0,
+						s = !
+						1;
+					try
+					{
+						for (
+							n =
+							n
+							.call(
+								e
+								); !
+							(o = (r =
+									n
+									.next()
+									)
+								.done
+								) &&
+							(i.push(r
+									.value
+									),
+								!
+								t ||
+								i
+								.length !==
+								t
+								); o = !
+							0
+							)
+						;
+					}
+					catch (
+						e)
+					{
+						s = !
+							0,
+							a =
+							e
+					}
+					finally
+					{
+						try
+						{
+							o || null ==
+								n
+								.return ||
+								n
+								.return()
+						}
+						finally
+						{
+							if (
+								s)
+								throw a
+						}
+					}
+					return i
+				}
+			}, t.exports
+			.__esModule = !
+			0, t.exports
+			.default = t
+			.exports
+	},
+	{}],
+	14: [function (e, t, n)
+	{
+		t.exports =
+			function ()
+			{
+				throw new TypeError(
+					"Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+					)
+			}, t.exports
+			.__esModule = !
+			0, t.exports
+			.default = t
+			.exports
+	},
+	{}],
+	15: [function (e, t, n)
+	{
+		var r = e(
+				"./arrayWithHoles.js"
+				),
+			a = e(
+				"./iterableToArrayLimit.js"
+				),
+			i = e(
+				"./unsupportedIterableToArray.js"
+				),
+			o = e(
+				"./nonIterableRest.js"
+				);
+		t.exports =
+			function (e, t)
+			{
+				return r(
+					e) || a(
+						e, t
+						) ||
+					i(e,
+					t) ||
+					o()
+			}, t.exports
+			.__esModule = !
+			0, t.exports
+			.default = t
+			.exports
+	},
+	{
+		"./arrayWithHoles.js": 2,
+		"./iterableToArrayLimit.js": 13,
+		"./nonIterableRest.js": 14,
+		"./unsupportedIterableToArray.js": 17
+	}],
+	16: [function (e, t, n)
+	{
+		function r(e)
 		{
 			return t
 				.exports =
-				a =
+				r =
 				"function" ==
 				typeof Symbol &&
 				"symbol" ==
@@ -401,10 +584,10 @@
 				.__esModule = !
 				0, t.exports
 				.default = t
-				.exports, a(
+				.exports, r(
 					e)
 		}
-		t.exports = a, t
+		t.exports = r, t
 			.exports
 			.__esModule = !
 			0, t.exports
@@ -412,47 +595,111 @@
 			.exports
 	},
 	{}],
-	12: [function (e, t, r)
+	17: [function (e, t, n)
+	{
+		var r = e(
+			"./arrayLikeToArray.js"
+			);
+		t.exports =
+			function (e, t)
+			{
+				if (e)
+				{
+					if ("string" ==
+						typeof e
+						)
+						return r(
+							e,
+							t
+							);
+					var n =
+						Object
+						.prototype
+						.toString
+						.call(
+							e
+							)
+						.slice(
+							8,
+							-
+							1
+							);
+					return "Object" ===
+						n &&
+						e
+						.constructor &&
+						(n = e
+							.constructor
+							.name
+							),
+						"Map" ===
+						n ||
+						"Set" ===
+						n ?
+						Array
+						.from(
+							e
+							) :
+						"Arguments" ===
+						n ||
+						/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/
+						.test(
+							n
+							) ?
+						r(e,
+							t) :
+						void 0
+				}
+			}, t.exports
+			.__esModule = !
+			0, t.exports
+			.default = t
+			.exports
+	},
+	{
+		"./arrayLikeToArray.js": 1
+	}],
+	18: [function (e, t, n)
 	{
 		t.exports = e(
 			"regenerator-runtime"
 			)
 	},
 	{
-		"regenerator-runtime": 14
+		"regenerator-runtime": 20
 	}],
-	13: [function (e, t, r)
+	19: [function (e, t, n)
 	{
 		"use strict";
 		Object
 			.defineProperty(
-				r,
+				n,
 				"__esModule",
 				{
 					value: !
 						0
-				}), r
+				}), n
 			.sanitizeUrl =
 			void 0;
-		var a =
+		var r =
 			/^([^\w]*)(javascript|data|vbscript)/im,
-			n =
+			a =
 			/&#(\w+)(^\w|;)?/g,
 			i =
 			/[\u0000-\u001F\u007F-\u009F\u2000-\u200D\uFEFF]/gim,
 			o =
 			/^([^:]+):/gm,
-			l = [".", "/"];
-		r.sanitizeUrl =
+			s = [".", "/"];
+		n.sanitizeUrl =
 			function (e)
 			{
-				var t, r = (
+				var t, n = (
 						t =
 						e ||
 						"",
 						t
 						.replace(
-							n,
+							a,
 							(function (
 								e,
 								t
@@ -469,68 +716,68 @@
 						i,
 						"")
 					.trim();
-				if (!r)
+				if (!n)
 					return "about:blank";
 				if (function (
 						e)
 					{
-						return l
+						return s
 							.indexOf(
 								e[
 									0]
 								) >
 							-
 							1
-					}(r))
-					return r;
-				var u = r
+					}(n))
+					return n;
+				var l = n
 					.match(
 						o);
-				if (!u)
-					return r;
-				var s = u[
+				if (!l)
+					return n;
+				var c = l[
 				0];
-				return a
+				return r
 					.test(
-					s) ?
+					c) ?
 					"about:blank" :
-					r
+					n
 			}
 	},
 	{}],
-	14: [function (e, t, r)
+	20: [function (e, t, n)
 	{
-		var a = function (e)
+		var r = function (e)
 		{
 			"use strict";
-			var t, r =
+			var t, n =
 				Object
 				.prototype,
-				a = r
+				r = n
 				.hasOwnProperty,
-				n =
+				a =
 				"function" ==
 				typeof Symbol ?
 				Symbol :
 				{},
-				i = n
+				i = a
 				.iterator ||
 				"@@iterator",
-				o = n
+				o = a
 				.asyncIterator ||
 				"@@asyncIterator",
-				l = n
+				s = a
 				.toStringTag ||
 				"@@toStringTag";
-			function u(
-				e, t, r)
+			function l(
+				e, t, n)
 			{
 				return Object
 					.defineProperty(
 						e,
 						t,
 						{
-							value: r,
+							value: n,
 							enumerable:
 								!
 								0,
@@ -546,44 +793,44 @@
 			}
 			try
 			{
-				u(
+				l(
 					{},
 					""
 					)
 			}
 			catch (e)
 			{
-				u = function (
+				l = function (
 					e,
 					t,
-					r
+					n
 					)
 				{
 					return e[
 							t
 							] =
-						r
+						n
 				}
 			}
-			function s(
-				e, t, r,
-				a)
+			function c(
+				e, t, n,
+				r)
 			{
-				var n =
+				var a =
 					t &&
 					t
-					.prototype instanceof m ?
+					.prototype instanceof b ?
 					t :
-					m,
+					b,
 					i =
 					Object
 					.create(
-						n
+						a
 						.prototype
 						),
 					o =
-					new R(
-						a ||
+					new I(
+						r ||
 						[]
 						);
 				return i
@@ -591,145 +838,145 @@
 					function (
 						e,
 						t,
-						r
+						n
 						)
 					{
-						var a =
+						var r =
 							d;
 						return function (
-							n,
+							a,
 							i
 							)
 						{
-							if (a ===
-								p
+							if (r ===
+								f
 								)
 								throw new Error(
 									"Generator is already running"
 									);
-							if (a ===
-								h
+							if (r ===
+								p
 								)
 							{
 								if ("throw" ===
-									n
+									a
 									)
 									throw i;
-								return T()
+								return M()
 							}
 							for (
-								r
+								n
 								.method =
-								n,
-								r
+								a,
+								n
 								.arg =
 								i;;
 								)
 							{
 								var o =
-									r
+									n
 									.delegate;
 								if (
 									o)
 								{
-									var l =
-										_(o,
-											r);
+									var s =
+										x(o,
+											n);
 									if (
-										l)
+										s)
 									{
-										if (l ===
-											v
+										if (s ===
+											m
 											)
 											continue;
-										return l
+										return s
 									}
 								}
 								if ("next" ===
-									r
+									n
 									.method
 									)
-									r
+									n
 									.sent =
-									r
+									n
 									._sent =
-									r
+									n
 									.arg;
 								else if (
 									"throw" ===
-									r
+									n
 									.method
 									)
 								{
-									if (a ===
+									if (r ===
 										d
 										)
-										throw a =
-											h,
-											r
+										throw r =
+											p,
+											n
 											.arg;
-									r.dispatchException(
-										r
+									n.dispatchException(
+										n
 										.arg
 										)
 								}
 								else "return" ===
-									r
+									n
 									.method &&
-									r
+									n
 									.abrupt(
 										"return",
-										r
+										n
 										.arg
 										);
-								a =
-								p;
-								var u =
-									c(e, t,
-										r
+								r =
+								f;
+								var l =
+									u(e, t,
+										n
 										);
 								if ("normal" ===
-									u
+									l
 									.type
 									)
 								{
-									if (a =
-										r
+									if (r =
+										n
 										.done ?
-										h :
-										f,
-										u
+										p :
+										h,
+										l
 										.arg ===
-										v
+										m
 										)
 										continue;
 									return {
-										value: u
+										value: l
 											.arg,
-										done: r
+										done: n
 											.done
 									}
 								}
 								"throw" ===
-								u.type &&
-									(a = h,
-										r
+								l.type &&
+									(r = p,
+										n
 										.method =
 										"throw",
-										r
+										n
 										.arg =
-										u
+										l
 										.arg
 										)
 							}
 						}
-					}(e, r,
+					}(e, n,
 						o
 						),
 					i
 			}
-			function c(
-				e, t, r)
+			function u(
+				e, t, n)
 			{
 				try
 				{
@@ -738,7 +985,7 @@
 						arg: e
 							.call(
 								t,
-								r
+								n
 								)
 					}
 				}
@@ -751,47 +998,47 @@
 					}
 				}
 			}
-			e.wrap = s;
+			e.wrap = c;
 			var d =
 				"suspendedStart",
-				f =
-				"suspendedYield",
-				p =
-				"executing",
 				h =
+				"suspendedYield",
+				f =
+				"executing",
+				p =
 				"completed",
-				v = {};
-			function m()
-			{}
+				m = {};
 			function b()
 			{}
-			function y()
+			function v()
 			{}
-			var w = {};
-			u(w, i, (function ()
+			function g()
+			{}
+			var y = {};
+			l(y, i, (function ()
 			{
 				return this
 			}));
-			var g =
+			var w =
 				Object
 				.getPrototypeOf,
-				x = g &&
-				g(g(C(
+				_ = w &&
+				w(w(O(
 				[])));
-			x && x !==
-				r && a
-				.call(x,
+			_ && _ !==
+				n && r
+				.call(_,
 					i
 					) &&
-				(w = x);
-			var E = y
+				(y = _);
+			var k = g
 				.prototype =
-				m
+				b
 				.prototype =
 				Object
 				.create(
-					w);
-			function k(
+					y);
+			function S(
 				e)
 			{
 				["next",
@@ -802,7 +1049,7 @@
 					((function (
 						t)
 					{
-						u(e, t, (function (
+						l(e, t, (function (
 							e
 							)
 						{
@@ -814,35 +1061,35 @@
 						}))
 					}))
 			}
-			function M(
+			function E(
 				e, t)
 			{
-				function r(
-					n,
+				function n(
+					a,
 					i,
-					o, l
+					o, s
 					)
 				{
-					var u =
-						c(e[n],
+					var l =
+						u(e[a],
 							e,
 							i
 							);
 					if ("throw" !==
-						u
+						l
 						.type
 						)
 					{
-						var s =
-							u
+						var c =
+							l
 							.arg,
 							d =
-							s
+							c
 							.value;
 						return d &&
 							"object" ==
 							typeof d &&
-							a
+							r
 							.call(
 								d,
 								"__await"
@@ -857,20 +1104,20 @@
 									e
 									)
 								{
-									r("next",
+									n("next",
 										e,
 										o,
-										l
+										s
 										)
 								}),
 								(function (
 									e
 									)
 								{
-									r("throw",
+									n("throw",
 										e,
 										o,
-										l
+										s
 										)
 								})
 								) :
@@ -883,31 +1130,31 @@
 									e
 									)
 								{
-									s.value =
+									c.value =
 										e,
 										o(
-											s)
+											c)
 								}),
 								(function (
 									e
 									)
 								{
-									return r(
+									return n(
 										"throw",
 										e,
 										o,
-										l
+										s
 										)
 								})
 								)
 					}
-					l(u.arg)
+					s(l.arg)
 				}
-				var n;
+				var a;
 				this._invoke =
 					function (
 						e,
-						a
+						r
 						)
 					{
 						function i()
@@ -915,18 +1162,18 @@
 							return new t(
 								(function (
 									t,
-									n
+									a
 									)
 								{
-									r(e, a, t,
-										n
+									n(e, r, t,
+										a
 										)
 								})
 								)
 						}
-						return n =
-							n ?
-							n
+						return a =
+							a ?
+							a
 							.then(
 								i,
 								i
@@ -934,115 +1181,115 @@
 							i()
 					}
 			}
-			function _(
-				e, r)
+			function x(
+				e, n)
 			{
-				var a =
+				var r =
 					e
 					.iterator[
-						r
+						n
 						.method
 						];
-				if (a ===
+				if (r ===
 					t)
 				{
-					if (r
+					if (n
 						.delegate =
 						null,
 						"throw" ===
-						r
+						n
 						.method
 						)
 					{
 						if (e
 							.iterator
 							.return &&
-							(r.method =
+							(n.method =
 								"return",
-								r
+								n
 								.arg =
 								t,
-								_(e,
-									r),
+								x(e,
+									n),
 								"throw" ===
-								r
+								n
 								.method
 								)
 							)
-							return v;
-						r.method =
+							return m;
+						n.method =
 							"throw",
-							r
+							n
 							.arg =
 							new TypeError(
 								"The iterator does not provide a 'throw' method"
 								)
 					}
-					return v
+					return m
 				}
-				var n =
-					c(a, e
+				var a =
+					u(r, e
 						.iterator,
-						r
+						n
 						.arg
 						);
 				if ("throw" ===
-					n
+					a
 					.type
 					)
-					return r
+					return n
 						.method =
 						"throw",
-						r
-						.arg =
 						n
+						.arg =
+						a
 						.arg,
-						r
+						n
 						.delegate =
 						null,
-						v;
+						m;
 				var i =
-					n
+					a
 					.arg;
 				return i ?
 					i
 					.done ?
-					(r[e.resultName] =
+					(n[e.resultName] =
 						i
 						.value,
-						r
+						n
 						.next =
 						e
 						.nextLoc,
 						"return" !==
-						r
+						n
 						.method &&
-						(r.method =
+						(n.method =
 							"next",
-							r
+							n
 							.arg =
 							t
 							),
-						r
+						n
 						.delegate =
 						null,
-						v
+						m
 						) :
 					i :
-					(r.method =
+					(n.method =
 						"throw",
-						r
+						n
 						.arg =
 						new TypeError(
 							"iterator result is not an object"
 							),
-						r
+						n
 						.delegate =
 						null,
-						v
+						m
 						)
 			}
-			function S(
+			function C(
 				e)
 			{
 				var t = {
@@ -1071,7 +1318,7 @@
 						t
 						)
 			}
-			function P(
+			function T(
 				e)
 			{
 				var t =
@@ -1086,7 +1333,7 @@
 					.completion =
 					t
 			}
-			function R(
+			function I(
 				e)
 			{
 				this.tryEntries = [
@@ -1095,7 +1342,7 @@
 					}],
 					e
 					.forEach(
-						S,
+						C,
 						this
 						),
 					this
@@ -1104,17 +1351,17 @@
 						0
 						)
 			}
-			function C(
+			function O(
 				e)
 			{
 				if (e)
 				{
-					var r =
+					var n =
 						e[
 							i];
 					if (
-						r)
-						return r
+						n)
+						return n
 							.call(
 								e
 								);
@@ -1130,37 +1377,37 @@
 							)
 						)
 					{
-						var n = -
+						var a = -
 							1,
 							o =
-							function r()
+							function n()
 							{
 								for (; ++
-									n <
+									a <
 									e
 									.length;
 									)
-									if (a
+									if (r
 										.call(
 											e,
-											n
+											a
 											)
 										)
-										return r
+										return n
 											.value =
 											e[
-												n],
-											r
+												a],
+											n
 											.done = !
 											1,
-											r;
-								return r
+											n;
+								return n
 									.value =
 									t,
-									r
+									n
 									.done = !
 									0,
-									r
+									n
 							};
 						return o
 							.next =
@@ -1168,10 +1415,10 @@
 					}
 				}
 				return {
-					next: T
+					next: M
 				}
 			}
-			function T()
+			function M()
 			{
 				return {
 					value: t,
@@ -1180,16 +1427,16 @@
 						0
 				}
 			}
-			return b
+			return v
 				.prototype =
-				y, u(E,
+				g, l(k,
 					"constructor",
-					y),
-				u(y, "constructor",
-					b),
-				b
+					g),
+				l(g, "constructor",
+					v),
+				v
 				.displayName =
-				u(y, l,
+				l(g, s,
 					"GeneratorFunction"
 					), e
 				.isGeneratorFunction =
@@ -1205,7 +1452,7 @@
 						!
 						t &&
 						(t ===
-							b ||
+							v ||
 							"GeneratorFunction" ===
 							(t.displayName ||
 								t
@@ -1222,11 +1469,11 @@
 						Object
 						.setPrototypeOf(
 							e,
-							y
+							g
 							) :
 						(e.__proto__ =
-							y,
-							u(e, l,
+							g,
+							l(e, s,
 								"GeneratorFunction"
 								)
 							),
@@ -1234,7 +1481,7 @@
 						.prototype =
 						Object
 						.create(
-							E
+							k
 							),
 						e
 				}, e
@@ -1245,23 +1492,23 @@
 					return {
 						__await: e
 					}
-				}, k(M
+				}, S(E
 					.prototype
 					),
-				u(M.prototype,
+				l(E.prototype,
 					o, (function ()
 					{
 						return this
 					})),
 				e
 				.AsyncIterator =
-				M, e
+				E, e
 				.async =
 				function (
 					t,
+					n,
 					r,
-					a,
-					n, i
+					a, i
 					)
 				{
 					void 0
@@ -1270,16 +1517,16 @@
 						(i =
 							Promise);
 					var o =
-						new M(
-							s(t, r,
-								a,
-								n
+						new E(
+							c(t, n,
+								r,
+								a
 								),
 							i
 							);
 					return e
 						.isGeneratorFunction(
-							r
+							n
 							) ?
 						o :
 						o
@@ -1297,16 +1544,16 @@
 									.next()
 							})
 							)
-				}, k(E),
-				u(E, l,
+				}, S(k),
+				l(k, s,
 					"Generator"
 					),
-				u(E, i,
+				l(k, i,
 					(function ()
 					{
 						return this
 					})),
-				u(E, "toString",
+				l(k, "toString",
 					(function ()
 					{
 						return "[object Generator]"
@@ -1318,45 +1565,45 @@
 					var
 				t = [];
 					for (
-						var r in
+						var n in
 							e
 						)
 						t
 						.push(
-							r
+							n
 							);
 					return t
 						.reverse(),
-						function r()
+						function n()
 						{
 							for (; t
 								.length;
 								)
 							{
-								var a =
+								var r =
 									t
 									.pop();
-								if (a in
+								if (r in
 									e
 									)
-									return r
+									return n
 										.value =
-										a,
-										r
+										r,
+										n
 										.done = !
 										1,
-										r
+										n
 							}
-							return r
+							return n
 								.done = !
 								0,
-								r
+								n
 						}
 				}, e
 				.values =
-				C, R
+				O, I
 				.prototype = {
-					constructor: R,
+					constructor: I,
 					reset: function (
 						e
 						)
@@ -1387,35 +1634,35 @@
 							this
 							.tryEntries
 							.forEach(
-								P
+								T
 								),
 							!
 							e
 							)
 							for (
-								var r in
+								var n in
 									this
 								)
 								"t" ===
-								r
+								n
 								.charAt(
 									0
 									) &&
-								a
+								r
 								.call(
 									this,
-									r
+									n
 									) &&
 								!
 								isNaN(
 									+
-									r
+									n
 									.slice(
 										1
 										)
 									) &&
 								(this[
-										r] =
+										n] =
 									t
 									)
 					},
@@ -1446,32 +1693,32 @@
 							.done
 							)
 							throw e;
-						var r =
+						var n =
 							this;
-						function n(
-							a,
-							n
+						function a(
+							r,
+							a
 							)
 						{
-							return l
+							return s
 								.type =
 								"throw",
-								l
+								s
 								.arg =
 								e,
-								r
+								n
 								.next =
-								a,
-								n &&
-								(r.method =
+								r,
+								a &&
+								(n.method =
 									"next",
-									r
+									n
 									.arg =
 									t
 									),
 								!
 								!
-								n
+								a
 						}
 						for (
 							var i =
@@ -1488,14 +1735,14 @@
 								.tryEntries[
 									i
 									],
-								l =
+								s =
 								o
 								.completion;
 							if ("root" ===
 								o
 								.tryLoc
 								)
-								return n(
+								return a(
 									"end"
 									);
 							if (o
@@ -1504,20 +1751,20 @@
 								.prev
 								)
 							{
-								var u =
-									a
+								var l =
+									r
 									.call(
 										o,
 										"catchLoc"
 										),
-									s =
-									a
+									c =
+									r
 									.call(
 										o,
 										"finallyLoc"
 										);
-								if (u &&
-									s
+								if (l &&
+									c
 									)
 								{
 									if (this
@@ -1525,7 +1772,7 @@
 										o
 										.catchLoc
 										)
-										return n(
+										return a(
 											o
 											.catchLoc,
 											!
@@ -1536,13 +1783,13 @@
 										o
 										.finallyLoc
 										)
-										return n(
+										return a(
 											o
 											.finallyLoc
 											)
 								}
 								else if (
-									u
+									l
 									)
 								{
 									if (this
@@ -1550,7 +1797,7 @@
 										o
 										.catchLoc
 										)
-										return n(
+										return a(
 											o
 											.catchLoc,
 											!
@@ -1560,7 +1807,7 @@
 								else
 								{
 									if (!
-										s
+										c
 										)
 										throw new Error(
 											"try statement without catch or finally"
@@ -1570,7 +1817,7 @@
 										o
 										.finallyLoc
 										)
-										return n(
+										return a(
 											o
 											.finallyLoc
 											)
@@ -1584,37 +1831,37 @@
 						)
 					{
 						for (
-							var r =
+							var n =
 								this
 								.tryEntries
 								.length -
-								1; r >=
+								1; n >=
 							0; --
-							r
+							n
 							)
 						{
-							var n =
+							var a =
 								this
 								.tryEntries[
-									r
+									n
 									];
-							if (n
+							if (a
 								.tryLoc <=
 								this
 								.prev &&
-								a
+								r
 								.call(
-									n,
+									a,
 									"finallyLoc"
 									) &&
 								this
 								.prev <
-								n
+								a
 								.finallyLoc
 								)
 							{
 								var i =
-									n;
+									a;
 								break
 							}
 						}
@@ -1650,7 +1897,7 @@
 								.next =
 								i
 								.finallyLoc,
-								v
+								m
 								) :
 							this
 							.complete(
@@ -1702,7 +1949,7 @@
 								.next =
 								t
 								),
-							v
+							m
 					},
 					finish: function (
 						e
@@ -1718,25 +1965,25 @@
 							t
 							)
 						{
-							var r =
+							var n =
 								this
 								.tryEntries[
 									t
 									];
-							if (r
+							if (n
 								.finallyLoc ===
 								e
 								)
 								return this
 									.complete(
-										r
+										n
 										.completion,
-										r
+										n
 										.afterLoc
 										),
-									P(
-										r),
-									v
+									T(
+										n),
+									m
 						}
 					},
 					catch: function (
@@ -1753,30 +2000,30 @@
 							t
 							)
 						{
-							var r =
+							var n =
 								this
 								.tryEntries[
 									t
 									];
-							if (r
+							if (n
 								.tryLoc ===
 								e
 								)
 							{
-								var a =
-									r
+								var r =
+									n
 									.completion;
 								if ("throw" ===
-									a
+									r
 									.type
 									)
 								{
-									var n =
-										a
+									var a =
+										r
 										.arg;
-									P(r)
+									T(n)
 								}
-								return n
+								return a
 							}
 						}
 						throw new Error(
@@ -1785,17 +2032,17 @@
 					},
 					delegateYield: function (
 						e,
-						r,
-						a
+						n,
+						r
 						)
 					{
 						return this
 							.delegate = {
-								iterator: C(
+								iterator: O(
 									e
 									),
-								resultName: r,
-								nextLoc: a
+								resultName: n,
+								nextLoc: r
 							},
 							"next" ===
 							this
@@ -1804,7 +2051,7 @@
 								.arg =
 								t
 								),
-							v
+							m
 					}
 				}, e
 		}("object" ==
@@ -1814,7 +2061,7 @@
 		try
 		{
 			regeneratorRuntime
-				= a
+				= r
 		}
 		catch (e)
 		{
@@ -1822,15 +2069,15 @@
 			typeof globalThis
 				? globalThis
 				.regeneratorRuntime =
-				a :
+				r :
 				Function(
 					"r",
 					"regeneratorRuntime = r"
-					)(a)
+					)(r)
 		}
 	},
 	{}],
-	15: [function (e, t, r)
+	21: [function (e, t, n)
 	{
 		! function ()
 		{
@@ -1850,24 +2097,24 @@
 					.__forceSmoothScrollPolyfill__
 					)
 				{
-					var r,
-						a =
+					var n,
+						r =
 						e
 						.HTMLElement ||
 						e
 						.Element,
-						n = {
+						a = {
 							scroll: e
 								.scroll ||
 								e
 								.scrollTo,
 							scrollBy: e
 								.scrollBy,
-							elementScroll: a
+							elementScroll: r
 								.prototype
 								.scroll ||
-								l,
-							scrollIntoView: a
+								s,
+							scrollIntoView: r
 								.prototype
 								.scrollIntoView
 						},
@@ -1887,7 +2134,7 @@
 						Date
 						.now,
 						o =
-						(r = e
+						(n = e
 							.navigator
 							.userAgent,
 							new RegExp(
@@ -1900,7 +2147,7 @@
 									)
 								)
 							.test(
-								r
+								n
 								) ?
 							1 :
 							0
@@ -1916,10 +2163,10 @@
 									0
 									] &&
 								(!0 !==
-									u(arguments[
+									l(arguments[
 										0
 										]) ?
-									h
+									p
 									.call(
 										e,
 										t
@@ -1955,7 +2202,7 @@
 										e
 										.pageYOffset
 										) :
-									n
+									a
 									.scroll
 									.call(
 										e,
@@ -2010,10 +2257,10 @@
 								arguments[
 									0
 									] &&
-								(u(arguments[
+								(l(arguments[
 										0
 										]) ?
-									n
+									a
 									.scrollBy
 									.call(
 										e,
@@ -2052,7 +2299,7 @@
 											] :
 										0
 										) :
-									h
+									p
 									.call(
 										e,
 										t
@@ -2079,10 +2326,10 @@
 											)
 										)
 									)
-						}, a
+						}, r
 						.prototype
 						.scroll =
-						a
+						r
 						.prototype
 						.scrollTo =
 						function ()
@@ -2094,7 +2341,7 @@
 								)
 								if (!
 									0 !==
-									u(arguments[
+									l(arguments[
 										0
 										])
 									)
@@ -2109,7 +2356,7 @@
 											0
 											]
 										.top;
-									h.call(this,
+									p.call(this,
 										this,
 										void 0 ===
 										e ?
@@ -2141,7 +2388,7 @@
 									throw new SyntaxError(
 										"Value could not be converted"
 										);
-								n.elementScroll
+								a.elementScroll
 									.call(
 										this,
 										void 0 !==
@@ -2190,7 +2437,7 @@
 										.scrollTop
 										)
 							}
-						}, a
+						}, r
 						.prototype
 						.scrollBy =
 						function ()
@@ -2201,7 +2448,7 @@
 									0
 									] &&
 								(!0 !==
-									u(arguments[
+									l(arguments[
 										0
 										]) ?
 									this
@@ -2229,7 +2476,7 @@
 												]
 											.behavior
 									}) :
-									n
+									a
 									.elementScroll
 									.call(
 										this,
@@ -2275,57 +2522,57 @@
 										.scrollTop
 										)
 									)
-						}, a
+						}, r
 						.prototype
 						.scrollIntoView =
 						function ()
 						{
 							if (!
 								0 !==
-								u(arguments[
+								l(arguments[
 									0
 									])
 								)
 							{
-								var r =
-									f(
+								var n =
+									h(
 										this),
-									a =
-									r
+									r =
+									n
 									.getBoundingClientRect(),
 									i =
 									this
 									.getBoundingClientRect();
-								r !==
+								n !==
 									t
 									.body ?
-									(h.call(this,
-											r,
-											r
+									(p.call(this,
+											n,
+											n
 											.scrollLeft +
 											i
 											.left -
-											a
-											.left,
 											r
+											.left,
+											n
 											.scrollTop +
 											i
 											.top -
-											a
+											r
 											.top
 											),
 										"fixed" !==
 										e
 										.getComputedStyle(
-											r
+											n
 											)
 										.position &&
 										e
 										.scrollBy(
 										{
-											left: a
+											left: r
 												.left,
-											top: a
+											top: r
 												.top,
 											behavior: "smooth"
 										})
@@ -2340,7 +2587,7 @@
 										behavior: "smooth"
 									})
 							}
-							else n
+							else a
 								.scrollIntoView
 								.call(
 									this,
@@ -2354,7 +2601,7 @@
 									)
 						}
 				}
-				function l(
+				function s(
 					e, t)
 				{
 					this.scrollLeft =
@@ -2363,7 +2610,7 @@
 						.scrollTop =
 						t
 				}
-				function u(
+				function l(
 					e)
 				{
 					if (null ===
@@ -2397,7 +2644,7 @@
 						" is not a valid value for enumeration ScrollBehavior."
 						)
 				}
-				function s(
+				function c(
 					e, t)
 				{
 					return "Y" ===
@@ -2416,40 +2663,40 @@
 						.scrollWidth :
 						void 0
 				}
-				function c(
-					t, r)
+				function u(
+					t, n)
 				{
-					var a =
+					var r =
 						e
 						.getComputedStyle(
 							t,
 							null
 							)[
 							"overflow" +
-							r
+							n
 							];
 					return "auto" ===
-						a ||
+						r ||
 						"scroll" ===
-						a
+						r
 				}
 				function d(
 					e)
 				{
 					var t =
-						s(e,
+						c(e,
 							"Y") &&
-						c(e,
+						u(e,
 							"Y"),
-						r =
-						s(e,
-							"X") &&
+						n =
 						c(e,
+							"X") &&
+						u(e,
 							"X");
 					return t ||
-						r
+						n
 				}
-				function f(
+				function h(
 					e)
 				{
 					for (; e !==
@@ -2466,25 +2713,25 @@
 						.host;
 					return e
 				}
-				function p(
+				function f(
 					t)
 				{
-					var r,
+					var n,
+						r,
 						a,
-						n,
 						o,
-						l =
+						s =
 						(i() -
 							t
 							.startTime
 							) /
 						468;
-					o = l =
-						l >
+					o = s =
+						s >
 						1 ?
 						1 :
-						l,
-						r =
+						s,
+						n =
 						.5 *
 						(1 - Math
 							.cos(
@@ -2493,94 +2740,94 @@
 								o
 								)
 							),
-						a =
+						r =
 						t
 						.startX +
 						(t.x -
 							t
 							.startX
 							) *
-						r,
-						n =
+						n,
+						a =
 						t
 						.startY +
 						(t.y -
 							t
 							.startY
 							) *
-						r, t
+						n, t
 						.method
 						.call(
 							t
 							.scrollable,
-							a,
-							n
+							r,
+							a
 							),
-						a ===
+						r ===
 						t
 						.x &&
-						n ===
+						a ===
 						t
 						.y ||
 						e
 						.requestAnimationFrame(
-							p
+							f
 							.bind(
 								e,
 								t
 								)
 							)
 				}
-				function h(
-					r, a, o)
+				function p(
+					n, r, o)
 				{
-					var u,
-						s,
+					var l,
 						c,
+						u,
 						d,
-						f =
+						h =
 						i();
-					r === t
+					n === t
 						.body ?
-						(u = e,
-							s =
+						(l = e,
+							c =
 							e
 							.scrollX ||
 							e
 							.pageXOffset,
-							c =
+							u =
 							e
 							.scrollY ||
 							e
 							.pageYOffset,
 							d =
-							n
+							a
 							.scroll
 							) :
-						(u = r,
-							s =
-							r
-							.scrollLeft,
+						(l = n,
 							c =
-							r
+							n
+							.scrollLeft,
+							u =
+							n
 							.scrollTop,
 							d =
-							l
+							s
 							),
-						p(
+						f(
 						{
-							scrollable: u,
+							scrollable: l,
 							method: d,
-							startTime: f,
-							startX: s,
-							startY: c,
-							x: a,
+							startTime: h,
+							startX: c,
+							startY: u,
+							x: r,
 							y: o
 						})
 				}
 			}
 			"object" ==
-			typeof r &&
+			typeof n &&
 				void 0 !==
 				t ? t
 				.exports = {
@@ -2589,51 +2836,2887 @@
 		}()
 	},
 	{}],
-	16: [function (e, t, r)
+	22: [function (e, t, n)
+	{
+		var r, a;
+		r = this, a =
+			function (e)
+			{
+				"use strict";
+				const t =
+					"\n";
+				class n
+				{
+					constructor
+						(e)
+						{
+							const
+							{
+								command: t,
+								headers: n,
+								body: r,
+								binaryBody: a,
+								escapeHeaderValues: i,
+								skipContentLengthHeader: o
+							} =
+							e
+							;
+							this.command =
+								t,
+								this
+								.headers =
+								Object
+								.assign(
+									{},
+									n ||
+									{}
+									),
+								a ?
+								(this
+									._binaryBody =
+									a,
+									this
+									.isBinaryBody = !
+									0
+									) :
+								(this
+									._body =
+									r ||
+									"",
+									this
+									.isBinaryBody = !
+									1
+									),
+								this
+								.escapeHeaderValues =
+								i ||
+								!
+								1,
+								this
+								.skipContentLengthHeader =
+								o ||
+								!
+								1
+						}
+					get body
+						()
+						{
+							return !
+								this
+								._body &&
+								this
+								.isBinaryBody &&
+								(this
+									._body =
+									(
+										new TextDecoder)
+									.decode(
+										this
+										._binaryBody
+										)
+									),
+								this
+								._body ||
+								""
+						}
+					get binaryBody
+						()
+						{
+							return this
+								._binaryBody ||
+								this
+								.isBinaryBody ||
+								(this
+									._binaryBody =
+									(
+										new TextEncoder)
+									.encode(
+										this
+										._body
+										)
+									),
+								this
+								._binaryBody
+						}
+					static fromRawFrame
+						(e,
+							t)
+						{
+							const
+								r = {},
+								a =
+								e =>
+								e
+								.replace(
+									/^\s+|\s+$/g,
+									""
+									);
+							for (
+								const
+									i of
+									e
+									.headers
+									.reverse()
+								)
+							{
+								i.indexOf(
+									":"
+									);
+								const
+									o =
+									a(i[
+										0]);
+								let s =
+									a(i[
+										1]);
+								t && "CONNECT" !==
+									e
+									.command &&
+									"CONNECTED" !==
+									e
+									.command &&
+									(s = n
+										.hdrValueUnEscape(
+											s
+											)
+										),
+									r[
+										o] =
+									s
+							}
+							return new n(
+							{
+								command: e
+									.command,
+								headers: r,
+								binaryBody: e
+									.binaryBody,
+								escapeHeaderValues: t
+							})
+						}
+					toString
+						()
+						{
+							return this
+								.serializeCmdAndHeaders()
+						}
+					serialize
+						()
+						{
+							const
+								e =
+								this
+								.serializeCmdAndHeaders();
+							return this
+								.isBinaryBody ?
+								n
+								.toUnit8Array(
+									e,
+									this
+									._binaryBody
+									)
+								.buffer :
+								e +
+								this
+								._body +
+								"\0"
+						}
+					serializeCmdAndHeaders
+						()
+						{
+							const
+								e = [
+									this
+									.command
+								];
+							this.skipContentLengthHeader &&
+								delete this
+								.headers[
+									"content-length"
+									];
+							for (
+								const
+									t of
+									Object
+									.keys(
+										this
+										.headers ||
+										{}
+										)
+								)
+							{
+								const
+									r =
+									this
+									.headers[
+										t
+										];
+								this.escapeHeaderValues &&
+									"CONNECT" !==
+									this
+									.command &&
+									"CONNECTED" !==
+									this
+									.command ?
+									e
+									.push(
+										`${t}:${n.hdrValueEscape(`${r}`)}`
+										) :
+									e
+									.push(
+										`${t}:${r}`
+										)
+							}
+							return (this
+									.isBinaryBody ||
+									!
+									this
+									.isBodyEmpty() &&
+									!
+									this
+									.skipContentLengthHeader
+									) &&
+								e
+								.push(
+									`content-length:${this.bodyLength()}`
+									),
+								e
+								.join(
+									t
+									) +
+								t +
+								t
+						}
+					isBodyEmpty
+						()
+						{
+							return 0 ===
+								this
+								.bodyLength()
+						}
+					bodyLength
+						()
+						{
+							const
+								e =
+								this
+								.binaryBody;
+							return e ?
+								e
+								.length :
+								0
+						}
+					static sizeOfUTF8
+						(e)
+						{
+							return e ?
+								(
+									new TextEncoder)
+								.encode(
+									e
+									)
+								.length :
+								0
+						}
+					static toUnit8Array
+						(e,
+							t)
+						{
+							const
+								n =
+								(
+									new TextEncoder)
+								.encode(
+									e
+									),
+								r =
+								new Uint8Array(
+									[
+										0]
+									),
+								a =
+								new Uint8Array(
+									n
+									.length +
+									t
+									.length +
+									r
+									.length
+									);
+							return a
+								.set(
+									n
+									),
+								a
+								.set(
+									t,
+									n
+									.length
+									),
+								a
+								.set(
+									r,
+									n
+									.length +
+									t
+									.length
+									),
+								a
+						}
+					static marshall
+						(e)
+						{
+							return new n(
+									e
+									)
+								.serialize()
+						}
+					static hdrValueEscape
+						(e)
+						{
+							return e
+								.replace(
+									/\\/g,
+									"\\\\"
+									)
+								.replace(
+									/\r/g,
+									"\\r"
+									)
+								.replace(
+									/\n/g,
+									"\\n"
+									)
+								.replace(
+									/:/g,
+									"\\c"
+									)
+						}
+					static hdrValueUnEscape
+						(e)
+						{
+							return e
+								.replace(
+									/\\r/g,
+									"\r"
+									)
+								.replace(
+									/\\n/g,
+									"\n"
+									)
+								.replace(
+									/\\c/g,
+									":"
+									)
+								.replace(
+									/\\\\/g,
+									"\\"
+									)
+						}
+				}
+				class r
+				{
+					constructor
+						(e,
+							t)
+						{
+							this.onFrame =
+								e,
+								this
+								.onIncomingPing =
+								t,
+								this
+								._encoder =
+								new TextEncoder,
+								this
+								._decoder =
+								new TextDecoder,
+								this
+								._token = [],
+								this
+								._initState()
+						}
+					parseChunk
+						(e, t = !
+							1
+							)
+						{
+							let
+							n;
+							if (n =
+								"string" ==
+								typeof e ?
+								this
+								._encoder
+								.encode(
+									e
+									) :
+								new Uint8Array(
+									e
+									),
+								t &&
+								0 !==
+								n[n.length -
+									1
+									]
+								)
+							{
+								const
+									e =
+									new Uint8Array(
+										n
+										.length +
+										1
+										);
+								e.set(n,
+										0),
+									e[n
+										.length] =
+									0,
+									n =
+									e
+							}
+							for (
+								let r =
+									0; r <
+								n
+								.length; r++
+								)
+							{
+								const
+									e =
+									n[
+										r];
+								this._onByte(
+									e
+									)
+							}
+						}
+					_collectFrame
+						(e)
+						{
+							0 !==
+								e &&
+								13 !==
+								e &&
+								(10 !==
+									e ?
+									(this
+										._onByte =
+										this
+										._collectCommand,
+										this
+										._reinjectByte(
+											e
+											)
+										) :
+									this
+									.onIncomingPing()
+									)
+						}
+					_collectCommand
+						(e)
+						{
+							if (13 !==
+								e
+								)
+								return 10 ===
+									e ?
+									(this
+										._results
+										.command =
+										this
+										._consumeTokenAsUTF8(),
+										void(
+											this
+											._onByte =
+											this
+											._collectHeaders
+											)
+										) :
+									void this
+									._consumeByte(
+										e
+										)
+						}
+					_collectHeaders
+						(e)
+						{
+							13 !==
+								e &&
+								(10 !==
+									e ?
+									(this
+										._onByte =
+										this
+										._collectHeaderKey,
+										this
+										._reinjectByte(
+											e
+											)
+										) :
+									this
+									._setupCollectBody()
+									)
+						}
+					_reinjectByte
+						(e)
+						{
+							this._onByte(
+								e
+								)
+						}
+					_collectHeaderKey
+						(e)
+						{
+							if (58 ===
+								e
+								)
+								return this
+									._headerKey =
+									this
+									._consumeTokenAsUTF8(),
+									void(
+										this
+										._onByte =
+										this
+										._collectHeaderValue
+										);
+							this._consumeByte(
+								e
+								)
+						}
+					_collectHeaderValue
+						(e)
+						{
+							if (13 !==
+								e
+								)
+								return 10 ===
+									e ?
+									(this
+										._results
+										.headers
+										.push(
+											[this
+												._headerKey,
+												this
+												._consumeTokenAsUTF8()
+											]
+											),
+										this
+										._headerKey =
+										void 0,
+										void(
+											this
+											._onByte =
+											this
+											._collectHeaders
+											)
+										) :
+									void this
+									._consumeByte(
+										e
+										)
+						}
+					_setupCollectBody
+						()
+						{
+							const
+								e =
+								this
+								._results
+								.headers
+								.filter(
+									(e =>
+										"content-length" ===
+										e[
+											0]
+										)
+									)[
+									0
+									];
+							e ? (this
+									._bodyBytesRemaining =
+									parseInt(
+										e[
+											1],
+										10
+										),
+									this
+									._onByte =
+									this
+									._collectBodyFixedSize
+									) :
+								this
+								._onByte =
+								this
+								._collectBodyNullTerminated
+						}
+					_collectBodyNullTerminated
+						(e)
+						{
+							0 !==
+								e ?
+								this
+								._consumeByte(
+									e
+									) :
+								this
+								._retrievedBody()
+						}
+					_collectBodyFixedSize
+						(e)
+						{
+							0 != this
+								._bodyBytesRemaining--
+								?
+								this
+								._consumeByte(
+									e
+									) :
+								this
+								._retrievedBody()
+						}
+					_retrievedBody
+						()
+						{
+							this._results
+								.binaryBody =
+								this
+								._consumeTokenAsRaw();
+							try
+							{
+								this.onFrame(
+									this
+									._results
+									)
+							}
+							catch (
+								e
+								)
+							{
+								console
+									.log(
+										"Ignoring an exception thrown by a frame handler. Original exception: ",
+										e
+										)
+							}
+							this._initState()
+						}
+					_consumeByte
+						(e)
+						{
+							this._token
+								.push(
+									e
+									)
+						}
+					_consumeTokenAsUTF8
+						()
+						{
+							return this
+								._decoder
+								.decode(
+									this
+									._consumeTokenAsRaw()
+									)
+						}
+					_consumeTokenAsRaw
+						()
+						{
+							const
+								e =
+								new Uint8Array(
+									this
+									._token
+									);
+							return this
+								._token = [],
+								e
+						}
+					_initState
+						()
+						{
+							this._results = {
+									command: void 0,
+									headers: [],
+									binaryBody: void 0
+								},
+								this
+								._token = [],
+								this
+								._headerKey =
+								void 0,
+								this
+								._onByte =
+								this
+								._collectFrame
+						}
+				}
+				var a, i;
+				e.StompSocketState =
+					void 0,
+					(a = e
+						.StompSocketState =
+						e
+						.StompSocketState ||
+						(e
+							.StompSocketState = {})
+						)[a
+						.CONNECTING =
+						0] =
+					"CONNECTING",
+					a[a.OPEN =
+						1] =
+					"OPEN",
+					a[a.CLOSING =
+						2] =
+					"CLOSING",
+					a[a.CLOSED =
+						3] =
+					"CLOSED",
+					e
+					.ActivationState =
+					void 0,
+					(i = e
+						.ActivationState =
+						e
+						.ActivationState ||
+						(e
+							.ActivationState = {})
+						)[i
+						.ACTIVE =
+						0] =
+					"ACTIVE",
+					i[i.DEACTIVATING =
+						1] =
+					"DEACTIVATING",
+					i[i.INACTIVE =
+						2] =
+					"INACTIVE";
+				class o
+				{
+					constructor
+						(e)
+						{
+							this.versions =
+								e
+						}
+					supportedVersions
+						()
+						{
+							return this
+								.versions
+								.join(
+									","
+									)
+						}
+					protocolVersions
+						()
+						{
+							return this
+								.versions
+								.map(
+									(e =>
+										`v${e.replace(".","")}.stomp`
+										)
+									)
+						}
+				}
+				o.V1_0 =
+					"1.0", o
+					.V1_1 =
+					"1.1", o
+					.V1_2 =
+					"1.2", o
+					.default =
+					new o([o.V1_2,
+						o
+						.V1_1,
+						o
+						.V1_0
+					]);
+				class s
+				{
+					constructor
+						(e, t,
+							n
+							)
+						{
+							this._client =
+								e,
+								this
+								._webSocket =
+								t,
+								this
+								._connected = !
+								1,
+								this
+								._serverFrameHandlers = {
+									CONNECTED: e =>
+									{
+										this.debug(
+												`connected to server ${e.headers.server}`
+												),
+											this
+											._connected = !
+											0,
+											this
+											._connectedVersion =
+											e
+											.headers
+											.version,
+											this
+											._connectedVersion ===
+											o
+											.V1_2 &&
+											(this
+												._escapeHeaderValues = !
+												0
+												),
+											this
+											._setupHeartbeat(
+												e
+												.headers
+												),
+											this
+											.onConnect(
+												e
+												)
+									},
+									MESSAGE: e =>
+									{
+										const
+											t =
+											e
+											.headers
+											.subscription,
+											n =
+											this
+											._subscriptions[
+												t
+												] ||
+											this
+											.onUnhandledMessage,
+											r =
+											e,
+											a =
+											this,
+											i =
+											this
+											._connectedVersion ===
+											o
+											.V1_2 ?
+											r
+											.headers
+											.ack :
+											r
+											.headers[
+												"message-id"
+												];
+										r.ack =
+											(
+												e = {}) =>
+											a
+											.ack(
+												i,
+												t,
+												e
+												),
+											r
+											.nack =
+											(
+												e = {}) =>
+											a
+											.nack(
+												i,
+												t,
+												e
+												),
+											n(
+												r)
+									},
+									RECEIPT: e =>
+									{
+										const
+											t =
+											this
+											._receiptWatchers[
+												e
+												.headers[
+													"receipt-id"
+													]
+												];
+										t ? (t(e),
+												delete this
+												._receiptWatchers[
+													e
+													.headers[
+														"receipt-id"
+														]
+													]
+												) :
+											this
+											.onUnhandledReceipt(
+												e
+												)
+									},
+									ERROR: e =>
+									{
+										this.onStompError(
+											e
+											)
+									}
+								},
+								this
+								._counter =
+								0,
+								this
+								._subscriptions = {},
+								this
+								._receiptWatchers = {},
+								this
+								._partialData =
+								"",
+								this
+								._escapeHeaderValues = !
+								1,
+								this
+								._lastServerActivityTS =
+								Date
+								.now(),
+								this
+								.debug =
+								n
+								.debug,
+								this
+								.stompVersions =
+								n
+								.stompVersions,
+								this
+								.connectHeaders =
+								n
+								.connectHeaders,
+								this
+								.disconnectHeaders =
+								n
+								.disconnectHeaders,
+								this
+								.heartbeatIncoming =
+								n
+								.heartbeatIncoming,
+								this
+								.heartbeatOutgoing =
+								n
+								.heartbeatOutgoing,
+								this
+								.splitLargeFrames =
+								n
+								.splitLargeFrames,
+								this
+								.maxWebSocketChunkSize =
+								n
+								.maxWebSocketChunkSize,
+								this
+								.forceBinaryWSFrames =
+								n
+								.forceBinaryWSFrames,
+								this
+								.logRawCommunication =
+								n
+								.logRawCommunication,
+								this
+								.appendMissingNULLonIncoming =
+								n
+								.appendMissingNULLonIncoming,
+								this
+								.discardWebsocketOnCommFailure =
+								n
+								.discardWebsocketOnCommFailure,
+								this
+								.onConnect =
+								n
+								.onConnect,
+								this
+								.onDisconnect =
+								n
+								.onDisconnect,
+								this
+								.onStompError =
+								n
+								.onStompError,
+								this
+								.onWebSocketClose =
+								n
+								.onWebSocketClose,
+								this
+								.onWebSocketError =
+								n
+								.onWebSocketError,
+								this
+								.onUnhandledMessage =
+								n
+								.onUnhandledMessage,
+								this
+								.onUnhandledReceipt =
+								n
+								.onUnhandledReceipt,
+								this
+								.onUnhandledFrame =
+								n
+								.onUnhandledFrame
+						}
+					get connectedVersion
+						()
+						{
+							return this
+								._connectedVersion
+						}
+					get connected
+						()
+						{
+							return this
+								._connected
+						}
+					start()
+					{
+						const
+							e =
+							new r(
+								(e =>
+								{
+									const
+										t =
+										n
+										.fromRawFrame(
+											e,
+											this
+											._escapeHeaderValues
+											);
+									this.logRawCommunication ||
+										this
+										.debug(
+											`<<< ${t}`
+											),
+										(this
+											._serverFrameHandlers[
+												t
+												.command
+												] ||
+											this
+											.onUnhandledFrame
+											)
+										(
+											t)
+								}),
+								(() =>
+								{
+									this.debug(
+										"<<< PONG"
+										)
+								})
+								);
+						this._webSocket
+							.onmessage =
+							t =>
+							{
+								if (this
+									.debug(
+										"Received data"
+										),
+									this
+									._lastServerActivityTS =
+									Date
+									.now(),
+									this
+									.logRawCommunication
+									)
+								{
+									const
+										e =
+										t
+										.data instanceof ArrayBuffer ?
+										(
+											new TextDecoder)
+										.decode(
+											t
+											.data
+											) :
+										t
+										.data;
+									this.debug(
+										`<<< ${e}`
+										)
+								}
+								e.parseChunk(
+									t
+									.data,
+									this
+									.appendMissingNULLonIncoming
+									)
+							},
+							this
+							._webSocket
+							.onclose =
+							e =>
+							{
+								this.debug(
+										`Connection closed to ${this._webSocket.url}`
+										),
+									this
+									._cleanUp(),
+									this
+									.onWebSocketClose(
+										e
+										)
+							},
+							this
+							._webSocket
+							.onerror =
+							e =>
+							{
+								this.onWebSocketError(
+									e
+									)
+							},
+							this
+							._webSocket
+							.onopen =
+							() =>
+							{
+								const
+									e =
+									Object
+									.assign(
+										{},
+										this
+										.connectHeaders
+										);
+								this.debug(
+										"Web Socket Opened..."
+										),
+									e[
+										"accept-version"] =
+									this
+									.stompVersions
+									.supportedVersions(),
+									e[
+										"heart-beat"] = [
+										this
+										.heartbeatOutgoing,
+										this
+										.heartbeatIncoming
+									]
+									.join(
+										","
+										),
+									this
+									._transmit(
+									{
+										command: "CONNECT",
+										headers: e
+									})
+							}
+					}
+					_setupHeartbeat
+						(n)
+						{
+							if (n
+								.version !==
+								o
+								.V1_1 &&
+								n
+								.version !==
+								o
+								.V1_2
+								)
+								return;
+							if (!
+								n[
+									"heart-beat"]
+								)
+								return;
+							const [
+								r,
+								a
+							] =
+							n["heart-beat"]
+								.split(
+									","
+									)
+								.map(
+									(e =>
+										parseInt(
+											e,
+											10
+											)
+										)
+									);
+							if (0 !==
+								this
+								.heartbeatOutgoing &&
+								0 !==
+								a
+								)
+							{
+								const
+									n =
+									Math
+									.max(
+										this
+										.heartbeatOutgoing,
+										a
+										);
+								this.debug(
+										`send PING every ${n}ms`
+										),
+									this
+									._pinger =
+									setInterval(
+										(() =>
+										{
+											this._webSocket
+												.readyState ===
+												e
+												.StompSocketState
+												.OPEN &&
+												(this
+													._webSocket
+													.send(
+														t
+														),
+													this
+													.debug(
+														">>> PING"
+														)
+													)
+										}),
+										n
+										)
+							}
+							if (0 !==
+								this
+								.heartbeatIncoming &&
+								0 !==
+								r
+								)
+							{
+								const
+									e =
+									Math
+									.max(
+										this
+										.heartbeatIncoming,
+										r
+										);
+								this.debug(
+										`check PONG every ${e}ms`
+										),
+									this
+									._ponger =
+									setInterval(
+										(() =>
+										{
+											const
+												t =
+												Date
+												.now() -
+												this
+												._lastServerActivityTS;
+											t > 2 *
+												e &&
+												(this
+													.debug(
+														`did not receive server activity for the last ${t}ms`
+														),
+													this
+													._closeOrDiscardWebsocket()
+													)
+										}),
+										e
+										)
+							}
+						}
+					_closeOrDiscardWebsocket
+						()
+						{
+							this.discardWebsocketOnCommFailure ?
+								(this
+									.debug(
+										"Discarding websocket, the underlying socket may linger for a while"
+										),
+									this
+									.discardWebsocket()
+									) :
+								(this
+									.debug(
+										"Issuing close on the websocket"
+										),
+									this
+									._closeWebsocket()
+									)
+						}
+					forceDisconnect
+						()
+						{
+							this._webSocket &&
+								(this
+									._webSocket
+									.readyState !==
+									e
+									.StompSocketState
+									.CONNECTING &&
+									this
+									._webSocket
+									.readyState !==
+									e
+									.StompSocketState
+									.OPEN ||
+									this
+									._closeOrDiscardWebsocket()
+									)
+						}
+					_closeWebsocket
+						()
+						{
+							this._webSocket
+								.onmessage =
+								() =>
+								{},
+								this
+								._webSocket
+								.close()
+						}
+					discardWebsocket
+						()
+						{
+							var e,
+								t;
+							"function" !=
+							typeof this
+								._webSocket
+								.terminate &&
+								(e = this
+									._webSocket,
+									t =
+									e =>
+									this
+									.debug(
+										e
+										),
+									e
+									.terminate =
+									function ()
+									{
+										const
+											n =
+											() =>
+											{};
+										this.onerror =
+											n,
+											this
+											.onmessage =
+											n,
+											this
+											.onopen =
+											n;
+										const
+											r =
+											new Date,
+											a =
+											Math
+											.random()
+											.toString()
+											.substring(
+												2,
+												8
+												),
+											i =
+											this
+											.onclose;
+										this.onclose =
+											e =>
+											{
+												const
+													n =
+													(
+														new Date)
+													.getTime() -
+													r
+													.getTime();
+												t(`Discarded socket (#${a})  closed after ${n}ms, with code/reason: ${e.code}/${e.reason}`)
+											},
+											this
+											.close(),
+											i
+											?.call(
+												e,
+												{
+													code: 4001,
+													reason: `Quick discarding socket (#${a}) without waiting for the shutdown sequence.`,
+													wasClean:
+														!
+														1
+												}
+												)
+									}
+									),
+								this
+								._webSocket
+								.terminate()
+						}
+					_transmit
+						(e)
+						{
+							const
+							{
+								command: t,
+								headers: r,
+								body: a,
+								binaryBody: i,
+								skipContentLengthHeader: o
+							} =
+							e,
+							s = new n(
+							{
+								command: t,
+								headers: r,
+								body: a,
+								binaryBody: i,
+								escapeHeaderValues: this
+									._escapeHeaderValues,
+								skipContentLengthHeader: o
+							});
+							let l =
+								s
+								.serialize();
+							if (this
+								.logRawCommunication ?
+								this
+								.debug(
+									`>>> ${l}`
+									) :
+								this
+								.debug(
+									`>>> ${s}`
+									),
+								this
+								.forceBinaryWSFrames &&
+								"string" ==
+								typeof l &&
+								(l = (
+										new TextEncoder)
+									.encode(
+										l
+										)
+									),
+								"string" ==
+								typeof l &&
+								this
+								.splitLargeFrames
+								)
+							{
+								let e =
+									l;
+								for (; e
+									.length >
+									0;
+									)
+								{
+									const
+										t =
+										e
+										.substring(
+											0,
+											this
+											.maxWebSocketChunkSize
+											);
+									e = e
+										.substring(
+											this
+											.maxWebSocketChunkSize
+											),
+										this
+										._webSocket
+										.send(
+											t
+											),
+										this
+										.debug(
+											`chunk sent = ${t.length}, remaining = ${e.length}`
+											)
+								}
+							}
+							else this
+								._webSocket
+								.send(
+									l
+									)
+						}
+					dispose
+					()
+					{
+						if (this
+							.connected
+							)
+							try
+							{
+								const
+									e =
+									Object
+									.assign(
+										{},
+										this
+										.disconnectHeaders
+										);
+								e.receipt ||
+									(e.receipt =
+										"close-" +
+										this
+										._counter++
+										),
+									this
+									.watchForReceipt(
+										e
+										.receipt,
+										(e =>
+										{
+											this._closeWebsocket(),
+												this
+												._cleanUp(),
+												this
+												.onDisconnect(
+													e
+													)
+										})
+										),
+									this
+									._transmit(
+									{
+										command: "DISCONNECT",
+										headers: e
+									})
+							}
+						catch (
+							e
+							)
+						{
+							this.debug(
+								`Ignoring error during disconnect ${e}`
+								)
+						}
+						else this
+							._webSocket
+							.readyState !==
+							e
+							.StompSocketState
+							.CONNECTING &&
+							this
+							._webSocket
+							.readyState !==
+							e
+							.StompSocketState
+							.OPEN ||
+							this
+							._closeWebsocket()
+					}
+					_cleanUp
+						()
+						{
+							this._connected = !
+								1,
+								this
+								._pinger &&
+								(clearInterval(
+										this
+										._pinger
+										),
+									this
+									._pinger =
+									void 0
+									),
+								this
+								._ponger &&
+								(clearInterval(
+										this
+										._ponger
+										),
+									this
+									._ponger =
+									void 0
+									)
+						}
+					publish(
+						e)
+					{
+						const
+						{
+							destination: t,
+							headers: n,
+							body: r,
+							binaryBody: a,
+							skipContentLengthHeader: i
+						} =
+						e,
+						o = Object
+							.assign(
+								{
+									destination: t
+								},
+								n
+								);
+						this._transmit(
+						{
+							command: "SEND",
+							headers: o,
+							body: r,
+							binaryBody: a,
+							skipContentLengthHeader: i
+						})
+					}
+					watchForReceipt
+						(e,
+							t)
+						{
+							this._receiptWatchers[
+									e
+									] =
+								t
+						}
+					subscribe
+						(e, t,
+							n = {}
+							)
+						{
+							(n = Object
+								.assign(
+									{},
+									n
+									)
+								)
+							.id ||
+								(n.id =
+									"sub-" +
+									this
+									._counter++
+									),
+								n
+								.destination =
+								e,
+								this
+								._subscriptions[
+									n
+									.id
+									] =
+								t,
+								this
+								._transmit(
+								{
+									command: "SUBSCRIBE",
+									headers: n
+								});
+							const
+								r =
+								this;
+							return {
+								id: n
+									.id,
+								unsubscribe: e =>
+									r
+									.unsubscribe(
+										n
+										.id,
+										e
+										)
+							}
+						}
+					unsubscribe
+						(e,
+							t = {})
+						{
+							t = Object
+								.assign(
+									{},
+									t
+									),
+								delete this
+								._subscriptions[
+									e
+									],
+								t
+								.id =
+								e,
+								this
+								._transmit(
+								{
+									command: "UNSUBSCRIBE",
+									headers: t
+								})
+						}
+					begin(e)
+					{
+						const
+							t =
+							e ||
+							"tx-" +
+							this
+							._counter++;
+						this._transmit(
+						{
+							command: "BEGIN",
+							headers:
+							{
+								transaction: t
+							}
+						});
+						const
+							n =
+							this;
+						return {
+							id: t,
+							commit()
+							{
+								n.commit(
+									t
+									)
+							},
+							abort()
+							{
+								n.abort(
+									t)
+							}
+						}
+					}
+					commit(
+						e)
+					{
+						this._transmit(
+						{
+							command: "COMMIT",
+							headers:
+							{
+								transaction: e
+							}
+						})
+					}
+					abort(e)
+					{
+						this._transmit(
+						{
+							command: "ABORT",
+							headers:
+							{
+								transaction: e
+							}
+						})
+					}
+					ack(e, t,
+						n = {}
+						)
+					{
+						n = Object
+							.assign(
+								{},
+								n
+								),
+							this
+							._connectedVersion ===
+							o
+							.V1_2 ?
+							n
+							.id =
+							e :
+							n[
+								"message-id"] =
+							e,
+							n
+							.subscription =
+							t,
+							this
+							._transmit(
+							{
+								command: "ACK",
+								headers: n
+							})
+					}
+					nack(e, t,
+						n = {}
+						)
+					{
+						return n =
+							Object
+							.assign(
+								{},
+								n
+								),
+							this
+							._connectedVersion ===
+							o
+							.V1_2 ?
+							n
+							.id =
+							e :
+							n[
+								"message-id"] =
+							e,
+							n
+							.subscription =
+							t,
+							this
+							._transmit(
+							{
+								command: "NACK",
+								headers: n
+							})
+					}
+				}
+				class l
+				{
+					constructor
+						(
+							t = {})
+						{
+							this.stompVersions =
+								o
+								.default,
+								this
+								.connectionTimeout =
+								0,
+								this
+								.reconnectDelay =
+								5e3,
+								this
+								.heartbeatIncoming =
+								1e4,
+								this
+								.heartbeatOutgoing =
+								1e4,
+								this
+								.splitLargeFrames = !
+								1,
+								this
+								.maxWebSocketChunkSize =
+								8192,
+								this
+								.forceBinaryWSFrames = !
+								1,
+								this
+								.appendMissingNULLonIncoming = !
+								1,
+								this
+								.discardWebsocketOnCommFailure = !
+								1,
+								this
+								.state =
+								e
+								.ActivationState
+								.INACTIVE;
+							const
+								n =
+								() =>
+								{};
+							this.debug =
+								n,
+								this
+								.beforeConnect =
+								n,
+								this
+								.onConnect =
+								n,
+								this
+								.onDisconnect =
+								n,
+								this
+								.onUnhandledMessage =
+								n,
+								this
+								.onUnhandledReceipt =
+								n,
+								this
+								.onUnhandledFrame =
+								n,
+								this
+								.onStompError =
+								n,
+								this
+								.onWebSocketClose =
+								n,
+								this
+								.onWebSocketError =
+								n,
+								this
+								.logRawCommunication = !
+								1,
+								this
+								.onChangeState =
+								n,
+								this
+								.connectHeaders = {},
+								this
+								._disconnectHeaders = {},
+								this
+								.configure(
+									t
+									)
+						}
+					get webSocket
+						()
+						{
+							return this
+								._stompHandler
+								?._webSocket
+						}
+					get disconnectHeaders
+						()
+						{
+							return this
+								._disconnectHeaders
+						}
+					set disconnectHeaders
+						(e)
+						{
+							this._disconnectHeaders =
+								e,
+								this
+								._stompHandler &&
+								(this
+									._stompHandler
+									.disconnectHeaders =
+									this
+									._disconnectHeaders
+									)
+						}
+					get connected
+						()
+						{
+							return !
+								!
+								this
+								._stompHandler &&
+								this
+								._stompHandler
+								.connected
+						}
+					get connectedVersion
+						()
+						{
+							return this
+								._stompHandler ?
+								this
+								._stompHandler
+								.connectedVersion :
+								void 0
+						}
+					get active
+						()
+						{
+							return this
+								.state ===
+								e
+								.ActivationState
+								.ACTIVE
+						}
+					_changeState
+						(e)
+						{
+							this.state =
+								e,
+								this
+								.onChangeState(
+									e
+									)
+						}
+					configure
+						(e)
+						{
+							Object
+								.assign(
+									this,
+									e
+									)
+						}
+					activate
+						()
+						{
+							const
+								t =
+								() =>
+								{
+									this.active ?
+										this
+										.debug(
+											"Already ACTIVE, ignoring request to activate"
+											) :
+										(this
+											._changeState(
+												e
+												.ActivationState
+												.ACTIVE
+												),
+											this
+											._connect()
+											)
+								};
+							this.state ===
+								e
+								.ActivationState
+								.DEACTIVATING ?
+								(this
+									.debug(
+										"Waiting for deactivation to finish before activating"
+										),
+									this
+									.deactivate()
+									.then(
+										(() =>
+										{
+											t()
+										})
+										)
+									) :
+								t()
+						}
+					async _connect()
+					{
+						if (await this
+							.beforeConnect(),
+							this
+							._stompHandler
+							)
+							return void this
+								.debug(
+									"There is already a stompHandler, skipping the call to connect"
+									);
+						if (!
+							this
+							.active
+							)
+							return void this
+								.debug(
+									"Client has been marked inactive, will not attempt to connect"
+									);
+						this.connectionTimeout >
+							0 &&
+							(this
+								._connectionWatcher &&
+								clearTimeout(
+									this
+									._connectionWatcher
+									),
+								this
+								._connectionWatcher =
+								setTimeout(
+									(() =>
+									{
+										this.connected ||
+											(this
+												.debug(
+													`Connection not established in ${this.connectionTimeout}ms, closing socket`
+													),
+												this
+												.forceDisconnect()
+												)
+									}),
+									this
+									.connectionTimeout
+									)
+								),
+							this
+							.debug(
+								"Opening Web Socket..."
+								);
+						const
+							t =
+							this
+							._createWebSocket();
+						this._stompHandler =
+							new s(
+								this,
+								t,
+								{
+									debug: this
+										.debug,
+									stompVersions: this
+										.stompVersions,
+									connectHeaders: this
+										.connectHeaders,
+									disconnectHeaders: this
+										._disconnectHeaders,
+									heartbeatIncoming: this
+										.heartbeatIncoming,
+									heartbeatOutgoing: this
+										.heartbeatOutgoing,
+									splitLargeFrames: this
+										.splitLargeFrames,
+									maxWebSocketChunkSize: this
+										.maxWebSocketChunkSize,
+									forceBinaryWSFrames: this
+										.forceBinaryWSFrames,
+									logRawCommunication: this
+										.logRawCommunication,
+									appendMissingNULLonIncoming: this
+										.appendMissingNULLonIncoming,
+									discardWebsocketOnCommFailure: this
+										.discardWebsocketOnCommFailure,
+									onConnect: e =>
+									{
+										if (this
+											._connectionWatcher &&
+											(clearTimeout(
+													this
+													._connectionWatcher
+													),
+												this
+												._connectionWatcher =
+												void 0
+												),
+											!
+											this
+											.active
+											)
+											return this
+												.debug(
+													"STOMP got connected while deactivate was issued, will disconnect now"
+													),
+												void this
+												._disposeStompHandler();
+										this.onConnect(
+											e
+											)
+									},
+									onDisconnect: e =>
+									{
+										this.onDisconnect(
+											e
+											)
+									},
+									onStompError: e =>
+									{
+										this.onStompError(
+											e
+											)
+									},
+									onWebSocketClose: t =>
+									{
+										this._stompHandler =
+											void 0,
+											this
+											.state ===
+											e
+											.ActivationState
+											.DEACTIVATING &&
+											this
+											._changeState(
+												e
+												.ActivationState
+												.INACTIVE
+												),
+											this
+											.onWebSocketClose(
+												t
+												),
+											this
+											.active &&
+											this
+											._schedule_reconnect()
+									},
+									onWebSocketError: e =>
+									{
+										this.onWebSocketError(
+											e
+											)
+									},
+									onUnhandledMessage: e =>
+									{
+										this.onUnhandledMessage(
+											e
+											)
+									},
+									onUnhandledReceipt: e =>
+									{
+										this.onUnhandledReceipt(
+											e
+											)
+									},
+									onUnhandledFrame: e =>
+									{
+										this.onUnhandledFrame(
+											e
+											)
+									}
+								}
+								),
+							this
+							._stompHandler
+							.start()
+					}
+					_createWebSocket
+						()
+						{
+							let
+							e;
+							if (this
+								.webSocketFactory
+								)
+								e =
+								this
+								.webSocketFactory();
+							else
+							{
+								if (!
+									this
+									.brokerURL
+									)
+									throw new Error(
+										"Either brokerURL or webSocketFactory must be provided"
+										);
+								e = new WebSocket(
+									this
+									.brokerURL,
+									this
+									.stompVersions
+									.protocolVersions()
+									)
+							}
+							return e
+								.binaryType =
+								"arraybuffer",
+								e
+						}
+					_schedule_reconnect
+						()
+						{
+							this.reconnectDelay >
+								0 &&
+								(this
+									.debug(
+										`STOMP: scheduling reconnection in ${this.reconnectDelay}ms`
+										),
+									this
+									._reconnector =
+									setTimeout(
+										(() =>
+										{
+											this._connect()
+										}),
+										this
+										.reconnectDelay
+										)
+									)
+						}
+					async deactivate(
+						t = {}
+						)
+					{
+						const
+							n =
+							t
+							.force ||
+							!
+							1,
+							r =
+							this
+							.active;
+						let
+						a;
+						if (this
+							.state ===
+							e
+							.ActivationState
+							.INACTIVE
+							)
+							return this
+								.debug(
+									"Already INACTIVE, nothing more to do"
+									),
+								Promise
+								.resolve();
+						if (this
+							._changeState(
+								e
+								.ActivationState
+								.DEACTIVATING
+								),
+							this
+							._reconnector &&
+							(clearTimeout(
+									this
+									._reconnector
+									),
+								this
+								._reconnector =
+								void 0
+								),
+							!
+							this
+							._stompHandler ||
+							this
+							.webSocket
+							.readyState ===
+							e
+							.StompSocketState
+							.CLOSED
+							)
+							return this
+								._changeState(
+									e
+									.ActivationState
+									.INACTIVE
+									),
+								Promise
+								.resolve();
+						{
+							const
+								e =
+								this
+								._stompHandler
+								.onWebSocketClose;
+							a = new Promise(
+								((t, n) =>
+								{
+									this._stompHandler
+										.onWebSocketClose =
+										n =>
+										{
+											e(n),
+												t()
+										}
+								})
+								)
+						}
+						return n ?
+							this
+							._stompHandler
+							?.discardWebsocket() :
+							r &&
+							this
+							._disposeStompHandler(),
+							a
+					}
+					forceDisconnect
+						()
+						{
+							this._stompHandler &&
+								this
+								._stompHandler
+								.forceDisconnect()
+						}
+					_disposeStompHandler
+						()
+						{
+							this._stompHandler &&
+								this
+								._stompHandler
+								.dispose()
+						}
+					publish(
+						e)
+					{
+						this._checkConnection(),
+							this
+							._stompHandler
+							.publish(
+								e
+								)
+					}
+					_checkConnection
+						()
+						{
+							if (!
+								this
+								.connected
+								)
+								throw new TypeError(
+									"There is no underlying STOMP connection"
+									)
+						}
+					watchForReceipt
+						(e,
+							t)
+						{
+							this._checkConnection(),
+								this
+								._stompHandler
+								.watchForReceipt(
+									e,
+									t
+									)
+						}
+					subscribe
+						(e, t,
+							n = {}
+							)
+						{
+							return this
+								._checkConnection(),
+								this
+								._stompHandler
+								.subscribe(
+									e,
+									t,
+									n
+									)
+						}
+					unsubscribe
+						(e,
+							t = {})
+						{
+							this._checkConnection(),
+								this
+								._stompHandler
+								.unsubscribe(
+									e,
+									t
+									)
+						}
+					begin(e)
+					{
+						return this
+							._checkConnection(),
+							this
+							._stompHandler
+							.begin(
+								e
+								)
+					}
+					commit(
+						e)
+					{
+						this._checkConnection(),
+							this
+							._stompHandler
+							.commit(
+								e
+								)
+					}
+					abort(e)
+					{
+						this._checkConnection(),
+							this
+							._stompHandler
+							.abort(
+								e
+								)
+					}
+					ack(e, t,
+						n = {}
+						)
+					{
+						this._checkConnection(),
+							this
+							._stompHandler
+							.ack(
+								e,
+								t,
+								n
+								)
+					}
+					nack(e, t,
+						n = {}
+						)
+					{
+						this._checkConnection(),
+							this
+							._stompHandler
+							.nack(
+								e,
+								t,
+								n
+								)
+					}
+				}
+				class c
+				{
+					constructor
+						(e)
+						{
+							this.client =
+								e
+						}
+					get outgoing
+						()
+						{
+							return this
+								.client
+								.heartbeatOutgoing
+						}
+					set outgoing
+						(e)
+						{
+							this.client
+								.heartbeatOutgoing =
+								e
+						}
+					get incoming
+						()
+						{
+							return this
+								.client
+								.heartbeatIncoming
+						}
+					set incoming
+						(e)
+						{
+							this.client
+								.heartbeatIncoming =
+								e
+						}
+				}
+				class u extends l
+				{
+					constructor
+						(e)
+						{
+							super
+								(),
+								this
+								.maxWebSocketFrameSize =
+								16384,
+								this
+								._heartbeatInfo =
+								new c(
+									this
+									),
+								this
+								.reconnect_delay =
+								0,
+								this
+								.webSocketFactory =
+								e,
+								this
+								.debug =
+								(...
+									e) =>
+								{
+									console
+										.log(
+											...
+											e
+											)
+								}
+						}
+					_parseConnect
+						(...
+							e)
+						{
+							let t,
+								n,
+								r,
+								a = {};
+							if (e
+								.length <
+								2
+								)
+								throw new Error(
+									"Connect requires at least 2 arguments"
+									);
+							return "function" ==
+								typeof e[
+									1
+									] ?
+								[a, n,
+									r,
+									t
+								] =
+								e :
+								6 ===
+								e
+								.length ?
+								[a.login,
+									a
+									.passcode,
+									n,
+									r,
+									t,
+									a
+									.host
+								] =
+								e :
+								[a.login,
+									a
+									.passcode,
+									n,
+									r,
+									t
+								] =
+								e,
+								[a, n,
+									r,
+									t
+								]
+						}
+					connect(...
+						e
+						)
+					{
+						const
+							t =
+							this
+							._parseConnect(
+								...
+								e
+								);
+						t[0] &&
+							(this
+								.connectHeaders =
+								t[
+									0]
+								),
+							t[
+								1] &&
+							(this
+								.onConnect =
+								t[
+									1]
+								),
+							t[
+								2] &&
+							(this
+								.onStompError =
+								t[
+									2]
+								),
+							t[
+								3] &&
+							(this
+								.onWebSocketClose =
+								t[
+									3]
+								),
+							super
+							.activate()
+					}
+					disconnect
+						(e,
+							t = {})
+						{
+							e && (this
+									.onDisconnect =
+									e
+									),
+								this
+								.disconnectHeaders =
+								t,
+								super
+								.deactivate()
+						}
+					send(e, t = {},
+						n =
+						""
+						)
+					{
+						const
+							r = !
+							1 ===
+							(t = Object
+								.assign(
+									{},
+									t
+									)
+								)[
+								"content-length"
+								];
+						r && delete t[
+								"content-length"
+								],
+							this
+							.publish(
+							{
+								destination: e,
+								headers: t,
+								body: n,
+								skipContentLengthHeader: r
+							})
+					}
+					set reconnect_delay
+						(e)
+						{
+							this.reconnectDelay =
+								e
+						}
+					get ws()
+					{
+						return this
+							.webSocket
+					}
+					get version
+						()
+						{
+							return this
+								.connectedVersion
+						}
+					get onreceive
+						()
+						{
+							return this
+								.onUnhandledMessage
+						}
+					set onreceive
+						(e)
+						{
+							this.onUnhandledMessage =
+								e
+						}
+					get onreceipt
+						()
+						{
+							return this
+								.onUnhandledReceipt
+						}
+					set onreceipt
+						(e)
+						{
+							this.onUnhandledReceipt =
+								e
+						}
+					get heartbeat
+						()
+						{
+							return this
+								._heartbeatInfo
+						}
+					set heartbeat
+						(e)
+						{
+							this.heartbeatIncoming =
+								e
+								.incoming,
+								this
+								.heartbeatOutgoing =
+								e
+								.outgoing
+						}
+				}
+				class d
+				{
+					static client
+						(e,
+							t)
+						{
+							return null ==
+								t &&
+								(t = o
+									.default
+									.protocolVersions()
+									),
+								new u(
+									(() =>
+										new(d
+											.WebSocketClass ||
+											WebSocket
+											)
+										(e,
+											t)
+										)
+									)
+						}
+					static over
+						(e)
+						{
+							let
+							t;
+							return "function" ==
+								typeof e ?
+								t =
+								e :
+								(console
+									.warn(
+										"Stomp.over did not receive a factory, auto reconnect will not work. Please see https://stomp-js.github.io/api-docs/latest/classes/Stomp.html#over"
+										),
+									t =
+									() =>
+									e
+									),
+								new u(
+									t
+									)
+						}
+				}
+				d.WebSocketClass =
+					null, e
+					.Client =
+					l, e
+					.CompatClient =
+					u, e
+					.FrameImpl =
+					n, e
+					.Parser =
+					r, e
+					.Stomp =
+					d, e
+					.StompConfig =
+					class
+					{}, e
+					.StompHeaders =
+					class
+					{}, e
+					.Versions =
+					o
+			}, "object" ==
+			typeof n &&
+			void 0 !== t ?
+			a(n) :
+			"function" ==
+			typeof define &&
+			define.amd ?
+			define([
+					"exports"],
+				a) : a((r =
+					"undefined" !=
+					typeof globalThis ?
+					globalThis :
+					r ||
+					self)
+				.StompJs = {}
+				)
+	},
+	{}],
+	23: [function (e, t, n)
 	{
 		"use strict";
-		var a = e(
+		var r = e(
 			"@babel/runtime/helpers/interopRequireDefault"
 			);
 		Object
 			.defineProperty(
-				r,
+				n,
 				"__esModule",
 				{
 					value: !
 						0
-				}), r
+				}), n
 			.default =
 			void 0;
-		var n = a(e(
+		var a = r(e(
 				"@babel/runtime/regenerator")),
-			i = a(e(
+			i = r(e(
 				"@babel/runtime/helpers/asyncToGenerator")),
 			o = e(
 				"./constants"
 				),
-			l = e(
+			s = e(
 			"./utils"),
-			u = function ()
+			l = function ()
 			{
 				var e = (0,
 					i
 					.default
-					)(n
+					)(a
 					.default
 					.mark(
 						(function e(
 							t
 							)
 						{
-							var r,
-								a,
+							var n,
+								r,
 								i,
-								u,
-								s,
+								l,
 								c,
+								u,
 								d;
-							return n
+							return a
 								.default
 								.wrap(
 									(function (
@@ -2649,39 +5732,39 @@
 												)
 											{
 											case 0:
-												return r =
+												return n =
 													t
 													.method,
-													a =
+													r =
 													void 0 ===
-													r ?
+													n ?
 													"get" :
-													r,
+													n,
 													i =
 													t
 													.endpoint,
-													u =
+													l =
 													t
 													.body,
-													s = {
-														method: a
+													c = {
+														method: r
 															.toUpperCase(),
 														headers:
 														{
 															"Content-Type": "application/json"
 														}
 													},
-													u &&
-													(s.body =
+													l &&
+													(c.body =
 														JSON
 														.stringify(
-															u
+															l
 															)
 														),
 													e
 													.next =
 													5,
-													(0, l
+													(0, s
 														.httpRequest
 														)
 													("".concat(
@@ -2692,16 +5775,16 @@
 														.concat(
 															i
 															),
-														s
+														c
 														);
 											case 5:
-												return c =
+												return u =
 													e
 													.sent,
 													e
 													.next =
 													8,
-													c
+													u
 													.text();
 											case 8:
 												return d =
@@ -2738,30 +5821,30 @@
 							)
 				}
 			}(),
-			s = function ()
+			c = function ()
 			{
 				var e = (0,
 					i
 					.default
-					)(n
+					)(a
 					.default
 					.mark(
 						(function e(
 							t,
+							n,
 							r,
-							a,
 							i
 							)
 						{
-							var u,
-								s,
+							var l,
 								c,
+								u,
 								d,
+								h,
 								f,
 								p,
-								h,
-								v;
-							return n
+								m;
+							return a
 								.default
 								.wrap(
 									(function (
@@ -2777,31 +5860,31 @@
 												)
 											{
 											case 0:
-												return u =
+												return l =
 													i
 													.utmCampaign,
-													s =
+													c =
 													i
 													.utmSource,
-													c =
+													u =
 													i
 													.utmMedium,
 													d =
 													i
 													.utmContent,
-													f =
+													h =
 													i
 													.referenceTail,
-													p =
+													f =
 													i
 													.sourceReference,
-													h =
+													p =
 													i
 													.embedUrl,
 													e
 													.next =
 													3,
-													(0, l
+													(0, s
 														.httpRequest
 														)
 													("".concat(
@@ -2821,24 +5904,24 @@
 															.stringify(
 															{
 																id: null,
-																projectId: r,
-																projectIdLong: a,
-																utmCampaign: u ?
-																	u
+																projectId: n,
+																projectIdLong: r,
+																utmCampaign: l ?
+																	l
 																	.slice(
 																		0,
 																		128
 																		) :
 																	null,
-																utmSource: s ?
-																	s
-																	.slice(
-																		0,
-																		128
-																		) :
-																	null,
-																utmMedium: c ?
+																utmSource: c ?
 																	c
+																	.slice(
+																		0,
+																		128
+																		) :
+																	null,
+																utmMedium: u ?
+																	u
 																	.slice(
 																		0,
 																		128
@@ -2851,22 +5934,22 @@
 																		128
 																		) :
 																	null,
-																referenceTail: f ?
-																	f
+																referenceTail: h ?
+																	h
 																	.slice(
 																		1,
 																		513
 																		) :
 																	null,
-																sourceReference: p ?
-																	p
+																sourceReference: f ?
+																	f
 																	.slice(
 																		0,
 																		512
 																		) :
 																	null,
-																embedUrl: h ?
-																	h
+																embedUrl: p ?
+																	p
 																	.slice(
 																		0,
 																		1024
@@ -2876,13 +5959,13 @@
 														timeout: 1e4
 													});
 											case 3:
-												return v =
+												return m =
 													e
 													.sent,
 													e
 													.next =
 													6,
-													v
+													m
 													.json();
 											case 6:
 												return e
@@ -2904,8 +5987,8 @@
 					);
 				return function (
 					t,
-					r,
-					a, n
+					n,
+					r, a
 					)
 				{
 					return e
@@ -2915,20 +5998,20 @@
 							)
 				}
 			}(),
-			c = function ()
+			u = function ()
 			{
 				var e = (0,
 					i
 					.default
-					)(n
+					)(a
 					.default
 					.mark(
 						(function e(
 							t,
-							r
+							n
 							)
 						{
-							return n
+							return a
 								.default
 								.wrap(
 									(function (
@@ -2944,32 +6027,45 @@
 												)
 											{
 											case 0:
+												if (t &&
+													n
+													)
+												{
+													e.next =
+														2;
+													break
+												}
 												return e
 													.abrupt(
 														"return",
-														(0, l
-															.httpRequest
-															)
-														("".concat(
-																o
-																.API_URL,
-																"/api/sessions/"
-																)
-															.concat(
-																r,
-																"/refresh"
-																),
-															{
-																method: "PATCH",
-																headers:
-																{
-																	"Client-Key": t
-																},
-																timeout: 7e3
-															}
-															)
+														null
 														);
-											case 1:
+											case 2:
+												return e
+													.next =
+													4,
+													(0, s
+														.httpRequest
+														)
+													("".concat(
+															o
+															.API_URL,
+															"/api/sessions/"
+															)
+														.concat(
+															n,
+															"/refresh"
+															),
+														{
+															method: "PATCH",
+															headers:
+															{
+																"Client-Key": t
+															},
+															timeout: 7e3
+														}
+														);
+											case 4:
 											case "end":
 												return e
 													.stop()
@@ -2981,7 +6077,7 @@
 						)
 					);
 				return function (
-					t, r
+					t, n
 					)
 				{
 					return e
@@ -2996,7 +6092,7 @@
 				var e = (0,
 					i
 					.default
-					)(n
+					)(a
 					.default
 					.mark(
 						(function e(
@@ -3004,8 +6100,8 @@
 							)
 						{
 							var
-							r;
-							return n
+							n;
+							return a
 								.default
 								.wrap(
 									(function (
@@ -3024,7 +6120,7 @@
 												return e
 													.next =
 													2,
-													(0, l
+													(0, s
 														.httpRequest
 														)
 													("".concat(
@@ -3041,13 +6137,13 @@
 														}
 														);
 											case 2:
-												return r =
+												return n =
 													e
 													.sent,
 													e
 													.next =
 													5,
-													r
+													n
 													.json();
 											case 5:
 												return e
@@ -3077,22 +6173,22 @@
 							)
 				}
 			}(),
-			f = function ()
+			h = function ()
 			{
 				var e = (0,
 					i
 					.default
-					)(n
+					)(a
 					.default
 					.mark(
 						(function e(
 							t
 							)
 						{
-							var r,
-								a,
+							var n,
+								r,
 								i;
-							return n
+							return a
 								.default
 								.wrap(
 									(function (
@@ -3108,48 +6204,60 @@
 												)
 											{
 											case 0:
-												return r =
+												if (n =
 													t
 													.projectNumericId,
-													a =
+													r =
 													t
 													.sessionId,
 													i =
 													t
 													.value,
-													e
+													n &&
+													r
+													)
+												{
+													e.next =
+														3;
+													break
+												}
+												return e
 													.abrupt(
-														"return",
-														(0, l
-															.httpRequest
-															)
-														("".concat(
-															o
-															.API_URL,
-															"/api/actions/common"
-															),
-														{
-															method: "POST",
-															headers:
-															{
-																"Content-Type": "application/json"
-															},
-															body: JSON
-																.stringify(
-																{
-																	actionTypeName: "READ_PERCENTAGE",
-																	sessionId: a,
-																	projectId: r,
-																	blockId: null,
-																	fields:
-																	{
-																		percent: i
-																	}
-																}),
-															timeout: 3e3
-														})
+														"return"
 														);
-											case 2:
+											case 3:
+												return e
+													.next =
+													5,
+													(0, s
+														.httpRequest
+														)
+													("".concat(
+														o
+														.API_URL,
+														"/api/actions/common"
+														),
+													{
+														method: "POST",
+														headers:
+														{
+															"Content-Type": "application/json"
+														},
+														body: JSON
+															.stringify(
+															{
+																actionTypeName: "READ_PERCENTAGE",
+																sessionId: r,
+																projectId: n,
+																blockId: null,
+																fields:
+																{
+																	percent: i
+																}
+															}),
+														timeout: 3e3
+													});
+											case 5:
 											case "end":
 												return e
 													.stop()
@@ -3170,128 +6278,143 @@
 							)
 				}
 			}(),
-			p = {
-				sendRequest: u,
-				createSession: s,
-				refreshSession: c,
+			f = {
+				sendRequest: l,
+				createSession: c,
+				refreshSession: u,
 				getProjectMetaInfo: d,
-				sendProjectReadPercent: f
+				sendProjectReadPercent: h
 			};
-		r.default = p
+		n.default = f
 	},
 	{
-		"./constants": 17,
-		"./utils": 22,
-		"@babel/runtime/helpers/asyncToGenerator": 1,
-		"@babel/runtime/helpers/interopRequireDefault": 10,
-		"@babel/runtime/regenerator": 12
+		"./constants": 24,
+		"./utils": 30,
+		"@babel/runtime/helpers/asyncToGenerator": 3,
+		"@babel/runtime/helpers/interopRequireDefault": 12,
+		"@babel/runtime/regenerator": 18
 	}],
-	17: [function (e, t, r)
+	24: [function (e, t, n)
 	{
 		"use strict";
 		Object
 			.defineProperty(
-				r,
+				n,
 				"__esModule",
 				{
 					value: !
 						0
-				}), r
+				}), n
 			.READ_PERCENT_SEND_INTERVAL =
-			r
+			n
 			.READ_PERCENT_ERROR_MARGIN =
-			r.MODES = r
+			n
+			.PROJECT_MODES =
+			n
+			.MULTIPLAYER_WS_URL =
+			n.MODES = n
 			.MAX_REFRESH_SESSION_AWAITING =
-			r
+			n
 			.EMBED_PROJECT_INITIALIZED_ATTRIBUTE_NAME =
-			r
+			n
 			.EMBED_PROJECT_CLASSNAME =
-			r.CDN_URL = r
+			n.CDN_URL = n
 			.API_URL =
-			void 0, r
+			void 0, n
 			.API_URL =
 			"https://api.interacty.me",
-			r.CDN_URL =
+			n
+			.MULTIPLAYER_WS_URL =
+			"wss://api.interacty.me/api/multiplayer/ws",
+			n.CDN_URL =
 			"https://p.interacty.me",
-			r
+			n
 			.MAX_REFRESH_SESSION_AWAITING =
-			9e5, r
+			9e5, n
 			.READ_PERCENT_SEND_INTERVAL =
-			4e3, r
+			4e3, n
 			.READ_PERCENT_ERROR_MARGIN =
-			0, r
+			0, n
 			.EMBED_PROJECT_CLASSNAME =
-			"remix-app", r
+			"remix-app", n
 			.EMBED_PROJECT_INITIALIZED_ATTRIBUTE_NAME =
-			"initialized", r
+			"initialized", n
 			.MODES = {
 				PUBLISHED: "published",
 				PREVIEW: "preview",
 				EMERGENCY: "emergency"
+			}, n
+			.PROJECT_MODES = {
+				SINGLE: "SINGLE",
+				MULTIPLAYER: "MULTIPLAYER"
 			}
 	},
 	{}],
-	18: [function (e, t, r)
+	25: [function (e, t, n)
 	{
 		"use strict";
-		var a = e(
+		var r = e(
 			"@babel/runtime/helpers/interopRequireDefault"
 			);
 		Object
 			.defineProperty(
-				r,
+				n,
 				"__esModule",
 				{
 					value: !
 						0
-				}), r
+				}), n
 			.RemixLoader =
 			void 0;
-		var n = a(e(
+		var a = r(e(
 				"@babel/runtime/regenerator")),
-			i = a(e(
+			i = r(e(
+				"@babel/runtime/helpers/slicedToArray")),
+			o = r(e(
 				"@babel/runtime/helpers/asyncToGenerator")),
-			o = a(e(
+			s = r(e(
 				"@babel/runtime/helpers/createClass")),
-			l = a(e(
+			l = r(e(
 				"@babel/runtime/helpers/classCallCheck")),
-			u = a(e(
+			c = r(e(
 				"@babel/runtime/helpers/defineProperty")),
-			s = a(e(
+			u = r(e(
 				"@babel/runtime/helpers/classPrivateFieldGet")),
-			c = a(e(
+			d = r(e(
 				"@babel/runtime/helpers/classPrivateFieldSet")),
-			d = e(
+			h = e(
 				"@braintree/sanitize-url"
 				),
-			f = a(e(
+			f = r(e(
 				"smoothscroll-polyfill")),
-			p = a(e(
-				"./session")),
-			h = e(
+			p = e(
 			"./utils"),
-			v = e(
+			m = e(
 				"./constants"
 				),
-			m = a(e(
+			b = r(e(
 				"./api")),
-			b = a(e(
-				"./integrations/googleAnalytics")),
-			y = a(e(
-				"./integrations/googleTagManager"));
-		function w(e, t)
+			v = r(e(
+				"./services/googleAnalytics")),
+			g = r(e(
+				"./services/googleTagManager")),
+			y = r(e(
+				"./services/webSocket")),
+			w = r(e(
+				"./services/session"));
+		function _(e, t)
 		{
-			var r = Object
+			var n = Object
 				.keys(e);
 			if (Object
 				.getOwnPropertySymbols
 				)
 			{
-				var a =
+				var r =
 					Object
 					.getOwnPropertySymbols(
 						e);
-				t && (a = a
+				t && (r = r
 						.filter(
 							(function (
 								t
@@ -3305,15 +6428,15 @@
 									.enumerable
 							})
 							)
-						), r
+						), n
 					.push
 					.apply(
-						r, a
+						n, r
 						)
 			}
-			return r
+			return n
 		}
-		function g(e)
+		function k(e)
 		{
 			for (var t =
 				1; t <
@@ -3321,16 +6444,16 @@
 				.length; t++
 				)
 			{
-				var r =
+				var n =
 					null !=
 					arguments[
 						t] ?
 					arguments[
 						t] :
 					{};
-				t % 2 ? w(
+				t % 2 ? _(
 						Object(
-							r
+							n
 							),
 						!0)
 					.forEach(
@@ -3338,11 +6461,11 @@
 							t
 							)
 						{
-							(0, u
+							(0, c
 								.default
 								)
 							(e, t,
-								r[
+								n[
 									t]
 								)
 						})
@@ -3354,11 +6477,11 @@
 						e,
 						Object
 						.getOwnPropertyDescriptors(
-							r
+							n
 							)
 						) :
-					w(Object(
-						r
+					_(Object(
+						n
 						))
 					.forEach(
 						(function (
@@ -3371,7 +6494,7 @@
 									t,
 									Object
 									.getOwnPropertyDescriptor(
-										r,
+										n,
 										t
 										)
 									)
@@ -3379,7 +6502,7 @@
 			}
 			return e
 		}
-		function x(e, t, r)
+		function S(e, t, n)
 		{
 			! function (e,
 				t)
@@ -3390,101 +6513,118 @@
 						"Cannot initialize the same private elements twice on an object"
 						)
 			}(e, t), t.set(
-				e, r)
+				e, n)
 		}
 		f.default
 	.polyfill();
 		var E = new WeakMap,
-			k = new WeakMap,
-			M = new WeakMap,
-			_ = new WeakMap,
-			S = new WeakMap,
-			P = new WeakMap,
-			R = new WeakMap,
+			x = new WeakMap,
 			C = new WeakMap,
 			T = new WeakMap,
-			O = new WeakMap,
-			j = new WeakMap,
 			I = new WeakMap,
-			L = new WeakMap,
+			O = new WeakMap,
+			M = new WeakMap,
+			R = new WeakMap,
+			P = new WeakMap,
 			A = new WeakMap,
+			L = new WeakMap,
+			W = new WeakMap,
+			j = new WeakMap,
 			N = new WeakMap,
 			D = new WeakMap,
-			W = new WeakMap,
+			H = new WeakMap,
+			B = new WeakMap,
 			U = new WeakMap,
+			V = new WeakMap,
 			F = new WeakMap,
 			G = new WeakMap,
-			H = new WeakMap,
 			q = new WeakMap,
-			B = new WeakMap,
-			V = new WeakMap,
-			Y = new WeakMap,
 			z = new WeakMap,
-			X = new WeakMap,
+			Y = new WeakMap,
+			$ = new WeakMap,
 			J = new WeakMap,
-			Z = new WeakMap,
+			X = new WeakMap,
 			K = new WeakMap,
 			Q = new WeakMap,
-			$ = new WeakMap,
+			Z = new WeakMap,
 			ee =
 			new WeakMap,
 			te =
+			new WeakMap,
+			ne =
 			new WeakMap,
 			re =
 			new WeakMap,
 			ae =
 			new WeakMap,
-			ne =
-			new WeakMap,
 			ie =
 			new WeakMap,
-			oe = (0, o
+			oe =
+			new WeakMap,
+			se =
+			new WeakMap,
+			le =
+			new WeakMap,
+			ce =
+			new WeakMap,
+			ue =
+			new WeakMap,
+			de =
+			new WeakMap,
+			he =
+			new WeakMap,
+			fe = (0, s
 				.default)((
 				function e(
 					t)
 				{
-					var r,
-						a,
-						o,
-						f =
-						this,
-						w =
-						t
-						.mode,
-						oe =
-						t
-						.nodeElement,
-						le =
-						t
-						.remixUrl,
-						ue =
-						t
-						.features,
-						se =
-						t
-						.projectId,
-						ce =
-						t
-						.projectNumericId,
-						de =
-						t
-						.projectStructure,
+					var n,
+						r,
+						s,
+						f,
+						_,
 						fe =
-						t
-						.initialWidth,
+						this,
 						pe =
 						t
-						.initialHeight,
-						he =
-						t
-						.lng,
-						ve =
-						t
-						.additionalTopOffset,
+						.mode,
 						me =
 						t
-						.onEvent,
+						.projectMode,
 						be =
+						t
+						.nodeElement,
+						ve =
+						t
+						.remixUrl,
+						ge =
+						t
+						.features,
+						ye =
+						t
+						.projectId,
+						we =
+						t
+						.projectNumericId,
+						_e =
+						t
+						.projectStructure,
+						ke =
+						t
+						.initialWidth,
+						Se =
+						t
+						.initialHeight,
+						Ee =
+						t
+						.lng,
+						xe =
+						t
+						.additionalTopOffset,
+						Ce =
+						t
+						.onEvent,
+						Te =
 						t
 						.isSubscriptionExpired;
 					(0, l
@@ -3493,15 +6633,15 @@
 					(this,
 						e
 						),
-					x(this, E,
+					S(this, E,
 						{
 							writable:
 								!
 								0,
 							value: void 0
 						}),
-						x(this,
-							k,
+						S(this,
+							x,
 							{
 								writable:
 									!
@@ -3509,52 +6649,7 @@
 								value: void 0
 							}
 							),
-						x(this,
-							M,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						x(this,
-							_,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						x(this,
-							S,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						x(this,
-							P,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						x(this,
-							R,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						x(this,
+						S(this,
 							C,
 							{
 								writable:
@@ -3563,7 +6658,7 @@
 								value: void 0
 							}
 							),
-						x(this,
+						S(this,
 							T,
 							{
 								writable:
@@ -3572,25 +6667,7 @@
 								value: void 0
 							}
 							),
-						x(this,
-							O,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						x(this,
-							j,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						x(this,
+						S(this,
 							I,
 							{
 								writable:
@@ -3599,8 +6676,8 @@
 								value: void 0
 							}
 							),
-						x(this,
-							L,
+						S(this,
+							O,
 							{
 								writable:
 									!
@@ -3608,7 +6685,34 @@
 								value: void 0
 							}
 							),
-						x(this,
+						S(this,
+							M,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						S(this,
+							R,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						S(this,
+							P,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						S(this,
 							A,
 							{
 								writable:
@@ -3617,8 +6721,8 @@
 								value: void 0
 							}
 							),
-						x(this,
-							N,
+						S(this,
+							L,
 							{
 								writable:
 									!
@@ -3626,16 +6730,7 @@
 								value: void 0
 							}
 							),
-						x(this,
-							D,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						x(this,
+						S(this,
 							W,
 							{
 								writable:
@@ -3644,8 +6739,8 @@
 								value: void 0
 							}
 							),
-						x(this,
-							U,
+						S(this,
+							j,
 							{
 								writable:
 									!
@@ -3653,8 +6748,8 @@
 								value: void 0
 							}
 							),
-						x(this,
-							F,
+						S(this,
+							N,
 							{
 								writable:
 									!
@@ -3662,27 +6757,17 @@
 								value: void 0
 							}
 							),
-						x(this,
-							G,
+						S(this,
+							D,
 							{
 								writable:
 									!
 									0,
-								value: []
+								value: void 0
 							}
 							),
-						x(this,
+						S(this,
 							H,
-							{
-								writable:
-									!
-									0,
-								value:
-								{}
-							}
-							),
-						x(this,
-							q,
 							{
 								writable:
 									!
@@ -3692,7 +6777,7 @@
 									1
 							}
 							),
-						x(this,
+						S(this,
 							B,
 							{
 								writable:
@@ -3701,8 +6786,92 @@
 								value: void 0
 							}
 							),
-						x(this,
+						S(this,
+							U,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						S(this,
 							V,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						S(this,
+							F,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						S(this,
+							G,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						S(this,
+							q,
+							{
+								writable:
+									!
+									0,
+								value: []
+							}
+							),
+						S(this,
+							z,
+							{
+								writable:
+									!
+									0,
+								value:
+								{}
+							}
+							),
+						S(this,
+							Y,
+							{
+								writable:
+									!
+									0,
+								value: null
+							}
+							),
+						S(this,
+							$,
+							{
+								writable:
+									!
+									0,
+								value:
+									!
+									1
+							}
+							),
+						S(this,
+							J,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						S(this,
+							X,
 							{
 								writable:
 									!
@@ -3723,13 +6892,13 @@
 									},
 									createdAt: null,
 									updatedAt: null,
-									maxRefreshAwaiting: v
+									maxRefreshAwaiting: m
 										.MAX_REFRESH_SESSION_AWAITING
 								}
 							}
 							),
-						x(this,
-							Y,
+						S(this,
+							K,
 							{
 								writable:
 									!
@@ -3741,333 +6910,470 @@
 									inProgress:
 										!
 										1,
-									sendInterval: v
+									sendInterval: m
 										.READ_PERCENT_SEND_INTERVAL
 								}
 							}
 							),
-						(0, u
+						(0, c
 							.default
 							)
 						(this,
 							"createIframe",
-							(function ()
-							{
-								(0, c
-									.default
-									)
-								(f, N,
-									(0, h
-										.getScrollableParent
-										)
-									((0, s
-											.default)
-										(f,
-											M)
-										)
-									),
-								(0, s
-									.default
-									)
-								(f,
-									M)
-								.innerHTML
-									=
-									"",
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.className =
-									"remix_cnt",
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.style
-									.position =
-									"relative",
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.style
-									.margin =
-									"0 auto",
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.style
-									.overflow =
-									"hidden",
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.style
-									.padding =
-									0,
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.style
-									.boxSizing =
-									"border-box",
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.style
-									.maxWidth =
-									"100%",
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.style
-									.width =
-									""
-									.concat(
-										(0, s
-											.default
-											)
-										(f,
-											T),
-										"px"
-										),
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.style
-									.height =
-									""
-									.concat(
-										(0, s
-											.default
-											)
-										(f,
-											O),
-										"px"
-										),
-									(0, s
-										.default
-										)
-									(f,
-										k) ?
-									(0, s
-										.default
-										)
-									(f,
-										S)
-									.includes(
-										"NO_LOGO"
-										) ||
-									((0, s
-											.default)
-										(f,
-											M)
-										.appendChild(
-											(0, s
-												.default
-												)
-											(f,
-												W)
-											.render()
-											),
-										(0, s
-											.default
-											)
-										(f,
-											M)
-										.appendChild(
-											(0, s
-												.default
-												)
-											(f,
-												Q)
-											.call(
-												f
-												)
-											)
-										) :
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.appendChild(
-										(0, s
-											.default
-											)
-										(f,
-											W)
-										.render()
-										),
-									(0, s
-										.default
-										)
-									(f,
-										X)
-									.call(
-										f,
-										window,
-										"message",
-										(0, s
-											.default
-											)
-										(f,
-											z),
-										!
-										1
-										);
-								var e =
-									document
-									.createElement(
-										"iframe"
-										);
-								e.id =
-									"remix-iframe",
-									e
-									.style
-									.border =
-									0,
-									e
-									.style
-									.width =
-									"100%",
-									e
-									.style
-									.height =
-									"100%",
-									e
-									.style
-									.overflow =
-									"hidden",
-									e
-									.setAttribute(
-										"allowFullScreen",
-										""
-										),
-									e
-									.src =
-									(0, s
-										.default
-										)
-									(f,
-										_),
-									(0, c
-										.default
-										)
-									(f, F,
-										e
-										),
-									(0, s
-										.default
-										)
-									(f,
-										M)
-									.appendChild(
-										e
-										),
-									e
-									.onload =
-									function ()
+							(0, o
+								.default
+								)
+							(a.default
+								.mark(
+									(function e()
 									{
-										(0, s
+										var
+										t;
+										return a
 											.default
-											)
-										(f,
-											ee)
-										.call
-											(f, "init",
-											{
-												projectId: (
-														0,
-														s
-														.default
-														)
-													(f,
-														P),
-												projectNumericId: (
-														0,
-														s
-														.default
-														)
-													(f,
-														R),
-												projectStructure: (
-														0,
-														s
-														.default
-														)
-													(f,
-														C),
-												lng: (0, s
-														.default
-														)
-													(f,
-														j),
-												mode: (0,
-														s
-														.default
-														)
-													(f,
-														E),
-												features: (
-														0,
-														s
-														.default
-														)
-													(f,
-														S),
-												isSubscriptionExpired: (
-														0,
-														s
-														.default
-														)
-													(f,
-														A)
-											})
-									}
-							})
+											.wrap(
+												(function (
+													e
+													)
+												{
+													for (;;)
+														switch (
+															e
+															.prev =
+															e
+															.next
+															)
+														{
+														case 0:
+															(0, u
+																.default
+																)
+															(fe,
+																H) ?
+															((0, u
+																	.default)
+																(fe,
+																	T)
+																.style
+																.position =
+																"fixed",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.style
+																.zIndex =
+																"999",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.style
+																.top =
+																"0",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.style
+																.left =
+																"0",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.style
+																.width =
+																"100%",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.style
+																.height =
+																"100%"
+																) :
+															((0, u
+																	.default)
+																(fe,
+																	T)
+																.style
+																.position =
+																"relative",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.style
+																.margin =
+																"0 auto"
+																),
+															(0, d
+																.default
+																)
+															(fe, B,
+																(0, p
+																	.getScrollableParent
+																	)
+																((0, u
+																		.default)
+																	(fe,
+																		T)
+																	)
+																),
+															(0, u
+																.default
+																)
+															(fe,
+																T)
+															.innerHTML
+																=
+																"",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.className =
+																"remix_cnt",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.style
+																.overflow =
+																"hidden",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.style
+																.padding =
+																0,
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.style
+																.boxSizing =
+																"border-box",
+																(0, u
+																	.default
+																	)
+																(fe,
+																	H) ||
+																((0, u
+																		.default)
+																	(fe,
+																		T)
+																	.style
+																	.maxWidth =
+																	"100%",
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		T)
+																	.style
+																	.width =
+																	""
+																	.concat(
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			A),
+																		"px"
+																		),
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		T)
+																	.style
+																	.height =
+																	""
+																	.concat(
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			L),
+																		"px"
+																		)
+																	),
+																(0, u
+																	.default
+																	)
+																(fe,
+																	C) ?
+																(0, u
+																	.default
+																	)
+																(fe,
+																	O)
+																.includes(
+																	"NO_LOGO"
+																	) ||
+																((0, u
+																		.default)
+																	(fe,
+																		T)
+																	.appendChild(
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			V)
+																		.render()
+																		),
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		H) ?
+																	document
+																	.documentElement
+																	.appendChild(
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			ie)
+																		.call(
+																			fe
+																			)
+																		) :
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		T)
+																	.appendChild(
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			ie)
+																		.call(
+																			fe
+																			)
+																		)
+																	) :
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.appendChild(
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		V)
+																	.render()
+																	),
+																(0, u
+																	.default
+																	)
+																(fe,
+																	te)
+																.call(
+																	fe,
+																	window,
+																	"message",
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		ee),
+																	!
+																	1
+																	),
+																(t = document
+																	.createElement(
+																		"iframe"
+																		)
+																	)
+																.id =
+																"remix-iframe",
+																t
+																.style
+																.border =
+																0,
+																t
+																.style
+																.width =
+																"100%",
+																t
+																.style
+																.height =
+																"100%",
+																t
+																.style
+																.overflow =
+																"hidden",
+																t
+																.setAttribute(
+																	"allowFullScreen",
+																	""
+																	),
+																t
+																.src =
+																(0, u
+																	.default
+																	)
+																(fe,
+																	I),
+																(0, d
+																	.default
+																	)
+																(fe, G,
+																	t
+																	),
+																(0, u
+																	.default
+																	)
+																(fe,
+																	T)
+																.appendChild(
+																	t
+																	),
+																t
+																.onload =
+																function ()
+																{
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		se)
+																	.call
+																		(fe, "init",
+																		{
+																			projectId: (
+																					0,
+																					u
+																					.default
+																					)
+																				(fe,
+																					M),
+																			projectNumericId: (
+																					0,
+																					u
+																					.default
+																					)
+																				(fe,
+																					R),
+																			projectStructure: (
+																					0,
+																					u
+																					.default
+																					)
+																				(fe,
+																					P),
+																			lng: (0, u
+																					.default
+																					)
+																				(fe,
+																					W),
+																			mode: (0,
+																					u
+																					.default
+																					)
+																				(fe,
+																					E),
+																			projectMode: (
+																					0,
+																					u
+																					.default
+																					)
+																				(fe,
+																					x),
+																			features: (
+																					0,
+																					u
+																					.default
+																					)
+																				(fe,
+																					O),
+																			isSubscriptionExpired: (
+																					0,
+																					u
+																					.default
+																					)
+																				(fe,
+																					D),
+																			url: (0, p
+																					.getWindowLocation
+																					)
+																				(),
+																			urlParams: (
+																					0,
+																					p
+																					.getWindowQueryParams
+																					)
+																				()
+																		})
+																};
+														case 21:
+														case "end":
+															return e
+																.stop()
+														}
+												}),
+												e
+												)
+									})
+									)
+								)
 							),
-						(0, u
+						(0, c
 							.default
 							)
 						(this,
 							"destroyIframe",
 							(function ()
 							{
-								(0, c
+								(0, d
 									.default
 									)
-								(f, q,
+								(fe, $,
 									!
 									0
 									),
-								(0, s
+								(0, u
 									.default
 									)
-								(f,
-									J)
-								.call
-									(
-										f)
+								(fe,
+									Y) &&
+								(0, u
+									.default
+									)
+								(fe,
+									Y)
+								.disconnect
+									(),
+									(0, u
+										.default
+										)
+									(fe,
+										ne)
+									.call(
+										fe
+										)
 							})
 							),
-						(0, u
+						(0, c
 							.default
 							)
 						(this,
@@ -4076,66 +7382,45 @@
 								e
 								)
 							{
-								h.validator
+								p.validator
 									.isNumber(
 										e
 										) &&
-									(0, c
+									(0, d
 										.default
 										)
-									(f, I,
+									(fe, j,
 										e
 										)
 							})
 							),
-						x(this,
-							z,
+						S(this,
+							Q,
 							{
 								writable:
 									!
 									0,
-								value: (r =
-									(0, i
+								value: (n =
+									(0, o
 										.default
 										)
-									(n.default
+									(a.default
 										.mark(
-											(function e(
-												t
-												)
+											(function e()
 											{
-												var r,
-													a,
+												var t,
+													n,
+													r,
 													i,
 													o,
+													s,
 													l,
-													u,
-													w,
-													x,
-													E,
-													_,
-													S,
-													T,
-													O,
-													j,
-													L,
-													A,
-													G,
-													q,
-													Y,
-													z,
-													J,
-													K,
-													Q,
-													$,
-													oe,
-													le,
-													ue,
-													se,
-													ce,
-													de,
-													fe;
-												return n
+													c,
+													d,
+													h,
+													f =
+													arguments;
+												return a
 													.default
 													.wrap(
 														(function (
@@ -4151,48 +7436,396 @@
 																	)
 																{
 																case 0:
-																	if (r =
+																	if (t =
+																		f
+																		.length >
+																		0 &&
+																		void 0 !==
+																		f[
+																			0] ?
+																		f[
+																			0] :
+																		Date
+																		.now(),
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			C)
+																		)
+																	{
+																		e.next =
+																			3;
+																		break
+																	}
+																	return e
+																		.abrupt(
+																			"return"
+																			);
+																case 3:
+																	return n =
+																		window
+																		.location
+																		.href,
+																		r =
+																		window
+																		.location
+																		.search,
+																		i =
+																		new URLSearchParams(
+																			r
+																			),
+																		o =
+																		i
+																		.get(
+																			"utm_campaign"
+																			),
+																		s =
+																		i
+																		.get(
+																			"utm_source"
+																			),
+																		l =
+																		i
+																		.get(
+																			"utm_medium"
+																			),
+																		c =
+																		i
+																		.get(
+																			"utm_content"
+																			),
+																		d =
+																		r,
+																		h =
+																		document
+																		.referrer,
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			X)
+																		.instance ||
+																		((0, u
+																				.default)
+																			(fe,
+																				X)
+																			.instance =
+																			new w
+																			.default(
+																			{
+																				clientId: (
+																						0,
+																						u
+																						.default
+																						)
+																					(fe,
+																						J),
+																				projectId: (
+																						0,
+																						u
+																						.default
+																						)
+																					(fe,
+																						M),
+																				projectIdLong: (
+																						0,
+																						u
+																						.default
+																						)
+																					(fe,
+																						R),
+																				utmCampaign: o,
+																				utmSource: s,
+																				utmMedium: l,
+																				utmContent: c,
+																				referenceTail: d,
+																				sourceReference: h,
+																				embedUrl: n
+																			})
+																			),
+																		e
+																		.next =
+																		15,
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			X)
+																		.instance
+																		.create();
+																case 15:
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		X)
+																	.createdAt
+																		=
+																		t,
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			X)
+																		.updatedAt =
+																		t;
+																case 17:
+																case "end":
+																	return e
+																		.stop()
+																}
+														}),
+														e
+														)
+											})
+											)
+										),
+									function ()
+									{
+										return n
+											.apply(
+												this,
+												arguments
+												)
+									}
+									)
+							}
+							),
+						S(this,
+							Z,
+							{
+								writable:
+									!
+									0,
+								value: (r =
+									(0, o
+										.default
+										)
+									(a.default
+										.mark(
+											(function e()
+											{
+												var
+												t;
+												return a
+													.default
+													.wrap(
+														(function (
+															e
+															)
+														{
+															for (;;)
+																switch (
+																	e
+																	.prev =
+																	e
+																	.next
+																	)
+																{
+																case 0:
+																	if ((0, u
+																			.default
+																			)
+																		(fe,
+																			C)
+																		)
+																	{
+																		e.next =
+																			2;
+																		break
+																	}
+																	return e
+																		.abrupt(
+																			"return"
+																			);
+																case 2:
+																	if (!
+																		((t = Date
+																				.now()
+																				) -
+																			(0, u
+																				.default
+																				)
+																			(fe,
+																				X)
+																			.updatedAt >
+																			(0, u
+																				.default
+																				)
+																			(fe,
+																				X)
+																			.maxRefreshAwaiting
+																			)
+																		)
+																	{
+																		e.next =
+																			8;
+																		break
+																	}
+																	return e
+																		.next =
+																		6,
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			Q)
+																		.call(
+																			fe,
+																			t
+																			);
+																case 6:
+																	e.next =
+																		11;
+																	break;
+																case 8:
+																	return e
+																		.next =
+																		10,
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			X)
+																		.instance
+																		.refresh();
+																case 10:
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		X)
+																	.updatedAt
+																		=
+																		t;
+																case 11:
+																case "end":
+																	return e
+																		.stop()
+																}
+														}),
+														e
+														)
+											})
+											)
+										),
+									function ()
+									{
+										return r
+											.apply(
+												this,
+												arguments
+												)
+									}
+									)
+							}
+							),
+						S(this,
+							ee,
+							{
+								writable:
+									!
+									0,
+								value: (s =
+									(0, o
+										.default
+										)
+									(a.default
+										.mark(
+											(function e(
+												t
+												)
+											{
+												var n,
+													r,
+													o,
+													s,
+													l,
+													c,
+													f,
+													w,
+													_,
+													S,
+													E,
+													x,
+													I,
+													O,
+													M,
+													R,
+													A,
+													L,
+													W,
+													N,
+													D,
+													q,
+													$,
+													K,
+													ee,
+													ne,
+													ae,
+													ie,
+													oe,
+													pe,
+													me;
+												return a
+													.default
+													.wrap(
+														(function (
+															e
+															)
+														{
+															for (;;)
+																switch (
+																	e
+																	.prev =
+																	e
+																	.next
+																	)
+																{
+																case 0:
+																	if (n =
 																		t
 																		.origin,
-																		a =
+																		r =
 																		void 0 ===
-																		r ?
+																		n ?
 																		null :
-																		r,
-																		i =
+																		n,
+																		o =
 																		t
 																		.data,
-																		o =
+																		s =
 																		void 0 ===
-																		i ?
+																		o ?
 																		{} :
-																		i,
+																		o,
 																		l =
 																		t
 																		.source,
-																		u =
+																		c =
 																		void 0 ===
 																		l ?
 																		null :
 																		l,
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			F) &&
-																		(0, s
+																		(fe,
+																			G) &&
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			F)
+																		(fe,
+																			G)
 																		.contentWindow ===
-																		u &&
-																		a ===
-																		(0, s
+																		c &&
+																		r ===
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			D)
+																		(fe,
+																			U)
 																		)
 																	{
 																		e.next =
@@ -4205,7 +7838,7 @@
 																			);
 																case 3:
 																	e.t0 =
-																		o
+																		s
 																		.method,
 																		e
 																		.next =
@@ -4220,68 +7853,81 @@
 																		"activity" ===
 																		e
 																		.t0 ?
-																		36 :
+																		20 :
 																		"setSize" ===
 																		e
 																		.t0 ?
-																		48 :
+																		22 :
 																		"scrollParent" ===
 																		e
 																		.t0 ?
-																		50 :
+																		24 :
+																		"connect-ws" ===
+																		e
+																		.t0 ?
+																		26 :
+																		"disconnect-ws" ===
+																		e
+																		.t0 ?
+																		40 :
+																		"send-ws-message" ===
+																		e
+																		.t0 ?
+																		44 :
 																		"send-request" ===
 																		e
 																		.t0 ?
-																		52 :
+																		48 :
 																		"redirect" ===
 																		e
 																		.t0 ?
-																		70 :
-																		73;
+																		73 :
+																		82;
 																	break;
 																case 6:
 																	return (0,
-																			s
+																			u
 																			.default
 																			)
-																		(f,
-																			W)
+																		(fe,
+																			V)
 																		.hideAndDestroy(),
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			M)
+																		(fe,
+																			T)
 																		.appendChild(
-																			(0, s
+																			(0, u
 																				.default
 																				)
-																			(f,
-																				U)
+																			(fe,
+																				F)
 																			.render()
 																			),
 																		e
 																		.abrupt(
 																			"break",
-																			74
+																			83
 																			);
 																case 9:
-																	if ((0, s
+																	return (0,
+																			u
 																			.default
 																			)
-																		(f,
-																			W)
+																		(fe,
+																			V)
 																		.hideAndDestroy(),
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			Z)
+																		(fe,
+																			re)
 																		.call(
-																			f,
-																			g(g(
+																			fe,
+																			k(k(
 																				{},
-																				o
+																				s
 																				.payload
 																				.sizes
 																				),
@@ -4290,66 +7936,74 @@
 																				width: "maxWidth"
 																			})
 																			),
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			C) ||
-																		(0, c
+																		(fe,
+																			P) ||
+																		(0, d
 																			.default
 																			)
-																		(f, C,
-																			o
+																		(fe, P,
+																			s
 																			.payload
 																			.projectStructure
 																			),
-																		(0, c
+																		(0, d
 																			.default
 																			)
-																		(f, B,
-																			o
+																		(fe, J,
+																			s
 																			.payload
 																			.clientId
 																			),
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
+																		(fe,
+																			Q)
+																		.call(
+																			fe
+																			),
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			le)
+																		.call(
+																			fe,
+																			!
+																			0
+																			),
+																		(0, u
+																			.default
+																			)
+																		(fe,
 																			te)
 																		.call(
-																			f,
-																			!
-																			0
-																			),
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			X)
-																		.call(
-																			f,
-																			(0, h
+																			fe,
+																			(0, p
 																				.getScrollReadyElement
 																				)
-																			((0, s
+																			((0, u
 																					.default)
-																				(f,
-																					N)
+																				(fe,
+																					B)
 																				),
 																			"scroll",
-																			(0, h
+																			(0, p
 																				.throttle
 																				)
 																			((function ()
 																				{
 																					return (0,
-																							s
+																							u
 																							.default
 																							)
-																						(f,
-																							te)
+																						(fe,
+																							le)
 																						.call(
-																							f,
+																							fe,
 																							!
 																							0
 																							)
@@ -4359,38 +8013,38 @@
 																			!
 																			1
 																			),
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			re)
+																		(fe,
+																			ce)
 																		.call(
-																			f,
+																			fe,
 																			!
 																			0
 																			),
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			X)
+																		(fe,
+																			te)
 																		.call(
-																			f,
+																			fe,
 																			window,
 																			"resize",
-																			(0, h
+																			(0, p
 																				.throttle
 																				)
 																			((function ()
 																				{
 																					return (0,
-																							s
+																							u
 																							.default
 																							)
-																						(f,
-																							re)
+																						(fe,
+																							ce)
 																						.call(
-																							f,
+																							fe,
 																							!
 																							0
 																							)
@@ -4400,190 +8054,51 @@
 																			!
 																			1
 																			),
-																		!
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			k)
-																		)
-																	{
-																		e.next =
-																			34;
-																		break
-																	}
-																	return w =
-																		window
-																		.location
-																		.href,
-																		x =
-																		window
-																		.location
-																		.search,
-																		E =
-																		new URLSearchParams(
-																			x
-																			),
-																		_ =
-																		E
-																		.get(
-																			"utm_campaign"
-																			),
-																		S =
-																		E
-																		.get(
-																			"utm_source"
-																			),
-																		T =
-																		E
-																		.get(
-																			"utm_medium"
-																			),
-																		O =
-																		E
-																		.get(
-																			"utm_content"
-																			),
-																		j =
-																		x,
-																		L =
-																		document
-																		.referrer,
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			V)
-																		.data =
-																		g(g(
-																			{},
-																			(0, s
-																				.default
-																				)
-																			(f,
-																				V)
-																			.data
-																			),
-																		{},
-																		{
-																			clientId: (
-																					0,
-																					s
-																					.default
-																					)
-																				(f,
-																					B),
-																			projectId: (
-																					0,
-																					s
-																					.default
-																					)
-																				(f,
-																					P),
-																			projectIdLong: (
-																					0,
-																					s
-																					.default
-																					)
-																				(f,
-																					R),
-																			utmCampaign: _,
-																			utmSource: S,
-																			utmMedium: T,
-																			utmContent: O,
-																			referenceTail: j,
-																			sourceReference: L,
-																			embedUrl: w
-																		}),
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			V)
-																		.instance =
-																		new p
-																		.default(
-																			(0, s
-																				.default
-																				)
-																			(f,
-																				V)
-																			.data
-																			),
-																		e
-																		.next =
-																		31,
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			V)
-																		.instance
-																		.sendActivity();
-																case 31:
-																	A = Date
-																		.now(),
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			V)
-																		.createdAt =
-																		A,
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			V)
-																		.updatedAt =
-																		A;
-																case 34:
-																	return (0,
-																			s
-																			.default
-																			)
-																		(f,
-																			k) &&
+																		(fe,
+																			C) &&
 																		(setTimeout(
 																				(function ()
 																				{
-																					(0, s
+																					(0, u
 																						.default
 																						)
-																					(f,
-																						ae)
+																					(fe,
+																						ue)
 																					.call
 																						(
-																							f),
-																						(0, s
+																							fe),
+																						(0, u
 																							.default
 																							)
-																						(f,
-																							X)
+																						(fe,
+																							te)
 																						.call(
-																							f,
-																							(0, h
+																							fe,
+																							(0, p
 																								.getScrollReadyElement
 																								)
-																							((0, s
+																							((0, u
 																									.default)
-																								(f,
-																									N)
+																								(fe,
+																									B)
 																								),
 																							"scroll",
-																							(0, h
+																							(0, p
 																								.throttle
 																								)
 																							((function ()
 																								{
 																									return (0,
-																											s
+																											u
 																											.default
 																											)
-																										(f,
-																											ae)
+																										(fe,
+																											ue)
 																										.call(
-																											f
+																											fe
 																											)
 																								}),
 																								1e3
@@ -4594,67 +8109,67 @@
 																				}),
 																				3e3
 																				),
-																			(0, s
+																			(0, u
 																				.default
 																				)
-																			(f,
-																				ne)
+																			(fe,
+																				de)
 																			.call(
-																				f
+																				fe
 																				),
-																			(G = (0, s
+																			(f = (0, u
 																					.default
 																					)
-																				(f,
-																					C)
+																				(fe,
+																					P)
 																				.integrations
 																				) &&
-																			(G.googleAnalytics &&
-																				G
+																			(f.googleAnalytics &&
+																				f
 																				.googleAnalytics
 																				.id &&
-																				((0, s
+																				((0, u
 																						.default)
-																					(f,
-																						H)
+																					(fe,
+																						z)
 																					.googleAnalytics =
-																					new b
+																					new v
 																					.default(
 																					{
-																						id: G
+																						id: f
 																							.googleAnalytics
 																							.id
 																					}),
-																					(0, s
+																					(0, u
 																						.default
 																						)
-																					(f,
-																						H)
+																					(fe,
+																						z)
 																					.googleAnalytics
 																					.init()
 																					),
-																				G
+																				f
 																				.googleTagManager &&
-																				G
+																				f
 																				.googleTagManager
 																				.id &&
-																				((0, s
+																				((0, u
 																						.default)
-																					(f,
-																						H)
+																					(fe,
+																						z)
 																					.googleTagManager =
-																					new y
+																					new g
 																					.default(
 																					{
-																						id: G
+																						id: f
 																							.googleTagManager
 																							.id
 																					}),
-																					(0, s
+																					(0, u
 																						.default
 																						)
-																					(f,
-																						H)
+																					(fe,
+																						z)
 																					.googleTagManager
 																					.init()
 																					)
@@ -4663,425 +8178,645 @@
 																		e
 																		.abrupt(
 																			"break",
-																			74
+																			83
 																			);
-																case 36:
-																	if (!
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			k)
-																		)
-																	{
-																		e.next =
-																			47;
-																		break
-																	}
-																	if (!
-																		((q = Date
-																				.now()
-																				) -
-																			(0, s
-																				.default
-																				)
-																			(f,
-																				V)
-																			.updatedAt >
-																			(0, s
-																				.default
-																				)
-																			(f,
-																				V)
-																			.maxRefreshAwaiting
-																			)
-																		)
-																	{
-																		e.next =
-																			44;
-																		break
-																	}
-																	(0, s
-																		.default
-																		)
-																	(f,
-																		V)
-																	.instance
-																		=
-																		new p
-																		.default(
-																			(0, s
-																				.default
-																				)
-																			(f,
-																				V)
-																			.data
-																			),
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			V)
-																		.createdAt =
-																		q,
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			V)
-																		.updatedAt =
-																		q,
-																		e
-																		.next =
-																		47;
-																	break;
-																case 44:
-																	return e
-																		.next =
-																		46,
-																		(0, s
-																			.default
-																			)
-																		(f,
-																			V)
-																		.instance
-																		.sendActivity();
-																case 46:
-																	(0, s
-																		.default
-																		)
-																	(f,
-																		V)
-																	.updatedAt
-																		=
-																		q;
-																case 47:
-																	return e
-																		.abrupt(
-																			"break",
-																			74
-																			);
-																case 48:
+																case 20:
 																	return (0,
-																			s
+																			u
 																			.default
 																			)
-																		(f,
+																		(fe,
 																			Z)
 																		.call(
-																			f,
-																			o
+																			fe
+																			),
+																		e
+																		.abrupt(
+																			"break",
+																			83
+																			);
+																case 22:
+																	return (0,
+																			u
+																			.default
+																			)
+																		(fe,
+																			re)
+																		.call(
+																			fe,
+																			s
 																			.payload
 																			.sizes
 																			),
 																		e
 																		.abrupt(
 																			"break",
-																			74
+																			83
 																			);
-																case 50:
-																	return h
+																case 24:
+																	return p
 																		.validator
 																		.isValue(
-																			o
+																			s
 																			.payload
 																			.top
 																			) &&
-																		h
+																		p
 																		.validator
 																		.isNumber(
-																			o
+																			s
 																			.payload
 																			.top
 																			) &&
-																		(Y = (0, h
+																		(w = (0, p
 																				.getElementYOffset
 																				)
-																			((0, s
+																			((0, u
 																					.default)
-																				(f,
-																					N)
+																				(fe,
+																					B)
 																				),
-																			(0, h
+																			(0, p
 																				.getScrollReadyElement
 																				)
-																			((0, s
+																			((0, u
 																					.default)
-																				(f,
-																					N)
+																				(fe,
+																					B)
 																				)
 																			.scrollTo(
 																			{
-																				top: (0, s
+																				top: (0, u
 																						.default
 																						)
-																					(f,
-																						te)
+																					(fe,
+																						le)
 																					.call(
-																						f
+																						fe
 																						)
 																					.top +
-																					Y +
-																					o
+																					w +
+																					s
 																					.payload
 																					.top -
-																					(0, s
+																					(0, u
 																						.default
 																						)
-																					(f,
-																						I),
+																					(fe,
+																						j),
 																				behavior: "smooth"
 																			})
 																			),
 																		e
 																		.abrupt(
 																			"break",
-																			74
+																			83
 																			);
-																case 52:
-																	if (z =
-																		o
-																		.payload,
-																		J =
-																		z
-																		.requestId,
-																		K =
-																		z
-																		.httpMethod,
-																		Q =
-																		z
-																		.endpoint,
-																		$ =
-																		z
-																		.body,
-																		oe =
-																		z
-																		.isForce,
-																		le =
-																		void 0 !==
-																		oe &&
-																		oe,
-																		!
-																		(0, s
+																case 26:
+																	if ((0, u
 																			.default
 																			)
-																		(f,
-																			k) &&
-																		!
-																		le
+																		(fe,
+																			H)
 																		)
 																	{
 																		e.next =
-																			68;
+																			28;
 																		break
 																	}
 																	return e
-																		.prev =
-																		54,
-																		ue = {
-																			method: K,
-																			endpoint: Q
-																		},
-																		$ &&
-																		(ue.body =
-																			g(
-																				{
-																					sessionId: (
-																							0,
-																							s
-																							.default
-																							)
-																						(f,
-																							V)
-																						.instance
-																						.getSessionId()
-																				},
-																				$
-																				)
-																			),
-																		e
-																		.next =
-																		59,
-																		m
-																		.default
-																		.sendRequest(
-																			ue
+																		.abrupt(
+																			"return"
 																			);
-																case 59:
-																	se = e
-																		.sent,
-																		(0, s
+																case 28:
+																	return e
+																		.prev =
+																		28,
+																		(0, d
 																			.default
 																			)
-																		(f,
-																			ee)
-																		.call(
-																			f,
-																			"send-response",
+																		(fe, Y,
+																			new y
+																			.default(
 																			{
-																				requestId: J,
-																				isSuccess:
-																					!
+																				onConnectEvent: function ()
+																				{
+																					(0, u
+																						.default
+																						)
+																					(fe,
+																						se)
+																					.call
+																						(fe,
+																							"ws-connected")
+																				},
+																				onDisconnectEvent: function ()
+																				{
+																					(0, u
+																						.default
+																						)
+																					(fe,
+																						se)
+																					.call
+																						(fe,
+																							"ws-disconnected")
+																				}
+																			})
+																			),
+																		_ =
+																		s
+																		.payload,
+																		S =
+																		_
+																		.gameId,
+																		E =
+																		_
+																		.masterPin,
+																		x =
+																		void 0 ===
+																		E ?
+																		null :
+																		E,
+																		e
+																		.next =
+																		33,
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			Y)
+																		.connect(
+																		{
+																			clientId: (
 																					0,
-																				result: se
-																			}
+																					u
+																					.default
+																					)
+																				(fe,
+																					J),
+																			gameId: S,
+																			masterPin: x
+																		});
+																case 33:
+																	(0, u
+																		.default
+																		)
+																	(fe,
+																		Y)
+																	.subscribe
+																		("/topic/games."
+																			.concat(
+																				S
+																				),
+																			(function (
+																				e
+																				)
+																			{
+																				(0, u
+																					.default
+																					)
+																				(fe,
+																					se)
+																				.call
+																					(fe, "ws-message",
+																					{
+																						data: JSON
+																							.parse(
+																								e
+																								)
+																					})
+																			})
 																			),
 																		e
 																		.next =
-																		66;
+																		39;
 																	break;
-																case 63:
+																case 36:
 																	e.prev =
-																		63,
+																		36,
 																		e
 																		.t1 =
 																		e
 																		.catch(
-																			54
+																			28
 																			),
-																		(0, s
+																		console
+																		.error(
+																			e
+																			.t1
+																			);
+																case 39:
+																	return e
+																		.abrupt(
+																			"break",
+																			83
+																			);
+																case 40:
+																	if ((0, u
 																			.default
 																			)
-																		(f,
-																			ee)
+																		(fe,
+																			H)
+																		)
+																	{
+																		e.next =
+																			42;
+																		break
+																	}
+																	return e
+																		.abrupt(
+																			"return"
+																			);
+																case 42:
+																	try
+																	{
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			Y)
+																		.disconnect
+																			()
+																	}
+																	catch (
+																		e
+																		)
+																	{
+																		console
+																			.error(
+																				e
+																				)
+																	}
+																	return e
+																		.abrupt(
+																			"break",
+																			83
+																			);
+																case 44:
+																	if ((0, u
+																			.default
+																			)
+																		(fe,
+																			H) &&
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			Y)
+																		)
+																	{
+																		e.next =
+																			46;
+																		break
+																	}
+																	return e
+																		.abrupt(
+																			"return"
+																			);
+																case 46:
+																	try
+																	{
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			Y)
+																		.sendMessage
+																			(s.payload
+																				.destination,
+																				k(k(
+																					{},
+																					s
+																					.payload
+																					.message
+																					),
+																				{},
+																				{
+																					clientId: (
+																							0,
+																							u
+																							.default
+																							)
+																						(fe,
+																							J)
+																				})
+																				)
+																	}
+																	catch (
+																		e
+																		)
+																	{
+																		console
+																			.error(
+																				e
+																				)
+																	}
+																	return e
+																		.abrupt(
+																			"break",
+																			83
+																			);
+																case 48:
+																	if (I =
+																		s
+																		.payload,
+																		O =
+																		I
+																		.requestId,
+																		M =
+																		I
+																		.httpMethod,
+																		R =
+																		I
+																		.endpoint,
+																		A =
+																		I
+																		.body,
+																		L =
+																		I
+																		.isForce,
+																		W =
+																		void 0 !==
+																		L &&
+																		L,
+																		!
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			C) &&
+																		!
+																		W
+																		)
+																	{
+																		e.next =
+																			71;
+																		break
+																	}
+																	if (e
+																		.prev =
+																		50,
+																		N = {
+																			method: M,
+																			endpoint: R
+																		},
+																		!
+																		A
+																		)
+																	{
+																		e.next =
+																			60;
+																		break
+																	}
+																	return e
+																		.next =
+																		55,
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			X)
+																		.instance
+																		.getId();
+																case 55:
+																	if (D =
+																		e
+																		.sent
+																		)
+																	{
+																		e.next =
+																			59;
+																		break
+																	}
+																	return (0,
+																			u
+																			.default
+																			)
+																		(fe,
+																			se)
 																		.call(
-																			f,
+																			fe,
 																			"send-response",
 																			{
-																				requestId: J,
+																				requestId: O,
+																				isSuccess:
+																					!
+																					1,
+																				error: new Error(
+																					"Can't find session id"
+																					)
+																			}
+																			),
+																		e
+																		.abrupt(
+																			"return"
+																			);
+																case 59:
+																	N.body =
+																		k(
+																			{
+																				sessionId: D
+																			},
+																			A
+																			);
+																case 60:
+																	return e
+																		.next =
+																		62,
+																		b
+																		.default
+																		.sendRequest(
+																			N
+																			);
+																case 62:
+																	q = e
+																		.sent,
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			se)
+																		.call(
+																			fe,
+																			"send-response",
+																			{
+																				requestId: O,
+																				isSuccess:
+																					!
+																					0,
+																				result: q
+																			}
+																			),
+																		e
+																		.next =
+																		69;
+																	break;
+																case 66:
+																	e.prev =
+																		66,
+																		e
+																		.t2 =
+																		e
+																		.catch(
+																			50
+																			),
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			se)
+																		.call(
+																			fe,
+																			"send-response",
+																			{
+																				requestId: O,
 																				isSuccess:
 																					!
 																					1,
 																				error: e
-																					.t1
+																					.t2
 																			}
 																			);
-																case 66:
+																case 69:
 																	e.next =
-																		69;
+																		72;
 																	break;
-																case 68:
-																	(0, s
+																case 71:
+																	(0, u
 																		.default
 																		)
-																	(f,
-																		ee)
+																	(fe,
+																		se)
 																	.call
-																		(f, "send-response",
+																		(fe, "send-response",
 																		{
-																			requestId: J,
+																			requestId: O,
 																			isSuccess:
 																				!
 																				1,
 																			error: new Error(
 																				'Failed to execute request with id "'
 																				.concat(
-																					J,
+																					O,
 																					'". "send-request" available only in "'
 																					)
 																				.concat(
-																					v
+																					m
 																					.MODES
 																					.PUBLISHED,
-																					'" mode'
+																					'" mode or with "isForce" flag'
 																					)
 																				)
 																		});
-																case 69:
+																case 72:
 																	return e
 																		.abrupt(
 																			"break",
-																			74
+																			83
 																			);
-																case 70:
-																	return ce =
-																		o
+																case 73:
+																	if ($ =
+																		s
 																		.payload
 																		.to,
-																		h
+																		p
 																		.validator
 																		.isURL(
-																			ce
-																			) &&
-																		(de =
-																			new URL(
-																				ce
-																				),
-																			location
-																			.search
-																			.substr(
-																				1
-																				)
-																			.split(
-																				"&"
-																				)
-																			.forEach(
-																				(function (
-																					e
-																					)
-																				{
-																					var t =
-																						e
-																						.split(
-																							"="
-																							),
-																						r =
-																						t[
-																							0],
-																						a =
-																						t[
-																							1];
-																					de.searchParams
-																						.append(
-																							r,
-																							a
-																							)
-																				})
-																				),
-																			fe =
-																			(0, d
-																				.sanitizeUrl
-																				)
-																			(de
-																			.toString()),
-																			(0, s
-																				.default
-																				)
-																			(f,
-																				k) ?
-																			window
-																			.location
-																			.href =
-																			fe :
-																			window
-																			.open(
-																				fe,
-																				"_blank"
-																				)
+																			$
+																			)
+																		)
+																	{
+																		e.next =
+																			76;
+																		break
+																	}
+																	return e
+																		.abrupt(
+																			"return"
+																			);
+																case 76:
+																	for (
+																		K =
+																		new URL(
+																			$
+																			),
+																		ee =
+																		(0, p
+																			.getWindowQueryParams
+																			)
+																		(),
+																		ne =
+																		0,
+																		ae =
+																		Object
+																		.entries(
+																			ee
+																			); ne <
+																		ae
+																		.length; ne++
+																		)
+																		ie =
+																		(0, i
+																			.default
+																			)
+																		(ae[ne],
+																			2
+																			),
+																		oe =
+																		ie[
+																			0],
+																		pe =
+																		ie[
+																			1],
+																		K
+																		.searchParams
+																		.append(
+																			oe,
+																			pe
+																			);
+																	return me =
+																		(0, h
+																			.sanitizeUrl
+																			)
+																		(K
+																		.toString()),
+																		(0, u
+																			.default
+																			)
+																		(fe,
+																			C) ?
+																		window
+																		.location
+																		.href =
+																		me :
+																		window
+																		.open(
+																			me,
+																			"_blank"
 																			),
 																		e
 																		.abrupt(
 																			"break",
-																			74
+																			83
 																			);
-																case 73:
+																case 82:
 																	return e
 																		.abrupt(
 																			"break",
-																			74
+																			83
 																			);
-																case 74:
-																	(0, s
+																case 83:
+																	(0, u
 																		.default
 																		)
-																	(f,
-																		ie)
+																	(fe,
+																		he)
 																	.call
-																		(f, o
+																		(fe, s
 																			.method,
-																			o
+																			s
 																			);
-																case 75:
+																case 84:
 																case "end":
 																	return e
 																		.stop()
@@ -5090,8 +8825,10 @@
 														e,
 														null,
 														[
-															[54,
-																63]
+															[28,
+																36],
+															[50,
+																66]
 														]
 														)
 											})
@@ -5101,7 +8838,7 @@
 										e
 										)
 									{
-										return r
+										return s
 											.apply(
 												this,
 												arguments
@@ -5110,8 +8847,8 @@
 									)
 							}
 							),
-						x(this,
-							X,
+						S(this,
+							te,
 							{
 								writable:
 									!
@@ -5119,10 +8856,10 @@
 								value: function (
 									e,
 									t,
-									r
+									n
 									)
 								{
-									var a =
+									var r =
 										arguments
 										.length >
 										3 &&
@@ -5135,25 +8872,25 @@
 											];
 									try
 									{
-										(0, s
+										(0, u
 											.default
 											)
-										(f,
-											G)
+										(fe,
+											q)
 										.push
 											(
 											{
 												target: e,
 												type: t,
-												func: r,
-												capture: a
+												func: n,
+												capture: r
 											}),
 											e
 											.addEventListener(
 												[
 													t],
-												r,
-												a
+												n,
+												r
 												)
 									}
 									catch (
@@ -5168,8 +8905,8 @@
 								}
 							}
 							),
-						x(this,
-							J,
+						S(this,
+							ne,
 							{
 								writable:
 									!
@@ -5178,11 +8915,11 @@
 								{
 									try
 									{
-										(0, s
+										(0, u
 											.default
 											)
-										(f,
-											G)
+										(fe,
+											q)
 										.forEach
 											((function (
 												e)
@@ -5197,10 +8934,10 @@
 														.capture
 														)
 											})),
-											(0, c
+											(0, d
 												.default
 												)
-											(f, G,
+											(fe, q,
 												[]
 												)
 									}
@@ -5216,8 +8953,8 @@
 								}
 							}
 							),
-						x(this,
-							Z,
+						S(this,
+							re,
 							{
 								writable:
 									!
@@ -5229,69 +8966,76 @@
 									var t =
 										e
 										.width,
-										r =
+										n =
 										e
 										.height,
-										a =
+										r =
 										e
 										.maxWidth;
 									try
 									{
-										h.validator
+										if ((0, u
+												.default
+												)
+											(fe,
+												H)
+											)
+											return;
+										p.validator
 											.isValue(
 												t
 												) &&
 											"maxWidth" ===
 											t &&
-											((0, s
+											((0, u
 													.default)
-												(f,
-													M)
+												(fe,
+													T)
 												.style
 												.width =
 												"100%"
 												),
-											h
+											p
 											.validator
 											.isValue(
-												a
+												r
 												) &&
-											h
+											p
 											.validator
 											.isNumber(
-												a
+												r
 												) &&
-											((0, s
+											((0, u
 													.default)
-												(f,
-													M)
+												(fe,
+													T)
 												.style
 												.maxWidth =
 												""
 												.concat(
-													a,
+													r,
 													"px"
 													)
 												),
-											h
+											p
 											.validator
 											.isValue(
-												r
+												n
 												) &&
-											h
+											p
 											.validator
 											.isNumber(
-												r
+												n
 												) &&
-											((0, s
+											((0, u
 													.default)
-												(f,
-													M)
+												(fe,
+													T)
 												.style
 												.height =
 												""
 												.concat(
-													r,
+													n,
 													"px"
 													)
 												)
@@ -5308,8 +9052,8 @@
 								}
 							}
 							),
-						x(this,
-							K,
+						S(this,
+							ae,
 							{
 								writable:
 									!
@@ -5319,7 +9063,7 @@
 									var e =
 										'\n        <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #fff; opacity: 1; display: flex; align-items: center; justify-content: center;">\n            <img src=\''
 										.concat(
-											v
+											m
 											.CDN_URL,
 											'/preloader.gif\' alt="preloader" style="width: 380px !important; max-width: 100% !important;" />\n        </div>'
 											),
@@ -5331,34 +9075,34 @@
 									t.innerHTML =
 										e
 										.trim();
-									var r =
+									var n =
 										t
 										.firstChild;
 									return {
 										render: function ()
 										{
-											return r
+											return n
 										},
 										hideAndDestroy: function ()
 										{
 											var e =
-												r
+												n
 												.parentNode;
 											e && e
 												.contains(
-													r
+													n
 													) &&
 												e
 												.removeChild(
-													r
+													n
 													)
 										}
 									}
 								}
 							}
 							),
-						x(this,
-							Q,
+						S(this,
+							ie,
 							{
 								writable:
 									!
@@ -5368,7 +9112,7 @@
 									var e =
 										'<a href="https://interacty.me" target="_blank"><img src=\''
 										.concat(
-											v
+											m
 											.CDN_URL,
 											'/powered_by.svg\' style="position: absolute; bottom: 0; right: 0; width: 132px !important; max-width: 100% !important;" alt="Powered by Interacty" /></a>'
 											),
@@ -5386,8 +9130,8 @@
 								}
 							}
 							),
-						x(this,
-							$,
+						S(this,
+							oe,
 							{
 								writable:
 									!
@@ -5400,7 +9144,7 @@
 											"div"
 											);
 									e.innerHTML =
-										'\n        <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #fff; display: flex; align-items: center; justify-content: center;"\n        >\n            <span style="font-size: 16px;">Oops! Some error occurred &#128532;</span>\n         </div>'
+										'\n        <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #fff; display: flex; align-items: center; justify-content: center;"\n        >\n            <span style="font-size: 16px; font-family: Arial, sans-serif">Oops! Some error occurred &#128532;</span>\n         </div>'
 										.trim();
 									var t =
 										e
@@ -5414,8 +9158,8 @@
 								}
 							}
 							),
-						x(this,
-							ee,
+						S(this,
+							se,
 							{
 								writable:
 									!
@@ -5446,28 +9190,28 @@
 											1
 											] :
 										{};
-									(0, s
+									(0, u
 										.default
 										)
-									(f,
-										F)
+									(fe,
+										G)
 									.contentWindow
 										.postMessage(
 											{
 												method: e,
 												payload: t
 											},
-											(0, s
+											(0, u
 												.default
 												)
-											(f,
-												D)
+											(fe,
+												U)
 											)
 								}
 							}
 							),
-						x(this,
-							te,
+						S(this,
+							le,
 							{
 								writable:
 									!
@@ -5477,30 +9221,30 @@
 									)
 								{
 									var t =
-										(0, h
+										(0, p
 											.getElementPositions
 											)
-										((0, s
+										((0, u
 												.default)
-											(f,
-												N),
-											(0, s
+											(fe,
+												B),
+											(0, u
 												.default
 												)
-											(f,
-												F)
+											(fe,
+												G)
 											);
 									return e &&
-										(0, s
+										(0, u
 											.default
 											)
-										(f,
-											ee)
+										(fe,
+											se)
 										.call(
-											f,
+											fe,
 											"iframePosition",
 											{
-												data: g(g(
+												data: k(k(
 													{},
 													t
 													),
@@ -5508,20 +9252,20 @@
 												{
 													top: t
 														.top -
-														(0, s
+														(0, u
 															.default
 															)
-														(f,
-															I),
+														(fe,
+															j),
 													windowBottom: t
 														.top -
-														(0, h
+														(0, p
 															.getElementInnerHeight
 															)
-														((0, s
+														((0, u
 																.default)
-															(f,
-																N)
+															(fe,
+																B)
 															)
 												})
 											}
@@ -5530,8 +9274,8 @@
 								}
 							}
 							),
-						x(this,
-							re,
+						S(this,
+							ce,
 							{
 								writable:
 									!
@@ -5547,13 +9291,13 @@
 											.innerHeight
 									};
 									return e &&
-										(0, s
+										(0, u
 											.default
 											)
-										(f,
-											ee)
+										(fe,
+											se)
 										.call(
-											f,
+											fe,
 											"windowSize",
 											{
 												data: t
@@ -5563,25 +9307,25 @@
 								}
 							}
 							),
-						x(this,
-							ae,
+						S(this,
+							ue,
 							{
 								writable:
 									!
 									0,
-								value: (a =
-									(0, i
+								value: (f =
+									(0, o
 										.default
 										)
-									(n.default
+									(a.default
 										.mark(
 											(function e()
 											{
 												var t,
+													n,
 													r,
-													a,
 													i;
-												return n
+												return a
 													.default
 													.wrap(
 														(function (
@@ -5598,10 +9342,10 @@
 																{
 																case 0:
 																	if (!
-																		((0, s
+																		((0, u
 																				.default)
-																			(f,
-																				Y)
+																			(fe,
+																				K)
 																			.value >=
 																			100
 																			)
@@ -5616,53 +9360,53 @@
 																			"return"
 																			);
 																case 2:
-																	t = (0, h
+																	t = (0, p
 																			.getElementPositions
 																			)
-																		((0, s
+																		((0, u
 																				.default)
-																			(f,
-																				N),
-																			(0, s
+																			(fe,
+																				B),
+																			(0, u
 																				.default
 																				)
-																			(f,
-																				F)
+																			(fe,
+																				G)
 																			),
-																		r =
+																		n =
 																		t
 																		.bottom -
-																		v
+																		m
 																		.READ_PERCENT_ERROR_MARGIN -
-																		(0, h
+																		(0, p
 																			.getElementInnerHeight
 																			)
-																		((0, s
+																		((0, u
 																				.default)
-																			(f,
-																				N)
+																			(fe,
+																				B)
 																			),
-																		a =
-																		r /
+																		r =
+																		n /
 																		t
 																		.height *
 																		100,
 																		(i = Math
 																			.round(
 																				100 -
-																				a
+																				r
 																				)
 																			) >
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			Y)
+																		(fe,
+																			K)
 																		.value &&
-																		((0, s
+																		((0, u
 																				.default)
-																			(f,
-																				Y)
+																			(fe,
+																				K)
 																			.value =
 																			i >
 																			100 ?
@@ -5682,7 +9426,7 @@
 										),
 									function ()
 									{
-										return a
+										return f
 											.apply(
 												this,
 												arguments
@@ -5691,23 +9435,23 @@
 									)
 							}
 							),
-						x(this,
-							ne,
+						S(this,
+							de,
 							{
 								writable:
 									!
 									0,
-								value: (o =
-									(0, i
+								value: (_ =
+									(0, o
 										.default
 										)
-									(n.default
+									(a.default
 										.mark(
 											(function e()
 											{
 												var t,
-													r;
-												return n
+													n;
+												return a
 													.default
 													.wrap(
 														(function (
@@ -5727,14 +9471,16 @@
 																		function ()
 																		{
 																			var e =
-																				(0, i
+																				(0, o
 																					.default
 																					)
-																				(n.default
+																				(a.default
 																					.mark(
 																						(function e()
 																						{
-																							return n
+																							var
+																							t;
+																							return a
 																								.default
 																								.wrap(
 																									(function (
@@ -5750,11 +9496,11 @@
 																												)
 																											{
 																											case 0:
-																												if ((0, s
+																												if ((0, u
 																														.default
 																														)
-																													(f,
-																														Y)
+																													(fe,
+																														K)
 																													.value
 																													)
 																												{
@@ -5770,49 +9516,66 @@
 																												return e
 																													.next =
 																													4,
-																													m
+																													(0, u
+																														.default
+																														)
+																													(fe,
+																														X)
+																													.instance
+																													.getId();
+																											case 4:
+																												if (t =
+																													e
+																													.sent
+																													)
+																												{
+																													e.next =
+																														7;
+																													break
+																												}
+																												return e
+																													.abrupt(
+																														"return"
+																														);
+																											case 7:
+																												return e
+																													.next =
+																													9,
+																													b
 																													.default
 																													.sendProjectReadPercent(
 																													{
 																														projectNumericId: (
 																																0,
-																																s
+																																u
 																																.default
 																																)
-																															(f,
+																															(fe,
 																																R),
-																														sessionId: (
-																																0,
-																																s
-																																.default
-																																)
-																															(f,
-																																V)
-																															.instance
-																															.getSessionId(),
+																														sessionId: t,
 																														value: (0,
-																																s
+																																u
 																																.default
 																																)
-																															(f,
-																																Y)
+																															(fe,
+																																K)
 																															.value
 																													});
-																											case 4:
-																												(0, s
+																											case 9:
+																												(0, u
 																													.default
 																													)
-																												(f,
-																													Y)
+																												(fe,
+																													K)
 																												.sentValue
 																													=
-																													(0, s
+																													(0, u
 																														.default
 																														)
-																													(f,
-																														Y)
+																													(fe,
+																														K)
 																													.value;
-																											case 5:
+																											case 10:
 																											case "end":
 																												return e
 																													.stop()
@@ -5859,15 +9622,15 @@
 																			.t0
 																			);
 																case 9:
-																	r = setInterval(
-																		(0, i
+																	n = setInterval(
+																		(0, o
 																			.default
 																			)
-																		(n.default
+																		(a.default
 																			.mark(
 																				(function e()
 																				{
-																					return n
+																					return a
 																						.default
 																						.wrap(
 																							(function (
@@ -5884,17 +9647,17 @@
 																									{
 																									case 0:
 																										if (!
-																											(0, s
+																											(0, u
 																												.default
 																												)
-																											(f,
-																												q) &&
+																											(fe,
+																												$) &&
 																											100 !==
-																											(0, s
+																											(0, u
 																												.default
 																												)
-																											(f,
-																												Y)
+																											(fe,
+																												K)
 																											.sentValue
 																											)
 																										{
@@ -5903,7 +9666,7 @@
 																											break
 																										}
 																										return clearInterval(
-																												r
+																												n
 																												),
 																											e
 																											.abrupt(
@@ -5914,11 +9677,11 @@
 																											.prev =
 																											3,
 																											!
-																											(0, s
+																											(0, u
 																												.default
 																												)
-																											(f,
-																												Y)
+																											(fe,
+																												K)
 																											.inProgress
 																											)
 																										{
@@ -5931,30 +9694,30 @@
 																												"return"
 																												);
 																									case 6:
-																										if ((0, s
+																										if ((0, u
 																												.default
 																												)
-																											(f,
-																												Y)
+																											(fe,
+																												K)
 																											.inProgress = !
 																											0,
-																											(0, s
+																											(0, u
 																												.default
 																												)
-																											(f,
-																												Y)
+																											(fe,
+																												K)
 																											.sentValue &&
 																											!
-																											((0, s
+																											((0, u
 																													.default)
-																												(f,
-																													Y)
+																												(fe,
+																													K)
 																												.sentValue <
-																												(0, s
+																												(0, u
 																													.default
 																													)
-																												(f,
-																													Y)
+																												(fe,
+																													K)
 																												.value
 																												)
 																											)
@@ -5968,11 +9731,11 @@
 																											10,
 																											t();
 																									case 10:
-																										(0, s
+																										(0, u
 																											.default
 																											)
-																										(f,
-																											Y)
+																										(fe,
+																											K)
 																										.inProgress
 																											= !
 																											1,
@@ -5994,11 +9757,11 @@
 																												e
 																												.t0
 																												),
-																											(0, s
+																											(0, u
 																												.default
 																												)
-																											(f,
-																												Y)
+																											(fe,
+																												K)
 																											.inProgress = !
 																											1;
 																									case 17:
@@ -6017,11 +9780,11 @@
 																				})
 																				)
 																			),
-																		(0, s
+																		(0, u
 																			.default
 																			)
-																		(f,
-																			Y)
+																		(fe,
+																			K)
 																		.sendInterval
 																		);
 																case 10:
@@ -6042,7 +9805,7 @@
 										),
 									function ()
 									{
-										return o
+										return _
 											.apply(
 												this,
 												arguments
@@ -6051,8 +9814,8 @@
 									)
 							}
 							),
-						x(this,
-							ie,
+						S(this,
+							he,
 							{
 								writable:
 									!
@@ -6062,296 +9825,329 @@
 									t
 									)
 								{
-									(0, s
+									(0, u
 										.default
 										)
-									(f,
-										L) &&
-									(0, s
+									(fe,
+										N) &&
+									(0, u
 										.default
 										)
-									(f,
-										L)
+									(fe,
+										N)
 									.call
-										(f, e,
+										(fe, e,
 											t
 											)
 								}
 							}
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
 							E,
-							(0, h
+							(0, p
 								.validateConstructorParam
 								)
 							("mode",
-								w,
+								pe,
 								!
 								1,
-								v
+								m
 								.MODES
 								.PUBLISHED
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							k,
-							(0, s
+							x,
+							(0, p
+								.validateConstructorParam
+								)
+							("projectMode",
+								me,
+								!
+								1,
+								m
+								.PROJECT_MODES
+								.SINGLE
+								)
+							),
+						(0, d
+							.default
+							)
+						(this,
+							C,
+							(0, u
 								.default
 								)
 							(this,
 								E
 								) ===
-							v
+							m
 							.MODES
 							.PUBLISHED
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							M,
-							(0, h
+							T,
+							(0, p
 								.validateConstructorParam
 								)
 							("nodeElement",
-								oe,
+								be,
 								!
 								0
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							_,
-							(0, h
+							I,
+							(0, p
 								.validateConstructorParam
 								)
 							("remixUrl",
-								le,
+								ve,
 								!
 								0
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							S,
-							(0, h
+							O,
+							(0, p
 								.validateConstructorParam
 								)
 							("features",
-								ue,
+								ge,
 								!
 								1,
 								[]
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							P,
-							(0, h
+							M,
+							(0, p
 								.validateConstructorParam
 								)
 							("projectId",
-								se,
+								ye,
 								!
 								1,
 								null
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
 							R,
-							(0, h
+							(0, p
 								.validateConstructorParam
 								)
 							("projectNumericId",
-								ce,
+								we,
 								!
 								1,
 								null
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							C,
-							(0, h
+							P,
+							(0, p
 								.validateConstructorParam
 								)
 							("projectStructure",
-								de,
+								_e,
 								!
 								1,
 								null
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							T,
-							(0, h
+							A,
+							(0, p
 								.validateConstructorParam
 								)
 							("initialWidth",
-								fe,
+								ke,
 								!
 								1,
 								800
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							O,
-							(0, h
+							L,
+							(0, p
 								.validateConstructorParam
 								)
 							("initialHeight",
-								pe,
+								Se,
 								!
 								1,
 								600
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							j,
-							(0, h
+							W,
+							(0, p
 								.validateConstructorParam
 								)
 							("lng",
-								he,
+								Ee,
 								!
 								1,
-								(0, h
+								(0, p
 									.getWindowLanguage
 									)
 								()
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							I,
-							(0, h
+							j,
+							(0, p
 								.validateConstructorParam
 								)
 							("additionalTopOffset",
-								ve,
+								xe,
 								!
 								1,
 								0
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							L,
-							(0, h
+							N,
+							(0, p
 								.validateConstructorParam
 								)
 							("onEvent",
-								me,
+								Ce,
 								!
 								1,
 								null
 								)
 							),
-						(0, c
-							.default
-							)
-						(this,
-							A,
-							be
-							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
 							D,
-							new URL(
-								le
-								)
-							.origin
+							Te
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
-							W,
-							(0, s
+							H,
+							(0, u
 								.default
 								)
 							(this,
-								K
-								)
-							.call(
-								this
-								)
+								x
+								) ===
+							m
+							.PROJECT_MODES
+							.MULTIPLAYER
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
 							U,
-							(0, s
+							new URL(
+								ve
+								)
+							.origin
+							),
+						(0, d
+							.default
+							)
+						(this,
+							V,
+							(0, u
 								.default
 								)
 							(this,
-								$
+								ae
 								)
 							.call(
 								this
 								)
 							),
-						(0, c
+						(0, d
 							.default
 							)
 						(this,
 							F,
+							(0, u
+								.default
+								)
+							(this,
+								oe
+								)
+							.call(
+								this
+								)
+							),
+						(0, d
+							.default
+							)
+						(this,
+							G,
 							null
 							)
 				}));
-		r.RemixLoader = oe,
+		n.RemixLoader = fe,
 			window
 			.RemixLoader =
-			oe, (0, i
-				.default)(n
+			fe, (0, o
+				.default)(a
 				.default
 				.mark((function e()
 				{
 					var t,
+						n,
 						r,
-						a,
 						i,
 						o,
-						l,
-						u,
 						s,
+						l,
 						c,
+						u,
 						d,
+						h,
 						f;
-					return n
+					return a
 						.default
 						.wrap(
 							(function (
@@ -6398,7 +10194,7 @@
 										if (t
 											.classList
 											.contains(
-												v
+												m
 												.EMBED_PROJECT_CLASSNAME
 												)
 											)
@@ -6415,7 +10211,7 @@
 										if (!
 											t
 											.getAttribute(
-												v
+												m
 												.EMBED_PROJECT_INITIALIZED_ATTRIBUTE_NAME
 												)
 											)
@@ -6431,16 +10227,16 @@
 									case 9:
 										if (t
 											.setAttribute(
-												v
+												m
 												.EMBED_PROJECT_INITIALIZED_ATTRIBUTE_NAME,
 												"true"
 												),
-											r =
+											n =
 											t
 											.getAttribute(
 												"hash"
 												),
-											a =
+											r =
 											t
 											.getAttribute(
 												"initialWidth"
@@ -6455,7 +10251,7 @@
 											.getAttribute(
 												"lng"
 												),
-											r
+											n
 											)
 										{
 											e.next =
@@ -6471,98 +10267,104 @@
 												"return"
 												);
 									case 17:
-										return l =
-											v
+										return s =
+											m
 											.MODES
 											.PUBLISHED,
-											u =
-											null,
-											s =
+											l =
 											null,
 											c =
 											null,
+											u =
+											null,
 											d = !
 											1,
+											h =
+											null,
 											e
 											.prev =
 											18,
 											e
 											.next =
 											21,
-											m
+											b
 											.default
 											.getProjectMetaInfo(
-												r
+												n
 												);
 									case 21:
 										f = e
 											.sent,
-											u =
+											l =
 											f
 											.features,
-											s =
+											c =
 											f
 											.projectId,
-											c =
+											u =
 											f
 											.id,
 											d =
 											f
 											.subscriptionExpired,
+											h =
+											f
+											.mode,
 											e
 											.next =
-											32;
+											33;
 										break;
-									case 28:
+									case 29:
 										e.prev =
-											28,
+											29,
 											e
 											.t0 =
 											e
 											.catch(
 												18
 												),
-											l =
-											v
+											s =
+											m
 											.MODES
 											.EMERGENCY,
 											console
 											.warn(
 												"[RemixLoader auto-initiator] Cannot get project meta information from server, "
 												.concat(
-													v
+													m
 													.MODES
 													.EMERGENCY,
 													" mode activated"
 													)
 												);
-									case 32:
+									case 33:
 										new window
 											.RemixLoader(
 											{
-												mode: l,
+												mode: s,
+												projectMode: h,
 												nodeElement: t,
 												remixUrl: ""
 													.concat(
-														v
+														m
 														.CDN_URL,
 														"/"
 														)
 													.concat(
-														r,
+														n,
 														"/index.html"
 														),
-												features: u,
-												projectId: s,
-												projectNumericId: c,
-												initialWidth: a,
+												features: l,
+												projectId: c,
+												projectNumericId: u,
+												initialWidth: r,
 												initialHeight: i,
 												lng: o ||
 													null,
 												isSubscriptionExpired: d
 											})
 											.createIframe();
-									case 33:
+									case 34:
 									case "end":
 										return e
 											.stop()
@@ -6572,64 +10374,66 @@
 							null,
 							[
 								[18,
-									28]
+									29]
 							]
 							)
 				})))()
 	},
 	{
-		"./api": 16,
-		"./constants": 17,
-		"./integrations/googleAnalytics": 19,
-		"./integrations/googleTagManager": 20,
-		"./session": 21,
-		"./utils": 22,
-		"@babel/runtime/helpers/asyncToGenerator": 1,
-		"@babel/runtime/helpers/classCallCheck": 4,
-		"@babel/runtime/helpers/classPrivateFieldGet": 6,
-		"@babel/runtime/helpers/classPrivateFieldSet": 7,
-		"@babel/runtime/helpers/createClass": 8,
-		"@babel/runtime/helpers/defineProperty": 9,
-		"@babel/runtime/helpers/interopRequireDefault": 10,
-		"@babel/runtime/regenerator": 12,
-		"@braintree/sanitize-url": 13,
-		"smoothscroll-polyfill": 15
+		"./api": 23,
+		"./constants": 24,
+		"./services/googleAnalytics": 26,
+		"./services/googleTagManager": 27,
+		"./services/session": 28,
+		"./services/webSocket": 29,
+		"./utils": 30,
+		"@babel/runtime/helpers/asyncToGenerator": 3,
+		"@babel/runtime/helpers/classCallCheck": 6,
+		"@babel/runtime/helpers/classPrivateFieldGet": 8,
+		"@babel/runtime/helpers/classPrivateFieldSet": 9,
+		"@babel/runtime/helpers/createClass": 10,
+		"@babel/runtime/helpers/defineProperty": 11,
+		"@babel/runtime/helpers/interopRequireDefault": 12,
+		"@babel/runtime/helpers/slicedToArray": 15,
+		"@babel/runtime/regenerator": 18,
+		"@braintree/sanitize-url": 19,
+		"smoothscroll-polyfill": 21
 	}],
-	19: [function (e, t, r)
+	26: [function (e, t, n)
 	{
 		"use strict";
-		var a = e(
+		var r = e(
 			"@babel/runtime/helpers/interopRequireDefault"
 			);
 		Object
 			.defineProperty(
-				r,
+				n,
 				"__esModule",
 				{
 					value: !
 						0
-				}), r
+				}), n
 			.default =
 			void 0;
-		var n = a(e(
+		var a = r(e(
 				"@babel/runtime/helpers/createClass")),
-			i = a(e(
+			i = r(e(
 				"@babel/runtime/helpers/classCallCheck")),
-			o = a(e(
+			o = r(e(
 				"@babel/runtime/helpers/defineProperty")),
-			l = a(e(
+			s = r(e(
 				"@babel/runtime/helpers/classPrivateFieldGet")),
-			u = a(e(
+			l = r(e(
 				"@babel/runtime/helpers/classPrivateFieldSet"));
-		var s = new WeakMap,
-			c = (0, n
+		var c = new WeakMap,
+			u = (0, a
 				.default)((
 				function e(
 					t)
 				{
-					var r =
+					var n =
 						this,
-						a =
+						r =
 						t
 						.id;
 					(0, i
@@ -6641,7 +10445,7 @@
 					function (
 						e,
 						t,
-						r
+						n
 						)
 					{
 						!
@@ -6662,9 +10466,9 @@
 						(e,
 							t),
 						t.set(e,
-							r)
+							n)
 					}(this,
-						s,
+						c,
 						{
 							writable:
 								!
@@ -6697,11 +10501,11 @@
 								t.src =
 									"https://www.googletagmanager.com/gtag/js?id="
 									.concat(
-										(0, l
+										(0, s
 											.default
 											)
-										(r,
-											s)
+										(n,
+											c)
 										),
 									t
 									.async = !
@@ -6723,11 +10527,11 @@
 										new Date
 										),
 									e("config",
-										(0, l
+										(0, s
 											.default
 											)
-										(r,
-											s)
+										(n,
+											c)
 										),
 									console
 									.log(
@@ -6745,59 +10549,59 @@
 							}
 						})
 						),
-					(0, u
+					(0, l
 						.default
 						)
 					(this,
-						s,
-						a
+						c,
+						r
 						)
 				}));
-		r.default = c
+		n.default = u
 	},
 	{
-		"@babel/runtime/helpers/classCallCheck": 4,
-		"@babel/runtime/helpers/classPrivateFieldGet": 6,
-		"@babel/runtime/helpers/classPrivateFieldSet": 7,
-		"@babel/runtime/helpers/createClass": 8,
-		"@babel/runtime/helpers/defineProperty": 9,
-		"@babel/runtime/helpers/interopRequireDefault": 10
+		"@babel/runtime/helpers/classCallCheck": 6,
+		"@babel/runtime/helpers/classPrivateFieldGet": 8,
+		"@babel/runtime/helpers/classPrivateFieldSet": 9,
+		"@babel/runtime/helpers/createClass": 10,
+		"@babel/runtime/helpers/defineProperty": 11,
+		"@babel/runtime/helpers/interopRequireDefault": 12
 	}],
-	20: [function (e, t, r)
+	27: [function (e, t, n)
 	{
 		"use strict";
-		var a = e(
+		var r = e(
 			"@babel/runtime/helpers/interopRequireDefault"
 			);
 		Object
 			.defineProperty(
-				r,
+				n,
 				"__esModule",
 				{
 					value: !
 						0
-				}), r
+				}), n
 			.default =
 			void 0;
-		var n = a(e(
+		var a = r(e(
 				"@babel/runtime/helpers/createClass")),
-			i = a(e(
+			i = r(e(
 				"@babel/runtime/helpers/classCallCheck")),
-			o = a(e(
+			o = r(e(
 				"@babel/runtime/helpers/defineProperty")),
-			l = a(e(
+			s = r(e(
 				"@babel/runtime/helpers/classPrivateFieldGet")),
-			u = a(e(
+			l = r(e(
 				"@babel/runtime/helpers/classPrivateFieldSet"));
-		var s = new WeakMap,
-			c = (0, n
+		var c = new WeakMap,
+			u = (0, a
 				.default)((
 				function e(
 					t)
 				{
-					var r =
+					var n =
 						this,
-						a =
+						r =
 						t
 						.id;
 					(0, i
@@ -6809,7 +10613,7 @@
 					function (
 						e,
 						t,
-						r
+						n
 						)
 					{
 						!
@@ -6830,9 +10634,9 @@
 						(e,
 							t),
 						t.set(e,
-							r)
+							n)
 					}(this,
-						s,
+						c,
 						{
 							writable:
 								!
@@ -6855,11 +10659,11 @@
 							e.innerHTML =
 								"(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n            })(window,document,'script','dataLayer','"
 								.concat(
-									(0, l
+									(0, s
 										.default
 										)
-									(r,
-										s),
+									(n,
+										c),
 									"');"
 									),
 								document
@@ -6889,11 +10693,11 @@
 							e.innerHTML =
 								'<iframe src="https://www.googletagmanager.com/ns.html?id='
 								.concat(
-									(0, l
+									(0, s
 										.default
 										)
-									(r,
-										s),
+									(n,
+										c),
 									'"\n            height="0" width="0" style="display:none;visibility:hidden" id="tag-manager"></iframe>'
 									),
 								document
@@ -6917,8 +10721,8 @@
 						{
 							try
 							{
-								r.initHeadScript(),
-									r
+								n.initHeadScript(),
+									n
 									.initBodyNoScript(),
 									console
 									.log(
@@ -6936,57 +10740,57 @@
 							}
 						})
 						),
-					(0, u
+					(0, l
 						.default
 						)
 					(this,
-						s,
-						a
+						c,
+						r
 						)
 				}));
-		r.default = c
+		n.default = u
 	},
 	{
-		"@babel/runtime/helpers/classCallCheck": 4,
-		"@babel/runtime/helpers/classPrivateFieldGet": 6,
-		"@babel/runtime/helpers/classPrivateFieldSet": 7,
-		"@babel/runtime/helpers/createClass": 8,
-		"@babel/runtime/helpers/defineProperty": 9,
-		"@babel/runtime/helpers/interopRequireDefault": 10
+		"@babel/runtime/helpers/classCallCheck": 6,
+		"@babel/runtime/helpers/classPrivateFieldGet": 8,
+		"@babel/runtime/helpers/classPrivateFieldSet": 9,
+		"@babel/runtime/helpers/createClass": 10,
+		"@babel/runtime/helpers/defineProperty": 11,
+		"@babel/runtime/helpers/interopRequireDefault": 12
 	}],
-	21: [function (e, t, r)
+	28: [function (e, t, n)
 	{
 		"use strict";
-		var a = e(
+		var r = e(
 			"@babel/runtime/helpers/interopRequireDefault"
 			);
 		Object
 			.defineProperty(
-				r,
+				n,
 				"__esModule",
 				{
 					value: !
 						0
-				}), r
+				}), n
 			.default =
 			void 0;
-		var n = a(e(
+		var a = r(e(
 				"@babel/runtime/regenerator")),
-			i = a(e(
+			i = r(e(
 				"@babel/runtime/helpers/asyncToGenerator")),
-			o = a(e(
+			o = r(e(
 				"@babel/runtime/helpers/createClass")),
-			l = a(e(
+			s = r(e(
 				"@babel/runtime/helpers/classCallCheck")),
-			u = a(e(
+			l = r(e(
 				"@babel/runtime/helpers/defineProperty")),
-			s = a(e(
+			c = r(e(
 				"@babel/runtime/helpers/classPrivateFieldGet")),
-			c = a(e(
+			u = r(e(
 				"@babel/runtime/helpers/classPrivateFieldSet")),
-			d = a(e(
-				"./api"));
-		function f(e, t, r)
+			d = r(e(
+				"../api"));
+		function h(e, t, n)
 		{
 			! function (e,
 				t)
@@ -6997,72 +10801,73 @@
 						"Cannot initialize the same private elements twice on an object"
 						)
 			}(e, t), t.set(
-				e, r)
+				e, n)
 		}
-		var p = new WeakMap,
-			h = new WeakMap,
-			v = new WeakMap,
+		var f = new WeakMap,
+			p = new WeakMap,
 			m = new WeakMap,
 			b = new WeakMap,
+			v = new WeakMap,
+			g = new WeakMap,
 			y = new WeakMap,
 			w = new WeakMap,
-			g = new WeakMap,
-			x = new WeakMap,
-			E = new WeakMap,
+			_ = new WeakMap,
 			k = new WeakMap,
-			M = new WeakMap,
-			_ = (0, o
+			S = new WeakMap,
+			E = new WeakMap,
+			x = new WeakMap,
+			C = (0, o
 				.default)((
 				function e(
 					t)
 				{
-					var r =
+					var n =
 						this,
-						a =
+						r =
 						t
 						.clientId,
 						o =
 						t
 						.projectId,
-						_ =
-						t
-						.projectIdLong,
-						S =
-						t
-						.utmCampaign,
-						P =
-						t
-						.utmSource,
-						R =
-						t
-						.utmMedium,
 						C =
 						t
-						.utmContent,
+						.projectIdLong,
 						T =
 						t
-						.referenceTail,
+						.utmCampaign,
+						I =
+						t
+						.utmSource,
 						O =
 						t
+						.utmMedium,
+						M =
+						t
+						.utmContent,
+						R =
+						t
+						.referenceTail,
+						P =
+						t
 						.sourceReference,
-						j =
+						A =
 						t
 						.embedUrl;
-					(0, l
+					(0, s
 						.default
 						)
 					(this,
 						e
 						),
-					f(this, p,
+					h(this, f,
 						{
 							writable:
 								!
 								0,
 							value: null
 						}),
-						f(this,
-							h,
+						h(this,
+							p,
 							{
 								writable:
 									!
@@ -7072,25 +10877,18 @@
 									1
 							}
 							),
-						f(this,
-							v,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						f(this,
+						h(this,
 							m,
 							{
 								writable:
 									!
 									0,
-								value: void 0
+								value:
+									!
+									1
 							}
 							),
-						f(this,
+						h(this,
 							b,
 							{
 								writable:
@@ -7099,8 +10897,8 @@
 								value: void 0
 							}
 							),
-						f(this,
-							y,
+						h(this,
+							v,
 							{
 								writable:
 									!
@@ -7108,16 +10906,7 @@
 								value: void 0
 							}
 							),
-						f(this,
-							w,
-							{
-								writable:
-									!
-									0,
-								value: void 0
-							}
-							),
-						f(this,
+						h(this,
 							g,
 							{
 								writable:
@@ -7126,8 +10915,8 @@
 								value: void 0
 							}
 							),
-						f(this,
-							x,
+						h(this,
+							y,
 							{
 								writable:
 									!
@@ -7135,8 +10924,8 @@
 								value: void 0
 							}
 							),
-						f(this,
-							E,
+						h(this,
+							w,
 							{
 								writable:
 									!
@@ -7144,7 +10933,16 @@
 								value: void 0
 							}
 							),
-						f(this,
+						h(this,
+							_,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						h(this,
 							k,
 							{
 								writable:
@@ -7153,8 +10951,8 @@
 								value: void 0
 							}
 							),
-						f(this,
-							M,
+						h(this,
+							S,
 							{
 								writable:
 									!
@@ -7162,19 +10960,37 @@
 								value: void 0
 							}
 							),
-						(0, u
+						h(this,
+							E,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						h(this,
+							x,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						(0, l
 							.default
 							)
 						(this,
-							"sendActivity",
+							"create",
 							(0, i
 								.default
 								)
-							(n.default
+							(a.default
 								.mark(
 									(function e()
 									{
-										return n
+										return a
 											.default
 											.wrap(
 												(function (
@@ -7190,122 +11006,115 @@
 															)
 														{
 														case 0:
-															if (e
-																.prev =
-																0,
-																(0, s
+															if (!
+																(0, c
 																	.default
 																	)
-																(r,
-																	h)
-																)
-															{
-																e.next =
-																	16;
-																break
-															}
-															if ((0, c
-																	.default
-																	)
-																(r, h,
-																	!
-																	0
-																	),
-																(0, s
-																	.default
-																	)
-																(r,
+																(n,
 																	p)
 																)
 															{
 																e.next =
-																	13;
+																	2;
 																break
 															}
 															return e
+																.abrupt(
+																	"return"
+																	);
+														case 2:
+															return (0,
+																	u
+																	.default
+																	)
+																(n, p,
+																	!
+																	0
+																	),
+																e
 																.t0 =
-																c
+																u
 																.default,
 																e
 																.t1 =
-																r,
+																n,
 																e
 																.t2 =
-																p,
+																f,
 																e
 																.next =
-																9,
+																8,
 																d
 																.default
 																.createSession(
-																	(0, s
+																	(0, c
 																		.default
 																		)
-																	(r,
-																		v),
-																	(0, s
-																		.default
-																		)
-																	(r,
-																		m),
-																	(0, s
-																		.default
-																		)
-																	(r,
+																	(n,
 																		b),
+																	(0, c
+																		.default
+																		)
+																	(n,
+																		v),
+																	(0, c
+																		.default
+																		)
+																	(n,
+																		g),
 																	{
 																		utmCampaign: (
 																				0,
-																				s
+																				c
 																				.default
 																				)
-																			(r,
+																			(n,
 																				y),
 																		utmSource: (
 																				0,
-																				s
+																				c
 																				.default
 																				)
-																			(r,
+																			(n,
 																				w),
 																		utmMedium: (
 																				0,
-																				s
+																				c
 																				.default
 																				)
-																			(r,
-																				g),
+																			(n,
+																				_),
 																		utmContent: (
 																				0,
-																				s
+																				c
 																				.default
 																				)
-																			(r,
-																				x),
+																			(n,
+																				k),
 																		referenceTail: (
 																				0,
-																				s
+																				c
 																				.default
 																				)
-																			(r,
-																				E),
+																			(n,
+																				S),
 																		sourceReference: (
 																				0,
-																				s
+																				c
 																				.default
 																				)
-																			(r,
-																				k),
+																			(n,
+																				E),
 																		embedUrl: (
 																				0,
-																				s
+																				c
 																				.default
 																				)
-																			(r,
-																				M)
+																			(n,
+																				x)
 																	}
 																	);
-														case 9:
+														case 8:
 															e.t3 =
 																e
 																.sent,
@@ -7318,74 +11127,209 @@
 																	e
 																	.t3
 																	),
-																e
-																.next =
-																15;
-															break;
-														case 13:
-															return e
-																.next =
-																15,
-																d
-																.default
-																.refreshSession(
-																	(0, s
-																		.default
-																		)
-																	(r,
-																		v),
-																	(0, s
-																		.default
-																		)
-																	(r,
-																		p)
-																	.id
-																	);
-														case 15:
-															(0, c
-																.default
-																)
-															(r, h,
-																!
-																1
-																);
-														case 16:
-															e.next =
-																22;
-															break;
-														case 18:
-															e.prev =
-																18,
-																e
-																.t4 =
-																e
-																.catch(
-																	0
-																	),
-																console
-																.error(
-																	e
-																	.t4
-																	),
-																(0, c
+																(0, u
 																	.default
 																	)
-																(r, h,
+																(n, p,
 																	!
 																	1
 																	);
-														case 22:
+														case 11:
 														case "end":
 															return e
 																.stop()
 														}
 												}),
-												e,
-												null,
-												[
-													[0,
-														18]
-												]
+												e
+												)
+									})
+									)
+								)
+							),
+						(0, l
+							.default
+							)
+						(this,
+							"refresh",
+							(0, i
+								.default
+								)
+							(a.default
+								.mark(
+									(function e()
+									{
+										return a
+											.default
+											.wrap(
+												(function (
+													e
+													)
+												{
+													for (;;)
+														switch (
+															e
+															.prev =
+															e
+															.next
+															)
+														{
+														case 0:
+															if ((0, c
+																	.default
+																	)
+																(n,
+																	f) &&
+																!
+																(0, c
+																	.default
+																	)
+																(n,
+																	m)
+																)
+															{
+																e.next =
+																	2;
+																break
+															}
+															return e
+																.abrupt(
+																	"return"
+																	);
+														case 2:
+															return (0,
+																	u
+																	.default
+																	)
+																(n, m,
+																	!
+																	0
+																	),
+																e
+																.next =
+																5,
+																d
+																.default
+																.refreshSession(
+																	(0, c
+																		.default
+																		)
+																	(n,
+																		b),
+																	(0, c
+																		.default
+																		)
+																	(n,
+																		f)
+																	.id
+																	);
+														case 5:
+															(0, u
+																.default
+																)
+															(n, m,
+																!
+																1
+																);
+														case 6:
+														case "end":
+															return e
+																.stop()
+														}
+												}),
+												e
+												)
+									})
+									)
+								)
+							),
+						(0, l
+							.default
+							)
+						(this,
+							"getId",
+							(0, i
+								.default
+								)
+							(a.default
+								.mark(
+									(function e()
+									{
+										return a
+											.default
+											.wrap(
+												(function (
+													e
+													)
+												{
+													for (;;)
+														switch (
+															e
+															.prev =
+															e
+															.next
+															)
+														{
+														case 0:
+															if ((0, c
+																	.default
+																	)
+																(n,
+																	f)
+																)
+															{
+																e.next =
+																	5;
+																break
+															}
+															return e
+																.next =
+																3,
+																new Promise(
+																	(function (
+																		e
+																		)
+																	{
+																		return setTimeout(
+																			e,
+																			3e3
+																			)
+																	})
+																	);
+														case 3:
+															if ((0, c
+																	.default
+																	)
+																(n,
+																	f)
+																)
+															{
+																e.next =
+																	5;
+																break
+															}
+															return e
+																.abrupt(
+																	"return",
+																	null
+																	);
+														case 5:
+															return e
+																.abrupt(
+																	"return",
+																	(0, c
+																		.default
+																		)
+																	(n,
+																		f)
+																	.id
+																	);
+														case 6:
+														case "end":
+															return e
+																.stop()
+														}
+												}),
+												e
 												)
 									})
 									)
@@ -7395,155 +11339,590 @@
 							.default
 							)
 						(this,
-							"getSessionId",
-							(function ()
-							{
-								return (0,
-										s
-										.default
-										)
-									(r,
-										p)
-									.id
-							})
+							b,
+							r
 							),
-						(0, c
+						(0, u
 							.default
 							)
 						(this,
 							v,
-							a
-							),
-						(0, c
-							.default
-							)
-						(this,
-							m,
 							o
 							),
-						(0, c
-							.default
-							)
-						(this,
-							b,
-							_
-							),
-						(0, c
-							.default
-							)
-						(this,
-							y,
-							S
-							),
-						(0, c
-							.default
-							)
-						(this,
-							w,
-							P
-							),
-						(0, c
+						(0, u
 							.default
 							)
 						(this,
 							g,
-							R
-							),
-						(0, c
-							.default
-							)
-						(this,
-							x,
 							C
 							),
-						(0, c
+						(0, u
 							.default
 							)
 						(this,
-							E,
+							y,
 							T
 							),
-						(0, c
+						(0, u
+							.default
+							)
+						(this,
+							w,
+							I
+							),
+						(0, u
+							.default
+							)
+						(this,
+							_,
+							O
+							),
+						(0, u
 							.default
 							)
 						(this,
 							k,
-							O
+							M
 							),
-						(0, c
+						(0, u
 							.default
 							)
 						(this,
-							M,
-							j
+							S,
+							R
+							),
+						(0, u
+							.default
+							)
+						(this,
+							E,
+							P
+							),
+						(0, u
+							.default
+							)
+						(this,
+							x,
+							A
 							)
 				}));
-		r.default = _
+		n.default = C
 	},
 	{
-		"./api": 16,
-		"@babel/runtime/helpers/asyncToGenerator": 1,
-		"@babel/runtime/helpers/classCallCheck": 4,
-		"@babel/runtime/helpers/classPrivateFieldGet": 6,
-		"@babel/runtime/helpers/classPrivateFieldSet": 7,
-		"@babel/runtime/helpers/createClass": 8,
-		"@babel/runtime/helpers/defineProperty": 9,
-		"@babel/runtime/helpers/interopRequireDefault": 10,
-		"@babel/runtime/regenerator": 12
+		"../api": 23,
+		"@babel/runtime/helpers/asyncToGenerator": 3,
+		"@babel/runtime/helpers/classCallCheck": 6,
+		"@babel/runtime/helpers/classPrivateFieldGet": 8,
+		"@babel/runtime/helpers/classPrivateFieldSet": 9,
+		"@babel/runtime/helpers/createClass": 10,
+		"@babel/runtime/helpers/defineProperty": 11,
+		"@babel/runtime/helpers/interopRequireDefault": 12,
+		"@babel/runtime/regenerator": 18
 	}],
-	22: [function (e, t, r)
+	29: [function (e, t, n)
 	{
 		"use strict";
-		var a = e(
+		var r = e(
 			"@babel/runtime/helpers/interopRequireDefault"
 			);
 		Object
 			.defineProperty(
-				r,
+				n,
 				"__esModule",
 				{
 					value: !
 						0
-				}), r
-			.validator = r
+				}), n
+			.default =
+			void 0;
+		var a = r(e(
+				"@babel/runtime/regenerator")),
+			i = r(e(
+				"@babel/runtime/helpers/asyncToGenerator")),
+			o = r(e(
+				"@babel/runtime/helpers/createClass")),
+			s = r(e(
+				"@babel/runtime/helpers/classCallCheck")),
+			l = r(e(
+				"@babel/runtime/helpers/defineProperty")),
+			c = r(e(
+				"@babel/runtime/helpers/classPrivateFieldGet")),
+			u = r(e(
+				"@babel/runtime/helpers/classPrivateFieldSet")),
+			d = e(
+				"@stomp/stompjs"
+				),
+			h = e(
+				"../constants"
+				);
+		function f(e, t, n)
+		{
+			! function (e,
+				t)
+			{
+				if (t.has(
+					e))
+					throw new TypeError(
+						"Cannot initialize the same private elements twice on an object"
+						)
+			}(e, t), t.set(
+				e, n)
+		}
+		var p = new WeakMap,
+			m = new WeakMap,
+			b = new WeakMap,
+			v = new WeakMap,
+			g = (0, o
+				.default)((
+				function e(
+					t)
+				{
+					var n =
+						this,
+						r =
+						t
+						.onConnectEvent,
+						o =
+						t
+						.onDisconnectEvent;
+					(0, s
+						.default
+						)
+					(this,
+						e
+						),
+					f(this, p,
+						{
+							writable:
+								!
+								0,
+							value: void 0
+						}),
+						f(this,
+							m,
+							{
+								writable:
+									!
+									0,
+								value:
+									!
+									1
+							}
+							),
+						f(this,
+							b,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						f(this,
+							v,
+							{
+								writable:
+									!
+									0,
+								value: void 0
+							}
+							),
+						(0, l
+							.default
+							)
+						(this,
+							"connect",
+							function ()
+							{
+								var e =
+									(0, i
+										.default
+										)
+									(a.default
+										.mark(
+											(function e(
+												t
+												)
+											{
+												var r,
+													i,
+													o;
+												return a
+													.default
+													.wrap(
+														(function (
+															e
+															)
+														{
+															for (;;)
+																switch (
+																	e
+																	.prev =
+																	e
+																	.next
+																	)
+																{
+																case 0:
+																	return r =
+																		t
+																		.clientId,
+																		i =
+																		t
+																		.gameId,
+																		o =
+																		t
+																		.masterPin,
+																		e
+																		.abrupt(
+																			"return",
+																			new Promise(
+																				(function (
+																					e
+																					)
+																				{
+																					var t =
+																						new d
+																						.Client(
+																						{
+																							brokerURL: ""
+																								.concat(
+																									h
+																									.MULTIPLAYER_WS_URL,
+																									"?clientId="
+																									)
+																								.concat(
+																									r,
+																									"&projectIdPin="
+																									)
+																								.concat(
+																									i
+																									)
+																								.concat(
+																									o ?
+																									"&masterPin="
+																									.concat(
+																										o
+																										) :
+																									""
+																									),
+																							onConnect: function ()
+																							{
+																								(0, u
+																									.default
+																									)
+																								(n, p,
+																									t
+																									),
+																								(0, u
+																									.default
+																									)
+																								(n, m,
+																									!
+																									0
+																									),
+																								(0, c
+																									.default
+																									)
+																								(n,
+																									b)
+																								.call
+																									(
+																										n),
+																									e()
+																							},
+																							onStompError: function (
+																								t
+																								)
+																							{
+																								console
+																									.error(
+																									{
+																										message: t
+																											.headers
+																											.message,
+																										details: t
+																											.body
+																									}),
+																									n
+																									.disconnect(),
+																									(0, u
+																										.default
+																										)
+																									(n, m,
+																										!
+																										1
+																										),
+																									(0, c
+																										.default
+																										)
+																									(n,
+																										v)
+																									.call(
+																										n
+																										),
+																									e()
+																							},
+																							onDisconnect: function ()
+																							{
+																								(0, u
+																									.default
+																									)
+																								(n, m,
+																									!
+																									1
+																									),
+																								(0, c
+																									.default
+																									)
+																								(n,
+																									v)
+																								.call
+																									(
+																										n)
+																							},
+																							onWebSocketError: function ()
+																							{
+																								n.disconnect(),
+																									(0, u
+																										.default
+																										)
+																									(n, m,
+																										!
+																										1
+																										),
+																									(0, c
+																										.default
+																										)
+																									(n,
+																										v)
+																									.call(
+																										n
+																										)
+																							},
+																							reconnectDelay: 2e3
+																						});
+																					t.activate()
+																				})
+																				)
+																			);
+																case 2:
+																case "end":
+																	return e
+																		.stop()
+																}
+														}),
+														e
+														)
+											})
+											)
+										);
+								return function (
+									t
+									)
+								{
+									return e
+										.apply(
+											this,
+											arguments
+											)
+								}
+							}
+							()
+							),
+						(0, l
+							.default
+							)
+						(this,
+							"disconnect",
+							(function ()
+							{
+								(0, c
+									.default
+									)
+								(n,
+									m) &&
+								(0, c
+									.default
+									)
+								(n,
+									p)
+								.deactivate
+									()
+							})
+							),
+						(0, l
+							.default
+							)
+						(this,
+							"sendMessage",
+							(function (
+								e,
+								t
+								)
+							{
+								(0, c
+									.default
+									)
+								(n,
+									m) &&
+								(0, c
+									.default
+									)
+								(n,
+									p)
+								.publish
+									(
+									{
+										destination: e,
+										body: JSON
+											.stringify(
+												t
+												)
+									})
+							})
+							),
+						(0, l
+							.default
+							)
+						(this,
+							"subscribe",
+							(function (
+								e,
+								t
+								)
+							{
+								if ((0, c
+										.default
+										)
+									(n,
+										m)
+									)
+									return (0,
+											c
+											.default
+											)
+										(n,
+											p)
+										.subscribe(
+											e,
+											(function (
+												e
+												)
+											{
+												return t(
+													e
+													.body
+													)
+											})
+											)
+							})
+							),
+						(0, l
+							.default
+							)
+						(this,
+							"unsubscribe",
+							(function (
+								e
+								)
+							{
+								(0, c
+									.default
+									)
+								(n,
+									m) &&
+								e.unsubscribe()
+							})
+							),
+						(0, u
+							.default
+							)
+						(this,
+							b,
+							r
+							),
+						(0, u
+							.default
+							)
+						(this,
+							v,
+							o
+							)
+				}));
+		n.default = g
+	},
+	{
+		"../constants": 24,
+		"@babel/runtime/helpers/asyncToGenerator": 3,
+		"@babel/runtime/helpers/classCallCheck": 6,
+		"@babel/runtime/helpers/classPrivateFieldGet": 8,
+		"@babel/runtime/helpers/classPrivateFieldSet": 9,
+		"@babel/runtime/helpers/createClass": 10,
+		"@babel/runtime/helpers/defineProperty": 11,
+		"@babel/runtime/helpers/interopRequireDefault": 12,
+		"@babel/runtime/regenerator": 18,
+		"@stomp/stompjs": 22
+	}],
+	30: [function (e, t, n)
+	{
+		"use strict";
+		var r = e(
+			"@babel/runtime/helpers/interopRequireDefault"
+			);
+		Object
+			.defineProperty(
+				n,
+				"__esModule",
+				{
+					value: !
+						0
+				}), n
+			.validator = n
 			.validateConstructorParam =
-			r
+			n
 			.throwExceptionManually =
-			r.throttle = r
-			.httpRequest = r
+			n.throttle = n
+			.httpRequest = n
+			.getWindowQueryParams =
+			n
+			.getWindowLocation =
+			n
 			.getWindowLanguage =
-			r
+			n
 			.getScrollableParent =
-			r
+			n
 			.getScrollReadyElement =
-			r
+			n
 			.getElementYOffset =
-			r
+			n
 			.getElementPositions =
-			r
+			n
 			.getElementInnerHeight =
 			void 0;
-		var n = a(e(
+		var a = r(e(
 				"@babel/runtime/regenerator")),
-			i = a(e(
+			i = r(e(
 				"@babel/runtime/helpers/typeof")),
-			o = a(e(
+			o = r(e(
 				"@babel/runtime/helpers/defineProperty")),
-			l = a(e(
-				"@babel/runtime/helpers/asyncToGenerator"));
-		function u(e, t)
+			s = r(e(
+				"@babel/runtime/helpers/asyncToGenerator")),
+			l = e(
+				"./constants"
+				);
+		function c(e, t)
 		{
-			var r = Object
+			var n = Object
 				.keys(e);
 			if (Object
 				.getOwnPropertySymbols
 				)
 			{
-				var a =
+				var r =
 					Object
 					.getOwnPropertySymbols(
 						e);
-				t && (a = a
+				t && (r = r
 						.filter(
 							(function (
 								t
@@ -7557,15 +11936,15 @@
 									.enumerable
 							})
 							)
-						), r
+						), n
 					.push
 					.apply(
-						r, a
+						n, r
 						)
 			}
-			return r
+			return n
 		}
-		function s(e)
+		function u(e)
 		{
 			for (var t =
 				1; t <
@@ -7573,16 +11952,16 @@
 				.length; t++
 				)
 			{
-				var r =
+				var n =
 					null !=
 					arguments[
 						t] ?
 					arguments[
 						t] :
 					{};
-				t % 2 ? u(
+				t % 2 ? c(
 						Object(
-							r
+							n
 							),
 						!0)
 					.forEach(
@@ -7594,7 +11973,7 @@
 								.default
 								)
 							(e, t,
-								r[
+								n[
 									t]
 								)
 						})
@@ -7606,11 +11985,11 @@
 						e,
 						Object
 						.getOwnPropertyDescriptors(
-							r
+							n
 							)
 						) :
-					u(Object(
-						r
+					c(Object(
+						n
 						))
 					.forEach(
 						(function (
@@ -7623,7 +12002,7 @@
 									t,
 									Object
 									.getOwnPropertyDescriptor(
-										r,
+										n,
 										t
 										)
 									)
@@ -7631,13 +12010,13 @@
 			}
 			return e
 		}
-		var c = function (e)
+		var d = function (e)
 			{
 				return e ===
 					document
 					.body
 			},
-			d = function (e)
+			h = function (e)
 			{
 				return e
 					.getBoundingClientRect()
@@ -7645,22 +12024,22 @@
 			f = function ()
 			{
 				var e = (0,
-					l
+					s
 					.default
-					)(n
+					)(a
 					.default
 					.mark(
 						(function e(
 							t,
-							r
+							n
 							)
 						{
-							var a,
+							var r,
 								i,
 								o,
-								l,
-								u;
-							return n
+								s,
+								l;
+							return a
 								.default
 								.wrap(
 									(function (
@@ -7676,17 +12055,17 @@
 												)
 											{
 											case 0:
-												return a =
-													r
+												return r =
+													n
 													.timeout,
 													i =
 													void 0 ===
-													a ?
+													r ?
 													3e4 :
-													a,
+													r,
 													o =
 													new AbortController,
-													l =
+													s =
 													setTimeout(
 														(function ()
 														{
@@ -7700,9 +12079,9 @@
 													5,
 													fetch(
 														t,
-														s(s(
+														u(u(
 															{},
-															r
+															n
 															),
 														{},
 														{
@@ -7711,13 +12090,13 @@
 														})
 														);
 											case 5:
-												if (u =
+												if (l =
 													e
 													.sent,
 													clearTimeout(
-														l
+														s
 														),
-													u
+													l
 													.ok
 													)
 												{
@@ -7732,7 +12111,7 @@
 												return e
 													.abrupt(
 														"return",
-														u
+														l
 														);
 											case 10:
 											case "end":
@@ -7746,7 +12125,7 @@
 						)
 					);
 				return function (
-					t, r
+					t, n
 					)
 				{
 					return e
@@ -7756,7 +12135,7 @@
 							)
 				}
 			}();
-		r.httpRequest = f;
+		n.httpRequest = f;
 		var p = {
 			isValue: function (
 				e)
@@ -7823,124 +12202,124 @@
 						)
 			}
 		};
-		r.validator = p, r
+		n.validator = p, n
 			.throttle =
 			function (e, t)
 			{
-				var r, a,
-					n = !1;
+				var n, r,
+					a = !1;
 				return function i()
 				{
 					if (
-						n)
-						return r =
+						a)
+						return n =
 							arguments,
 							void(
-								a =
+								r =
 								this
 								);
 					e.apply(this,
 							arguments
 							),
-						n = !
+						a = !
 						0,
 						setTimeout(
 							(function ()
 							{
-								n = !
+								a = !
 									1,
-									r &&
+									n &&
 									(i.apply(
-											a,
-											r
+											r,
+											n
 											),
+										n =
 										r =
-										a =
 										null
 										)
 							}),
 							t
 							)
 				}
-			}, r
+			}, n
 			.getElementYOffset =
 			function (e)
 			{
-				return c(
+				return d(
 					e) ?
 					window
 					.pageYOffset :
 					e
 					.scrollTop
-			}, r
+			}, n
 			.getElementInnerHeight =
 			function (e)
 			{
-				return c(
+				return d(
 					e) ?
 					window
 					.innerHeight :
 					e
 					.clientHeight
-			}, r
+			}, n
 			.getScrollReadyElement =
 			function (e)
 			{
-				return c(
+				return d(
 					e) ?
 					window :
 					e
-			}, r
+			}, n
 			.getElementPositions =
 			function (e, t)
 			{
-				var r = {
+				var n = {
 						top: void 0,
 						left: void 0,
 						height: void 0,
 						bottom: void 0
 					},
-					a = d(
+					r = h(
 					t);
-				return c(
-					e) ? (r
+				return d(
+					e) ? (n
 						.top =
-						a
+						r
 						.top,
-						r
+						n
 						.left =
-						a
+						r
 						.left,
-						r
+						n
 						.height =
-						a
-						.height,
 						r
+						.height,
+						n
 						.bottom =
-						a
+						r
 						.bottom
 						) :
-					(r.top =
-						a
-						.top -
-						d(e)
-						.top,
+					(n.top =
 						r
+						.top -
+						h(e)
+						.top,
+						n
 						.left =
 						e
 						.scrollLeft,
-						r
+						n
 						.height =
 						e
 						.scrollHeight,
-						r
+						n
 						.bottom =
-						r
+						n
 						.top +
-						r
+						n
 						.height
-						), r
-			}, r
+						), n
+			}, n
 			.getScrollableParent =
 			function (e)
 			{
@@ -7960,7 +12339,7 @@
 						), e
 					.appendChild(
 						t);
-				for (var r =
+				for (var n =
 						function e(
 							t
 							)
@@ -7983,7 +12362,7 @@
 										)
 										return !
 											1;
-									var r = -
+									var n = -
 										1 !==
 										window
 										.getComputedStyle(
@@ -7995,7 +12374,7 @@
 											);
 									return t &&
 										!
-										r
+										n
 								}
 								(
 									t) ?
@@ -8012,17 +12391,17 @@
 						e
 						.lastChild
 						);
-				return r
+				return n
 			};
-		var h = function (e,
+		var m = function (e,
 			t)
 		{
-			var r =
+			var n =
 				"[RemixLoader] Unhandled exception";
 			if ("CV" ===
 				e)
 			{
-				var a =
+				var r =
 					"[RemixLoader | CONSTRUCTOR VALIDATOR]";
 				switch (
 					t
@@ -8030,9 +12409,9 @@
 					)
 				{
 				case "undefined":
-					r = ""
+					n = ""
 						.concat(
-							a,
+							r,
 							' Field "'
 							)
 						.concat(
@@ -8047,9 +12426,9 @@
 							);
 					break;
 				case "unknown":
-					r = ""
+					n = ""
 						.concat(
-							a,
+							r,
 							' Unknown field: "'
 							)
 						.concat(
@@ -8059,9 +12438,9 @@
 							);
 					break;
 				case "format":
-					r = ""
+					n = ""
 						.concat(
-							a,
+							r,
 							' Invalid field "'
 							)
 						.concat(
@@ -8089,9 +12468,9 @@
 							);
 					break;
 				case "value":
-					r = ""
+					n = ""
 						.concat(
-							a,
+							r,
 							' Invalid field "'
 							)
 						.concat(
@@ -8114,9 +12493,9 @@
 							);
 					break;
 				case "internal":
-					r = ""
+					n = ""
 						.concat(
-							a,
+							r,
 							' Internal error! Validating field: "'
 							)
 						.concat(
@@ -8131,20 +12510,20 @@
 							)
 				}
 			}
-			var n =
+			var a =
 				new Error(
-					r);
-			throw n
+					n);
+			throw a
 				.name =
 				"ManuallyException",
-				n
+				a
 		};
-		r.throwExceptionManually =
-			h, r
+		n.throwExceptionManually =
+			m, n
 			.validateConstructorParam =
 			function (e, t)
 			{
-				var r = !(
+				var n = !(
 						arguments
 						.length >
 						2 &&
@@ -8155,7 +12534,7 @@
 						) ||
 					arguments[
 						2],
-					a =
+					r =
 					arguments
 					.length >
 					3 ?
@@ -8179,18 +12558,48 @@
 							return "string" ==
 								typeof t ?
 								t :
-								h("CV",
+								m("CV",
 								{
 									type: "format",
 									key: e,
 									value: t,
 									expected: "String"
 								});
+						case "projectMode":
+							return "string" !=
+								typeof t ?
+								m("CV",
+								{
+									type: "format",
+									key: e,
+									value: t,
+									expected: "String"
+								}) :
+								Object
+								.values(
+									l
+									.PROJECT_MODES
+									)
+								.includes(
+									t
+									) ?
+								t :
+								m("CV",
+								{
+									type: "value",
+									key: e,
+									value: t,
+									expected: Object
+										.values(
+											l
+											.PROJECT_MODES
+											)
+								});
 						case "nodeElement":
 							return t instanceof Element ||
 								t instanceof HTMLDocument ?
 								t :
-								h("CV",
+								m("CV",
 								{
 									type: "format",
 									key: e,
@@ -8203,7 +12612,7 @@
 									t
 									) ?
 								t :
-								h("CV",
+								m("CV",
 								{
 									type: "format",
 									key: e,
@@ -8216,7 +12625,7 @@
 									t
 									) ?
 								t :
-								h("CV",
+								m("CV",
 								{
 									type: "format",
 									key: e,
@@ -8232,7 +12641,7 @@
 								.parse(
 									t
 									) :
-								h("CV",
+								m("CV",
 								{
 									type: "format",
 									key: e,
@@ -8248,7 +12657,7 @@
 									t
 									) ?
 								t :
-								h("CV",
+								m("CV",
 								{
 									type: "format",
 									key: e,
@@ -8259,7 +12668,7 @@
 							return "function" ==
 								typeof t ?
 								t :
-								h("CV",
+								m("CV",
 								{
 									type: "format",
 									key: e,
@@ -8267,7 +12676,7 @@
 									expected: "Function"
 								});
 						default:
-							return h(
+							return m(
 								"CV",
 								{
 									type: "unknown",
@@ -8275,14 +12684,14 @@
 								}
 								)
 						}
-					return r ?
-						h("CV",
+					return n ?
+						m("CV",
 						{
 							type: "undefined",
 							key: e,
 							value: t
 						}) :
-						a
+						r
 				}
 				catch (t)
 				{
@@ -8291,7 +12700,7 @@
 						.name
 						)
 						throw t;
-					return h(
+					return m(
 						"CV",
 						{
 							type: "internal",
@@ -8300,7 +12709,7 @@
 						}
 						)
 				}
-			}, r
+			}, n
 			.getWindowLanguage =
 			function ()
 			{
@@ -8332,14 +12741,55 @@
 				{
 					return null
 				}
+			}, n
+			.getWindowLocation =
+			function ()
+			{
+				return {
+					host: window
+						.location
+						.host,
+					hostname: window
+						.location
+						.hostname,
+					href: window
+						.location
+						.href,
+					origin: window
+						.location
+						.origin,
+					pathname: window
+						.location
+						.pathname,
+					port: window
+						.location
+						.port,
+					protocol: window
+						.location
+						.protocol
+				}
+			}, n
+			.getWindowQueryParams =
+			function ()
+			{
+				return Object
+					.fromEntries(
+						new URLSearchParams(
+							window
+							.location
+							.search
+							)
+						.entries()
+						)
 			}
 	},
 	{
-		"@babel/runtime/helpers/asyncToGenerator": 1,
-		"@babel/runtime/helpers/defineProperty": 9,
-		"@babel/runtime/helpers/interopRequireDefault": 10,
-		"@babel/runtime/helpers/typeof": 11,
-		"@babel/runtime/regenerator": 12
+		"./constants": 24,
+		"@babel/runtime/helpers/asyncToGenerator": 3,
+		"@babel/runtime/helpers/defineProperty": 11,
+		"@babel/runtime/helpers/interopRequireDefault": 12,
+		"@babel/runtime/helpers/typeof": 16,
+		"@babel/runtime/regenerator": 18
 	}]
 },
-{}, [18]);
+{}, [25]);
